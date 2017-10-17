@@ -30,15 +30,17 @@ The data channel is for one-way graph data streaming from robot to grapher and l
 
 ### Interaction Diagram
 
+The interactions between a client and the server when starting a data stream.
+
 {{<figure src="/media/telemetry.png" title="Telemetry Interactions">}}
 
 ### Message Formats
 
 #### Inventory Message
 
-This message lists all items that can be graphed under the "items" key and measurements for different types of items under the "measures" key. This messages is versions to potentially invalidate grapher save files.
+This message lists all items that can be graphed under the `items` key and measurements for different types of items under the `measures` key. This messages is versions to potentially invalidate grapher save files.
 
-{{<highlight json>}}
+```json
 {
   "items": [
     {
@@ -125,13 +127,13 @@ This message lists all items that can be graphed under the "items" key and measu
   "type": "inventory",
   "version": 1
 }
-{{< /highlight >}}
+```
 
 #### Subscribe Message
 
-The "itemId" and "measurementId" keys correspond to "id" in the inventory message.
+The `itemId` and `measurementId` keys correspond to `id` in the inventory message.
 
-{{<highlight json>}}
+```json
 {
   "type": "start",
   "subscription": [
@@ -161,13 +163,13 @@ The "itemId" and "measurementId" keys correspond to "id" in the inventory messag
     }
   ]
 }
-{{< /highlight >}}
+```
 
 #### Subscription Acknowledgement
 
 This message is returned as the response to the subscribe message and lists the descriptions of each measurement subscribed to.
 
-{{<highlight json>}}
+```json
 {
   "type": "subscription",
   "descriptions": [
@@ -175,13 +177,13 @@ This message is returned as the response to the subscribe message and lists the 
     "Shooter Wheel Output Current"
   ]
 }
-{{< /highlight >}}
+```
 
 #### Data Message
 
-We want to keep this as lightweight as possible. The "timestamp" and "type" keys might be removed.
+This message is encapsulated in a UDP datagram so we want to keep this as lightweight as possible. The type` key is deprecated.
 
-{{<highlight json>}}
+```json
 {
   "data": [
     0.099998,
@@ -204,4 +206,4 @@ We want to keep this as lightweight as possible. The "timestamp" and "type" keys
   "timestamp": 1507473896981,
   "type": "talon"
 }
-{{< /highlight >}}
+```
