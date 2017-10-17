@@ -1,4 +1,4 @@
-baseURL = "http://strykeforce.github.io/"
+baseURL = "https://strykeforce.github.io/"
 languageCode = "en-us"
 title = "Stryke Force Dev Site"
 theme = "nix"
