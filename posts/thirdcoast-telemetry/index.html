@@ -102,6 +102,8 @@ ga('create', 'UA-108186367-2', 'auto');
 
 <h3 id="interaction-diagram">Interaction Diagram</h3>
 
+<p>The interactions between a client and the server when starting a data stream.</p>
+
 
 <figure >
     
@@ -120,8 +122,7 @@ ga('create', 'UA-108186367-2', 'auto');
 
 <h4 id="inventory-message">Inventory Message</h4>
 
-<p>This message lists all items that can be graphed under the &ldquo;items&rdquo; key and measurements for different types of items under the &ldquo;measures&rdquo; key. This messages is versions to potentially invalidate grapher save files.</p>
-
+<p>This message lists all items that can be graphed under the <code>items</code> key and measurements for different types of items under the <code>measures</code> key. This messages is versions to potentially invalidate grapher save files.</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#309;font-weight:bold">&#34;items&#34;</span>: [
     {
@@ -208,12 +209,10 @@ ga('create', 'UA-108186367-2', 'auto');
   <span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;inventory&#34;</span>,
   <span style="color:#309;font-weight:bold">&#34;version&#34;</span>: <span style="color:#f60">1</span>
 }</code></pre></div>
-
 <h4 id="subscribe-message">Subscribe Message</h4>
 
-<p>The &ldquo;itemId&rdquo; and &ldquo;measurementId&rdquo; keys correspond to &ldquo;id&rdquo; in the inventory message.</p>
-
-<p><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<p>The <code>itemId</code> and <code>measurementId</code> keys correspond to <code>id</code> in the inventory message.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;start&#34;</span>,
   <span style="color:#309;font-weight:bold">&#34;subscription&#34;</span>: [
     {
@@ -241,12 +240,10 @@ ga('create', 'UA-108186367-2', 'auto');
       <span style="color:#309;font-weight:bold">&#34;measurementId&#34;</span>: <span style="color:#f60">13</span>
     }
   ]
-}</code></pre></div></p>
-
+}</code></pre></div>
 <h4 id="subscription-acknowledgement">Subscription Acknowledgement</h4>
 
 <p>This message is returned as the response to the subscribe message and lists the descriptions of each measurement subscribed to.</p>
-
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;subscription&#34;</span>,
   <span style="color:#309;font-weight:bold">&#34;descriptions&#34;</span>: [
@@ -254,11 +251,9 @@ ga('create', 'UA-108186367-2', 'auto');
     <span style="color:#c30">&#34;Shooter Wheel Output Current&#34;</span>
   ]
 }</code></pre></div>
-
 <h4 id="data-message">Data Message</h4>
 
-<p>We want to keep this as lightweight as possible. The &ldquo;timestamp&rdquo; and &ldquo;type&rdquo; keys might be removed.</p>
-
+<p>This message is encapsulated in a UDP datagram so we want to keep this as lightweight as possible. The type` key is deprecated.</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#309;font-weight:bold">&#34;data&#34;</span>: [
     <span style="color:#f60">0.099998</span>,
@@ -281,7 +276,6 @@ ga('create', 'UA-108186367-2', 'auto');
   <span style="color:#309;font-weight:bold">&#34;timestamp&#34;</span>: <span style="color:#f60">1507473896981</span>,
   <span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;talon&#34;</span>
 }</code></pre></div>
-
                 
 
 <h3>See Also</h3>
