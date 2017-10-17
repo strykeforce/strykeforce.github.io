@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Thirdcoast Talon &middot; Stryke Force DevBlog </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.31-DEV" />
+
+
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://strykeforce.github.io/css/nix.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-108186367-2', 'auto');
+	  ga('send', 'pageview');
+
+</script>
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" id="green-terminal" href=https://strykeforce.github.io/>dev@strykeforce ~ $</a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="https://strykeforce.github.io/">/home/dev</a>
+				</li>
+				
+				
+				<li >
+					<a href="/posts">~/posts</a>
+				</li>
+				
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1><a href="https://strykeforce.github.io/posts/thirdcoast-talon/">Thirdcoast Talon</a></h1>
+            <span class="post-date">Oct 17, 2017 </span>
+            <div class="post-content">
+                
+
+<h1 id="talon-configurations">Talon Configurations</h1>
+
+<p>Third Coast provides a library for storing any number of Talon configurations in a <a href="https://github.com/toml-lang/toml">TOML</a> file and applying them to Talons. The configuration file is stored in the robot application JAR and loaded by the class loader.</p>
+
+<p>The structure of a Talon configuration file is:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#09f;font-style:italic"># first Talon configuration</span>
+[[TALON]]
+name = <span style="color:#c30">&#34;drive&#34;</span>
+mode = <span style="color:#c30">&#34;Voltage&#34;</span>
+<span style="color:#09f;font-style:italic"># etc...</span>
+
+<span style="color:#09f;font-style:italic"># second Talon configuration</span>
+[[TALON]]
+name = <span style="color:#c30">&#34;azimuth&#34;</span>
+mode = <span style="color:#c30">&#34;Position&#34;</span>
+<span style="color:#09f;font-style:italic"># etc...</span></code></pre></div>
+<h2 id="talon-configuration-parameter-reference">Talon Configuration Parameter Reference</h2>
+
+<p>Talon parameters may apply to all or specific modes as listed below.</p>
+
+<h3 id="talon-parameters-applicable-to-all-operating-modes">Talon Parameters Applicable to all Operating Modes</h3>
+
+<h4 id="name">name</h4>
+
+<p>Each talon configuration name needs to be globally unique.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">name = <span style="color:#c30">&#34;drive_teleop&#34;</span></code></pre></div>
+<h4 id="mode">mode</h4>
+
+<p>Select a control mode from the following list. Note this is case-sensitive. If not specified, defaults to Voltage.</p>
+
+<ul>
+<li>Current</li>
+<li>Disabled</li>
+<li>Follower</li>
+<li>MotionMagic</li>
+<li>MotionProfile</li>
+<li>PercentVbus</li>
+<li>Position</li>
+<li>Speed</li>
+<li>Voltage</li>
+</ul>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">mode = <span style="color:#c30">&#34;Voltage&#34;</span></code></pre></div>
+<h4 id="setpoint-max">setpoint_max</h4>
+
+<p>Max input or throttle will scale to this absolute value. Units are the same at the setpoint, i.e. volts, ticks, etc&hellip; Applies to all modes.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">setpoint_max = <span style="color:#f60">12.0</span> <span style="color:#09f;font-style:italic"># max volts</span></code></pre></div>
+<h4 id="current-limit">current_limit</h4>
+
+<p>Limit current to specified maximum. A value of zero will disable current limit. Applies to all modes.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">current_limit = <span style="color:#f60">50</span></code></pre></div>
+<h4 id="feedback-device">feedback_device</h4>
+
+<p>Select feedback device from the following list. Note this is case-sensitive. If not specified, defaults to QuadEncoder. Applies to all modes.</p>
+
+<ul>
+<li>AnalogEncoder</li>
+<li>AnalogPot</li>
+<li>CtreMagEncoder_Absolute</li>
+<li>CtreMagEncoder_Relative</li>
+<li>EncFalling</li>
+<li>EncRising</li>
+<li>PulseWidth</li>
+<li>QuadEncoder</li>
+</ul>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">feedback_device = <span style="color:#c30">&#34;QuadEncoder&#34;</span></code></pre></div>
+<h4 id="ticks-per-revolution">ticks_per_revolution</h4>
+
+<p>Configure how many codes per revolution are generated by this encoder. See Talon software manual section 7.2. If not specified, Talon will use native units. Applies to all modes.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">ticks_per_revolution = <span style="color:#f60">4096</span></code></pre></div>
+<h4 id="brake-in-neutral">brake_in_neutral</h4>
+
+<p>Set to true to brake during neutral, false to coast during neutral. If not specified, defaults to true. Applies to all modes.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">brake_in_neutral = <span style="color:#069;font-weight:bold">true</span></code></pre></div>
+<h4 id="forward-limit-switch-reverse-limit-switch">forward_limit_switch, reverse_limit_switch</h4>
+
+<p>Limit switches are normally-open, normally-closed, or disabled. If not specified, defaults to disabled. Applies to all modes.</p>
+
+<ul>
+<li>NormallyOpen</li>
+<li>NormallyClosed</li>
+<li>Disabled</li>
+</ul>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">forward_limit_switch = <span style="color:#c30">&#34;NormallyOpen&#34;</span>
+reverse_limit_switch = <span style="color:#c30">&#34;Disabled&#34;</span></code></pre></div>
+<h4 id="forward-soft-limit-reverse-soft-limit">forward_soft_limit, reverse_soft_limit</h4>
+
+<p>Soft limits are set if the following options are present. Units are the same at the setpoint, i.e. volts, ticks. Applies to all modes.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">forward_soft_limit = <span style="color:#f60">10000.0</span>
+reverse_soft_limit = <span style="color:#f60">12000.0</span></code></pre></div>
+<h4 id="encoder-reversed">encoder_reversed</h4>
+
+<p>Set to true to reverse the encoder sensing direction to be in-phase with motor output. If not specified, defaults to false. Applies to all modes.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">encoder_reversed = <span style="color:#069;font-weight:bold">false</span></code></pre></div>
+<h4 id="output-reversed">output_reversed</h4>
+
+<p>Set to true to reverse motor output. If not specified, defaults to false. Applies to all modes.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">output_reversed = <span style="color:#069;font-weight:bold">false</span></code></pre></div>
+<h4 id="voltage-ramp-rate">voltage_ramp_rate</h4>
+
+<p>Set a maximum output voltage ramp rate, in volts/sec. A value at or near zero will disable ramping (see Talon software manual section 6.4). Applies to all modes.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">voltage_ramp_rate = <span style="color:#f60">0.0</span></code></pre></div>
+<h4 id="velocity-measurement-period">velocity_measurement_period</h4>
+
+<p>The Velocity Measurement Sample Period is selected from a fixed list of pre-supported sampling periods [1, 5, 10, 20, 25, 50, 100] milliseconds (see Talon software manual section 7.8). If not specified, defaults to 100 ms.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">velocity_measurement_period = <span style="color:#f60">100</span></code></pre></div>
+<h4 id="velocity-measurement-window">velocity_measurement_window</h4>
+
+<p>The Velocity Measurement Rolling Average Window is selected from a fixed list of pre-supported sample counts: [1, 2, 4, 8, 16, 32, 64]. If an alternative value is specified, it is rounded down to the nearest supported value. If not specified, defaults to 64.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">velocity_measurement_window = <span style="color:#f60">64</span></code></pre></div>
+<h3 id="talon-parameters-applicable-to-closed-loop-operating-modes">Talon Parameters Applicable to Closed-loop Operating Modes</h3>
+
+<h4 id="pidf-i-zone">PIDF, I-zone</h4>
+
+<h4 id="allowable-closed-loop-error">allowable_closed_loop_error</h4>
+
+<p>Within this error range, PID gains are zero, F still in effect. Units are mA for current, talon native units for position and velocity. If not specified, defaults to zero. Applies to closed-loop modes.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">allowable_closed_loop_error = <span style="color:#f60">0</span></code></pre></div>
+<h4 id="forward-output-voltage-nominal-reverse-output-voltage-nominal">forward_output_voltage_nominal, reverse_output_voltage_nominal</h4>
+
+<p>Output magnitude between zero and this value is set to this value. If not specified, defaults to zero. Applies to closed-loop modes.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">forward_output_voltage_nominal = <span style="color:#f60">0.0</span>
+reverse_output_voltage_nominal = <span style="color:#f60">0.0</span></code></pre></div>
+<h4 id="forward-output-voltage-peak-reverse-output-voltage-peak">forward_output_voltage_peak, reverse_output_voltage_peak</h4>
+
+<p>Output voltage will be limited to this value. If not specified, defaults to no limit, Applies to closed-loop modes.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">forward_output_voltage_peak = <span style="color:#f60">5.0</span>
+reverse_output_voltage_peak = <span style="color:#f60">5.0</span></code></pre></div>
+<h4 id="nominal-closed-loop-voltage">nominal_closed_loop_voltage</h4>
+
+<p>When set, the output of the Closed Loop mode is compensated for the measured battery voltage. Set to zero to disable. If not specified, defaults to disabled. Applies to closed-loop modes.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">nominal_closed_loop_voltage = <span style="color:#f60">12.0</span></code></pre></div>
+<h4 id="output-voltage-max">output_voltage_max</h4>
+
+<p>Set the maximum voltage that the Talon will ever output. This can be used to limit the maximum output voltage (positive or negative) in closed-loop modes so that motors which cannot withstand full bus voltage can be used safely. If not specified, defaults to no limit.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">output_voltage_max = <span style="color:#f60">12.0</span></code></pre></div>
+                
+
+<h3>See Also</h3>
+<ul>
+	
+	<li><a href="/posts/thirdcoast-telemetry/">Thirdcoast Telemetry</a></li>
+	
+	<li><a href="/posts/thirdcoast-swerve/">Thirdcoast Swerve</a></li>
+	
+	<li><a href="/posts/thirdcoast/">Third Coast Java Library</a></li>
+	
+</ul>
+
+
+            </div>
+            
+            <div class="post-comments">
+                
+            </div>
+            
+            <div class="push"></div>
+        </div>
+        <footer class="footer text-center">
+<p>Copyright &copy; 2017 Stryke Force 2767 -
+<span class="credit">
+	Powered by 
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and 
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
+
+    </body>

@@ -17,7 +17,42 @@
       <pubDate>Tue, 17 Oct 2017 09:48:58 -0400</pubDate>
       
       <guid>https://strykeforce.github.io/posts/thirdcoast/</guid>
-      <description>Our Third Coast swerve drive, talon configuration and telemetry API for FRC robots is available here.</description>
+      <description>Our Third Coast swerve drive, talon configuration and telemetry API for FRC robots is available from its repository.
+Documentation Third Coast Javadocs.</description>
+    </item>
+    
+    <item>
+      <title>Thirdcoast Telemetry</title>
+      <link>https://strykeforce.github.io/posts/thirdcoast-telemetry/</link>
+      <pubDate>Tue, 17 Oct 2017 13:53:02 -0400</pubDate>
+      
+      <guid>https://strykeforce.github.io/posts/thirdcoast-telemetry/</guid>
+      <description>Status: DRAFT
+This is the current state of the Third Coast Telemetry protocol between our grapher app written in LabView and our robot code written in Java.
+Network The grapher and robot communicate over two network channels, one for control and one for data.
+The control channel is a HTTP REST web service that listens on robot TCP port 5800.
+The data channel is for one-way graph data streaming from robot to grapher and listens on grapher workstation UDP port 5555.</description>
+    </item>
+    
+    <item>
+      <title>Thirdcoast Talon</title>
+      <link>https://strykeforce.github.io/posts/thirdcoast-talon/</link>
+      <pubDate>Tue, 17 Oct 2017 13:52:57 -0400</pubDate>
+      
+      <guid>https://strykeforce.github.io/posts/thirdcoast-talon/</guid>
+      <description>Talon Configurations Third Coast provides a library for storing any number of Talon configurations in a TOML file and applying them to Talons. The configuration file is stored in the robot application JAR and loaded by the class loader.
+The structure of a Talon configuration file is:
+# first Talon configuration [[TALON]] name = &amp;#34;drive&amp;#34; mode = &amp;#34;Voltage&amp;#34; # etc... # second Talon configuration [[TALON]] name = &amp;#34;azimuth&amp;#34; mode = &amp;#34;Position&amp;#34; # etc.</description>
+    </item>
+    
+    <item>
+      <title>Thirdcoast Swerve</title>
+      <link>https://strykeforce.github.io/posts/thirdcoast-swerve/</link>
+      <pubDate>Tue, 17 Oct 2017 13:52:49 -0400</pubDate>
+      
+      <guid>https://strykeforce.github.io/posts/thirdcoast-swerve/</guid>
+      <description>It is designed to run on swerve drive hardware described in this paper. The swerve drive is controlled using the SwerveDrive class. Derivation of inverse kinematic equations are from Ether&amp;rsquo;s Swerve Kinematics and Programming.
+The swerve-drive inverse kinematics algorithm will always calculate individual wheel angles as -0.5 to 0.5 rotations, measured clockwise with zero being the straight-ahead position. Wheel speed is calculated as 0 to 1 in the direction of the wheel angle.</description>
     </item>
     
   </channel>

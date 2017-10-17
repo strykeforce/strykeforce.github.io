@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Thirdcoast Telemetry &middot; Stryke Force DevBlog </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.31-DEV" />
+
+
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://strykeforce.github.io/css/nix.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-108186367-2', 'auto');
+	  ga('send', 'pageview');
+
+</script>
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" id="green-terminal" href=https://strykeforce.github.io/>dev@strykeforce ~ $</a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="https://strykeforce.github.io/">/home/dev</a>
+				</li>
+				
+				
+				<li >
+					<a href="/posts">~/posts</a>
+				</li>
+				
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1><a href="https://strykeforce.github.io/posts/thirdcoast-telemetry/">Thirdcoast Telemetry</a></h1>
+            <span class="post-date">Oct 17, 2017 </span>
+            <div class="post-content">
+                
+
+<p>Status: <strong>DRAFT</strong></p>
+
+<p>This is the current state of the Third Coast Telemetry protocol between our grapher app written in LabView and our robot code written in Java.</p>
+
+<h3 id="network">Network</h3>
+
+<p>The grapher and robot communicate over two network channels, one for control and one for data.</p>
+
+<p>The control channel is a HTTP REST web service that listens on robot TCP port 5800.</p>
+
+<p>The data channel is for one-way graph data streaming from robot to grapher and listens on grapher workstation UDP port 5555.</p>
+
+<h3 id="web-service-endpoints">Web Service Endpoints</h3>
+
+<ul>
+<li><strong><code>GET /v1/grapher/inventory</code></strong> - request the robot inventory, robot web service returns JSON message specified as Inventory Message below</li>
+<li><strong><code>POST /v1/grapher/subscription</code></strong> - subscribe and start the data stream, subscribe JSON message sent to robot is specified as Subscribe Message below. The POST request will receive a Subscription Acknowledgement message. Data is streamed over UDP in the JSON Data Message format below.</li>
+<li><strong><code>DELETE /v1/grapher/subscription</code></strong> - stop the data stream from robot to grapher.</li>
+</ul>
+
+<h3 id="interaction-diagram">Interaction Diagram</h3>
+
+
+<figure >
+    
+        <img src="/media/telemetry.png" />
+    
+    
+    <figcaption>
+        <h4>Telemetry Interactions</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<h3 id="message-formats">Message Formats</h3>
+
+<h4 id="inventory-message">Inventory Message</h4>
+
+<p>This message lists all items that can be graphed under the &ldquo;items&rdquo; key and measurements for different types of items under the &ldquo;measures&rdquo; key. This messages is versions to potentially invalidate grapher save files.</p>
+
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#309;font-weight:bold">&#34;items&#34;</span>: [
+    {
+      <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#f60">0</span>,
+      <span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;talon&#34;</span>,
+      <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Azimuth 0 (0)&#34;</span>
+    },
+    {
+      <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#f60">10</span>,
+      <span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;talon&#34;</span>,
+      <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Drive 0 (10)&#34;</span>
+    }
+  ],
+  <span style="color:#309;font-weight:bold">&#34;measures&#34;</span>: {
+    <span style="color:#309;font-weight:bold">&#34;talon&#34;</span>: [
+      {
+        <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#f60">0</span>,
+        <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Setpoint&#34;</span>,
+        <span style="color:#309;font-weight:bold">&#34;units&#34;</span>: <span style="color:#c30">&#34;RPM&#34;</span>
+      },
+      {
+        <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#f60">1</span>,
+        <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Output Current&#34;</span>,
+        <span style="color:#309;font-weight:bold">&#34;units&#34;</span>: <span style="color:#c30">&#34;amps&#34;</span>
+      },
+      {
+        <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#f60">2</span>,
+        <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Output Voltage&#34;</span>,
+        <span style="color:#309;font-weight:bold">&#34;units&#34;</span>: <span style="color:#c30">&#34;volts&#34;</span>
+      },
+      {
+        <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#f60">3</span>,
+        <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Encoder Position&#34;</span>,
+        <span style="color:#309;font-weight:bold">&#34;units&#34;</span>: <span style="color:#c30">&#34;revolutions&#34;</span>
+      },
+      {
+        <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#f60">4</span>,
+        <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Encoder Velocity&#34;</span>,
+        <span style="color:#309;font-weight:bold">&#34;units&#34;</span>: <span style="color:#c30">&#34;RPM&#34;</span>
+      },
+      {
+        <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#f60">5</span>,
+        <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Absolute Encoder Position&#34;</span>,
+        <span style="color:#309;font-weight:bold">&#34;units&#34;</span>: <span style="color:#c30">&#34;revolutions&#34;</span>
+      },
+      {
+        <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#f60">6</span>,
+        <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Control Loop Error&#34;</span>,
+        <span style="color:#309;font-weight:bold">&#34;units&#34;</span>: <span style="color:#c30">&#34;RPM&#34;</span>
+      },
+      {
+        <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#f60">7</span>,
+        <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Integrator Accumulator&#34;</span>,
+        <span style="color:#309;font-weight:bold">&#34;units&#34;</span>: <span style="color:#c30">&#34;none&#34;</span>
+      },
+      {
+        <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#f60">8</span>,
+        <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Bus Voltage&#34;</span>,
+        <span style="color:#309;font-weight:bold">&#34;units&#34;</span>: <span style="color:#c30">&#34;volts&#34;</span>
+      },
+      {
+        <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#f60">9</span>,
+        <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Forward Hard Limit Closed&#34;</span>,
+        <span style="color:#309;font-weight:bold">&#34;units&#34;</span>: <span style="color:#c30">&#34;boolean&#34;</span>
+      },
+      {
+        <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#f60">10</span>,
+        <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Reverse Hard Limit Closed&#34;</span>,
+        <span style="color:#309;font-weight:bold">&#34;units&#34;</span>: <span style="color:#c30">&#34;boolean&#34;</span>
+      },
+      {
+        <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#f60">11</span>,
+        <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Forward Soft Limit OK&#34;</span>,
+        <span style="color:#309;font-weight:bold">&#34;units&#34;</span>: <span style="color:#c30">&#34;boolean&#34;</span>
+      },
+      {
+        <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#f60">12</span>,
+        <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Reverse Soft Limit OK&#34;</span>,
+        <span style="color:#309;font-weight:bold">&#34;units&#34;</span>: <span style="color:#c30">&#34;boolean&#34;</span>
+      }
+    ]
+  },
+  <span style="color:#309;font-weight:bold">&#34;timestamp&#34;</span>: <span style="color:#f60">1506990773465</span>,
+  <span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;inventory&#34;</span>,
+  <span style="color:#309;font-weight:bold">&#34;version&#34;</span>: <span style="color:#f60">1</span>
+}</code></pre></div>
+
+<h4 id="subscribe-message">Subscribe Message</h4>
+
+<p>The &ldquo;itemId&rdquo; and &ldquo;measurementId&rdquo; keys correspond to &ldquo;id&rdquo; in the inventory message.</p>
+
+<p><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;start&#34;</span>,
+  <span style="color:#309;font-weight:bold">&#34;subscription&#34;</span>: [
+    {
+      <span style="color:#309;font-weight:bold">&#34;itemId&#34;</span>: <span style="color:#f60">0</span>,
+      <span style="color:#309;font-weight:bold">&#34;measurementId&#34;</span>: <span style="color:#f60">1</span>
+    },
+    {
+      <span style="color:#309;font-weight:bold">&#34;itemId&#34;</span>: <span style="color:#f60">10</span>,
+      <span style="color:#309;font-weight:bold">&#34;measurementId&#34;</span>: <span style="color:#f60">2</span>
+    },
+    {
+      <span style="color:#309;font-weight:bold">&#34;itemId&#34;</span>: <span style="color:#f60">1</span>,
+      <span style="color:#309;font-weight:bold">&#34;measurementId&#34;</span>: <span style="color:#f60">1</span>
+    },
+    {
+      <span style="color:#309;font-weight:bold">&#34;itemId&#34;</span>: <span style="color:#f60">11</span>,
+      <span style="color:#309;font-weight:bold">&#34;measurementId&#34;</span>: <span style="color:#f60">2</span>
+    },
+    {
+      <span style="color:#309;font-weight:bold">&#34;itemId&#34;</span>: <span style="color:#f60">61</span>,
+      <span style="color:#309;font-weight:bold">&#34;measurementId&#34;</span>: <span style="color:#f60">13</span>
+    },
+    {
+      <span style="color:#309;font-weight:bold">&#34;itemId&#34;</span>: <span style="color:#f60">62</span>,
+      <span style="color:#309;font-weight:bold">&#34;measurementId&#34;</span>: <span style="color:#f60">13</span>
+    }
+  ]
+}</code></pre></div></p>
+
+<h4 id="subscription-acknowledgement">Subscription Acknowledgement</h4>
+
+<p>This message is returned as the response to the subscribe message and lists the descriptions of each measurement subscribed to.</p>
+
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;subscription&#34;</span>,
+  <span style="color:#309;font-weight:bold">&#34;descriptions&#34;</span>: [
+    <span style="color:#c30">&#34;Shooter Wheel Setpoint&#34;</span>,
+    <span style="color:#c30">&#34;Shooter Wheel Output Current&#34;</span>
+  ]
+}</code></pre></div>
+
+<h4 id="data-message">Data Message</h4>
+
+<p>We want to keep this as lightweight as possible. The &ldquo;timestamp&rdquo; and &ldquo;type&rdquo; keys might be removed.</p>
+
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#309;font-weight:bold">&#34;data&#34;</span>: [
+    <span style="color:#f60">0.099998</span>,
+    <span style="color:#f60">8.52108</span>,
+    <span style="color:#f60">8.964057</span>,
+    <span style="color:#f60">1.01418</span>,
+    <span style="color:#f60">-7.885253</span>,
+    <span style="color:#f60">-9.401892</span>,
+    <span style="color:#f60">-2.115742</span>,
+    <span style="color:#f60">7.151332</span>,
+    <span style="color:#f60">9.722767</span>,
+    <span style="color:#f60">3.190984</span>,
+    <span style="color:#f60">-6.328449</span>,
+    <span style="color:#f60">-9.922691</span>,
+    <span style="color:#f60">-4.22653</span>,
+    <span style="color:#f60">5.426841</span>,
+    <span style="color:#f60">9.999177</span>,
+    <span style="color:#f60">5.209498</span>
+  ],
+  <span style="color:#309;font-weight:bold">&#34;timestamp&#34;</span>: <span style="color:#f60">1507473896981</span>,
+  <span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;talon&#34;</span>
+}</code></pre></div>
+
+                
+
+<h3>See Also</h3>
+<ul>
+	
+	<li><a href="/posts/thirdcoast-talon/">Thirdcoast Talon</a></li>
+	
+	<li><a href="/posts/thirdcoast-swerve/">Thirdcoast Swerve</a></li>
+	
+	<li><a href="/posts/thirdcoast/">Third Coast Java Library</a></li>
+	
+</ul>
+
+
+            </div>
+            
+            <div class="post-comments">
+                
+            </div>
+            
+            <div class="push"></div>
+        </div>
+        <footer class="footer text-center">
+<p>Copyright &copy; 2017 Stryke Force 2767 -
+<span class="credit">
+	Powered by 
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and 
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
+
+    </body>
