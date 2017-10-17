@@ -6,6 +6,9 @@ categories:
 tags:
   - "java"
   - "thirdcoast"
+keywords:
+  - Third Coast
+  - Swerve
 draft: false
 weight: 10
 ---
