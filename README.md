@@ -1,1 +1,0 @@
-# Stryke Force Dev Blog
