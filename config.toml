@@ -12,7 +12,7 @@ theme = "nix"
   HeaderUsername = "dev"
   HeaderHostname = "strykeforce"
   Email = "jeff@j3ff.io"
-  About = "This is the Stryke Force Team 2767 FRC dev blog. Stryke Force is a community FIRST robotics team based in Kalamazoo, Michigan."
+  About = "This is the Stryke Force 2767 FRC dev team blog. Stryke Force is a community FIRST robotics team based in Kalamazoo, Michigan."
   ProfilePicture = "strykeforce.jpg"
   GoogleAnalytics = "UA-108186367-2"
 
