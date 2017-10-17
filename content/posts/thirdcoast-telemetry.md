@@ -55,74 +55,61 @@ This message lists all items that can be graphed under the `items` key and measu
     }
   ],
   "measures": {
-    "talon": [
-      {
-        "id": 0,
-        "description": "Setpoint",
-        "units": "RPM"
-      },
-      {
-        "id": 1,
-        "description": "Output Current",
-        "units": "amps"
-      },
-      {
-        "id": 2,
-        "description": "Output Voltage",
-        "units": "volts"
-      },
-      {
-        "id": 3,
-        "description": "Encoder Position",
-        "units": "revolutions"
-      },
-      {
-        "id": 4,
-        "description": "Encoder Velocity",
-        "units": "RPM"
-      },
-      {
-        "id": 5,
-        "description": "Absolute Encoder Position",
-        "units": "revolutions"
-      },
-      {
-        "id": 6,
-        "description": "Control Loop Error",
-        "units": "RPM"
-      },
-      {
-        "id": 7,
-        "description": "Integrator Accumulator",
-        "units": "none"
-      },
-      {
-        "id": 8,
-        "description": "Bus Voltage",
-        "units": "volts"
-      },
-      {
-        "id": 9,
-        "description": "Forward Hard Limit Closed",
-        "units": "boolean"
-      },
-      {
-        "id": 10,
-        "description": "Reverse Hard Limit Closed",
-        "units": "boolean"
-      },
-      {
-        "id": 11,
-        "description": "Forward Soft Limit OK",
-        "units": "boolean"
-      },
-      {
-        "id": 12,
-        "description": "Reverse Soft Limit OK",
-        "units": "boolean"
-      }
-    ]
-  },
+     "talon": [
+       {
+         "id": "SETPOINT",
+         "description": "Setpoint"
+       },
+       {
+         "id": "OUTPUT_CURRENT",
+         "description": "Output Current"
+       },
+       {
+         "id": "OUTPUT_VOLTAGE",
+         "description": "Output Voltage"
+       },
+       {
+         "id": "ENCODER_POSITION",
+         "description": "Encoder Position"
+       },
+       {
+         "id": "ENCODER_VELOCITY",
+         "description": "Encoder Velocity"
+       },
+       {
+         "id": "ABSOLUTE_ENCODER_POSITION",
+         "description": "Absolute Encoder Position"
+       },
+       {
+         "id": "CONTROL_LOOP_ERROR",
+         "description": "Control Loop Error"
+       },
+       {
+         "id": "INTEGRATOR_ACCUMULATOR",
+         "description": "Integrator Accumulator"
+       },
+       {
+         "id": "BUS_VOLTAGE",
+         "description": "Bus Voltage"
+       },
+       {
+         "id": "FORWARD_HARD_LIMIT_CLOSED",
+         "description": "Forward Hard Limit Closed"
+       },
+       {
+         "id": "REVERSE_HARD_LIMIT_CLOSED",
+         "description": "Reverse Hard Limit Closed"
+       },
+       {
+         "id": "FORWARD_SOFT_LIMIT_OK",
+         "description": "Forward Soft Limit OK"
+       },
+       {
+         "id": "REVERSE_SOFT_LIMIT_OK",
+         "description": "Reverse Soft Limit OK"
+       }
+     ]
+   },
   "timestamp": 1506990773465,
   "type": "inventory",
   "version": 1
