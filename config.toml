@@ -1,6 +1,6 @@
 baseURL = "https://strykeforce.github.io/"
 languageCode = "en-us"
-title = "Stryke Force Dev Site"
+title = "Stryke Force DevBlog"
 theme = "nix"
 
 [params]

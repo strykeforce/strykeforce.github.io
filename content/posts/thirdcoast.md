@@ -7,5 +7,8 @@ tags:
   - "java"
   - "thirdcoast"
 draft: false
+weight: 10
 ---
-Our Third Coast swerve drive, talon configuration and telemetry API for FRC robots is available [here](thirdcoast/).
+Our Third Coast swerve drive, talon configuration and telemetry API for FRC robots is available [here][thirdcoast].
+
+[thirdcoast]: https://github.com/strykeforce/thirdcoast
