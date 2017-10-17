@@ -24,6 +24,10 @@ pygmentsCodefences = true
     name = "posts"
     weight = 0
     url = "/posts"
+  [[menu.header]]
+    name = "thirdcoast"
+    weight = 10
+    url = "/tags/thirdcoast/"
 
 [related]
 
