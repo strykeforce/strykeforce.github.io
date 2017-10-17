@@ -3,6 +3,7 @@ sudo:          false
 branches:
   only:
   - develop
+install: true
 before_script:
 - git clone https://${GH_TOKEN}@github.com/$TRAVIS_REPO_SLUG.git $TRAVIS_REPO_SLUG
 - cd $TRAVIS_REPO_SLUG
