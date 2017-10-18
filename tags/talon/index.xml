@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Talon on Stryke Force DevBlog</title>
+    <link>https://strykeforce.github.io/tags/talon/</link>
+    <description>Recent content in Talon on Stryke Force DevBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 17 Oct 2017 13:52:57 -0400</lastBuildDate>
+    
+	<atom:link href="https://strykeforce.github.io/tags/talon/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Thirdcoast Talon</title>
+      <link>https://strykeforce.github.io/posts/thirdcoast-talon/</link>
+      <pubDate>Tue, 17 Oct 2017 13:52:57 -0400</pubDate>
+      
+      <guid>https://strykeforce.github.io/posts/thirdcoast-talon/</guid>
+      <description>Talon Configurations Third Coast provides a library for storing any number of Talon configurations in a TOML file and applying them to Talons. The configuration file is stored in the robot application JAR and loaded by the class loader.
+The structure of a Talon configuration file is:
+# first Talon configuration [[TALON]] name = &amp;#34;drive&amp;#34; mode = &amp;#34;Voltage&amp;#34; # etc... # second Talon configuration [[TALON]] name = &amp;#34;azimuth&amp;#34; mode = &amp;#34;Position&amp;#34; # etc.</description>
+    </item>
+    
+  </channel>
+</rss>

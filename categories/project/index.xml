@@ -51,7 +51,7 @@ The structure of a Talon configuration file is:
       <pubDate>Tue, 17 Oct 2017 13:52:49 -0400</pubDate>
       
       <guid>https://strykeforce.github.io/posts/thirdcoast-swerve/</guid>
-      <description>It is designed to run on swerve drive hardware described in this paper. The swerve drive is controlled using the SwerveDrive class. Derivation of inverse kinematic equations are from Ether&amp;rsquo;s Swerve Kinematics and Programming.
+      <description>This software is designed to run on swerve drive hardware described in this paper. The swerve drive is controlled using the SwerveDrive class. Derivation of inverse kinematic equations are from Ether&amp;rsquo;s Swerve Kinematics and Programming.
 The swerve-drive inverse kinematics algorithm will always calculate individual wheel angles as -0.5 to 0.5 rotations, measured clockwise with zero being the straight-ahead position. Wheel speed is calculated as 0 to 1 in the direction of the wheel angle.</description>
     </item>
     

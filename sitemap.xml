@@ -3,22 +3,22 @@
   
   <url>
     <loc>https://strykeforce.github.io/posts/thirdcoast/</loc>
-    <lastmod>2017-10-17T15:53:14-04:00</lastmod>
+    <lastmod>2017-10-18T00:00:58-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/posts/thirdcoast-telemetry/</loc>
-    <lastmod>2017-10-17T23:37:42-04:00</lastmod>
+    <lastmod>2017-10-18T00:00:58-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/posts/thirdcoast-talon/</loc>
-    <lastmod>2017-10-17T14:26:53-04:00</lastmod>
+    <lastmod>2017-10-18T00:00:58-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/posts/thirdcoast-swerve/</loc>
-    <lastmod>2017-10-17T14:26:53-04:00</lastmod>
+    <lastmod>2017-10-18T00:00:58-04:00</lastmod>
   </url>
   
   <url>
@@ -27,38 +27,56 @@
   </url>
   
   <url>
+    <loc>https://strykeforce.github.io/tags/frc/</loc>
+    <lastmod>2017-10-18T00:00:58-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://strykeforce.github.io/tags/java/</loc>
-    <lastmod>2017-10-17T15:53:14-04:00</lastmod>
+    <lastmod>2017-10-18T00:00:58-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/posts/</loc>
-    <lastmod>2017-10-17T15:53:14-04:00</lastmod>
+    <lastmod>2017-10-18T00:00:58-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/categories/project/</loc>
-    <lastmod>2017-10-17T15:53:14-04:00</lastmod>
+    <lastmod>2017-10-18T00:00:58-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/</loc>
-    <lastmod>2017-10-17T15:53:14-04:00</lastmod>
+    <lastmod>2017-10-18T00:00:58-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://strykeforce.github.io/tags/swerve/</loc>
+    <lastmod>2017-10-18T00:00:58-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/tags/</loc>
-    <lastmod>2017-10-17T15:53:14-04:00</lastmod>
+    <lastmod>2017-10-18T00:00:58-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://strykeforce.github.io/tags/talon/</loc>
+    <lastmod>2017-10-18T00:00:58-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/tags/thirdcoast/</loc>
-    <lastmod>2017-10-17T15:53:14-04:00</lastmod>
+    <lastmod>2017-10-18T00:00:58-04:00</lastmod>
     <priority>0</priority>
   </url>
   

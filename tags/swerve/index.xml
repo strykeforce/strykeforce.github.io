@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Swerve on Stryke Force DevBlog</title>
+    <link>https://strykeforce.github.io/tags/swerve/</link>
+    <description>Recent content in Swerve on Stryke Force DevBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 17 Oct 2017 09:48:58 -0400</lastBuildDate>
+    
+	<atom:link href="https://strykeforce.github.io/tags/swerve/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Third Coast Java Library</title>
+      <link>https://strykeforce.github.io/posts/thirdcoast/</link>
+      <pubDate>Tue, 17 Oct 2017 09:48:58 -0400</pubDate>
+      
+      <guid>https://strykeforce.github.io/posts/thirdcoast/</guid>
+      <description>Our Third Coast swerve drive, talon configuration and telemetry API for FRC robots is available from its repository.
+Documentation Third Coast Javadocs.</description>
+    </item>
+    
+    <item>
+      <title>Thirdcoast Swerve</title>
+      <link>https://strykeforce.github.io/posts/thirdcoast-swerve/</link>
+      <pubDate>Tue, 17 Oct 2017 13:52:49 -0400</pubDate>
+      
+      <guid>https://strykeforce.github.io/posts/thirdcoast-swerve/</guid>
+      <description>This software is designed to run on swerve drive hardware described in this paper. The swerve drive is controlled using the SwerveDrive class. Derivation of inverse kinematic equations are from Ether&amp;rsquo;s Swerve Kinematics and Programming.
+The swerve-drive inverse kinematics algorithm will always calculate individual wheel angles as -0.5 to 0.5 rotations, measured clockwise with zero being the straight-ahead position. Wheel speed is calculated as 0 to 1 in the direction of the wheel angle.</description>
+    </item>
+    
+  </channel>
+</rss>

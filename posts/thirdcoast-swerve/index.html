@@ -13,17 +13,17 @@
             "@type": "WebPage",
             "@id": "https://strykeforce.github.io/posts/thirdcoast-swerve/"
           },
-          "keywords": "java, thirdcoast",
-          "wordcount": 215,
+          "keywords": "java, thirdcoast, swerve, frc",
+          "wordcount": 216,
           "url": "https://strykeforce.github.io/posts/thirdcoast-swerve/",
           "datePublished": "2017-10-17T13:52:49-04:00",
-          "dateModified": "2017-10-17T14:26:53-04:00",
+          "dateModified": "2017-10-18T00:00:58-04:00",
           
           "author": {
             "@type": "Person",
             "name": "Jeff Hutchison"
           },
-          "description": "",
+          "description": "A demonstration of Third Coast swerve drive API usage.",
           "image": "https://strykeforce.github.io/strykeforce.jpg",
           "publisher": {
     		    "@type": "Organization",
@@ -114,7 +114,7 @@ ga('create', 'UA-108186367-2', 'auto');
             <div class="post-content">
                 
 
-<p>It is designed to run on swerve drive hardware described in this <a href="https://www.chiefdelphi.com/media/papers/3375">paper</a>. The swerve drive is controlled using the <a href="https://strykeforce.github.io/thirdcoast/javadoc/org/strykeforce/thirdcoast/swerve/package-summary.html"><code>SwerveDrive</code></a> class. Derivation of inverse kinematic equations are from Ether&rsquo;s <a href="https://www.chiefdelphi.com/media/papers/2426">Swerve Kinematics and Programming</a>.</p>
+<p>This software is designed to run on swerve drive hardware described in this <a href="https://www.chiefdelphi.com/media/papers/3375">paper</a>. The swerve drive is controlled using the <a href="https://strykeforce.github.io/thirdcoast/javadoc/org/strykeforce/thirdcoast/swerve/package-summary.html"><code>SwerveDrive</code></a> class. Derivation of inverse kinematic equations are from Ether&rsquo;s <a href="https://www.chiefdelphi.com/media/papers/2426">Swerve Kinematics and Programming</a>.</p>
 
 <p>The swerve-drive inverse kinematics algorithm will always calculate individual wheel angles as -0.5 to 0.5 rotations, measured clockwise with zero being the straight-ahead position. Wheel speed is calculated as 0 to 1 in the direction of the wheel angle. The <a href="https://strykeforce.github.io/thirdcoast/javadoc/org/strykeforce/thirdcoast/swerve/package-summary.html"><code>Wheel</code></a> class will calculate how to implement this angle and drive direction optimally for the azimuth and drive motors. In some cases it makes sense to reverse wheel direction to avoid rotating the wheel azimuth 180 degrees.</p>
 
@@ -131,11 +131,11 @@ ga('create', 'UA-108186367-2', 'auto');
 <h3>See Also</h3>
 <ul>
 	
+	<li><a href="/posts/thirdcoast/">Third Coast Java Library</a></li>
+	
 	<li><a href="/posts/thirdcoast-telemetry/">Thirdcoast Telemetry</a></li>
 	
 	<li><a href="/posts/thirdcoast-talon/">Thirdcoast Talon</a></li>
-	
-	<li><a href="/posts/thirdcoast/">Third Coast Java Library</a></li>
 	
 </ul>
 
