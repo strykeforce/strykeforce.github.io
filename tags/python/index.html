@@ -91,7 +91,8 @@ ga('create', 'UA-108186367-2', 'auto');
 							<h4 class="post-date">Oct 18, 2017</h4>
 						</div>
 						<div class="post-summary"><p>One of the benefits of using open data formats such as JSON and HTTP/REST is the ease with which we can develop client applications for Third Coast Telemetry. This is a simple demonstration client written in Python.
-#!/usr/bin/env python # usage: pygrapher &lt;id&gt; &lt;measurement&gt; # example: pygrapher 0 SETPOINT import sys import requests import socket import json import matplotlib.pyplot as plt id = int(sys.argv[1]) # CAN address measure_id = sys.argv[2] # measurement id from inventory # server endpoints SERVER = &#39;http://localhost:5800&#39; SUB_ENDPOINT = SERVER + &#39;/v1/grapher/subscription&#39; # send subscription to start UDP streaming, retrieve description from response payload = {&#39;type&#39;:&#39;start&#39;, &#39;subscription&#39;: [{&#39;itemId&#39;:id, &#39;measurementId&#39;:measure_id}]} r = requests.</p></div>
+This is a sample of output when run with ./pygrapher 1 SETPOINT
+ Pygrapher screen shot   Source Code #!/usr/bin/env python # usage: pygrapher &lt;id&gt; &lt;measurement&gt; # example: pygrapher 0 SETPOINT import sys import requests import socket import json import matplotlib.</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://strykeforce.github.io/posts/thirdcoast-pygrapher/">Read More</a>
 						</div>
