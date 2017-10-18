@@ -7,8 +7,13 @@
   </url>
   
   <url>
+    <loc>https://strykeforce.github.io/posts/thirdcoast-pygrapher/</loc>
+    <lastmod>2017-10-18T10:18:43-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://strykeforce.github.io/posts/thirdcoast-telemetry/</loc>
-    <lastmod>2017-10-18T00:00:58-04:00</lastmod>
+    <lastmod>2017-10-18T10:18:43-04:00</lastmod>
   </url>
   
   <url>
@@ -51,6 +56,12 @@
   </url>
   
   <url>
+    <loc>https://strykeforce.github.io/tags/python/</loc>
+    <lastmod>2017-10-18T10:18:43-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://strykeforce.github.io/</loc>
     <lastmod>2017-10-18T00:00:58-04:00</lastmod>
     <priority>0</priority>
@@ -71,6 +82,12 @@
   <url>
     <loc>https://strykeforce.github.io/tags/talon/</loc>
     <lastmod>2017-10-18T00:00:58-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://strykeforce.github.io/tags/telemetry/</loc>
+    <lastmod>2017-10-18T10:18:43-04:00</lastmod>
     <priority>0</priority>
   </url>
   

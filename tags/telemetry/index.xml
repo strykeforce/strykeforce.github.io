@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Telemetry on Stryke Force DevBlog</title>
+    <link>https://strykeforce.github.io/tags/telemetry/</link>
+    <description>Recent content in Telemetry on Stryke Force DevBlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 18 Oct 2017 10:04:47 -0400</lastBuildDate>
+    
+	<atom:link href="https://strykeforce.github.io/tags/telemetry/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Third Coast Pygrapher</title>
+      <link>https://strykeforce.github.io/posts/thirdcoast-pygrapher/</link>
+      <pubDate>Wed, 18 Oct 2017 10:04:47 -0400</pubDate>
+      
+      <guid>https://strykeforce.github.io/posts/thirdcoast-pygrapher/</guid>
+      <description>One of the benefits of using open data formats such as JSON and HTTP/REST is the ease with which we can develop client applications for Third Coast Telemetry. This is a simple demonstration client written in Python.
+#!/usr/bin/env python # usage: pygrapher &amp;lt;id&amp;gt; &amp;lt;measurement&amp;gt; # example: pygrapher 0 SETPOINT import sys import requests import socket import json import matplotlib.pyplot as plt id = int(sys.argv[1]) # CAN address measure_id = sys.argv[2] # measurement id from inventory # server endpoints SERVER = &amp;#39;http://localhost:5800&amp;#39; SUB_ENDPOINT = SERVER + &amp;#39;/v1/grapher/subscription&amp;#39; # send subscription to start UDP streaming, retrieve description from response payload = {&amp;#39;type&amp;#39;:&amp;#39;start&amp;#39;, &amp;#39;subscription&amp;#39;: [{&amp;#39;itemId&amp;#39;:id, &amp;#39;measurementId&amp;#39;:measure_id}]} r = requests.</description>
+    </item>
+    
+    <item>
+      <title>Thirdcoast Telemetry</title>
+      <link>https://strykeforce.github.io/posts/thirdcoast-telemetry/</link>
+      <pubDate>Tue, 17 Oct 2017 13:53:02 -0400</pubDate>
+      
+      <guid>https://strykeforce.github.io/posts/thirdcoast-telemetry/</guid>
+      <description>Status: DRAFT
+This is the current state of the Third Coast Telemetry protocol between our grapher app written in LabView and our robot code written in Java.
+Network The grapher and robot communicate over two network channels, one for control and one for data.
+The control channel is a HTTP REST web service that listens on robot TCP port 5800.
+The data channel is for one-way graph data streaming from robot to grapher and listens on grapher workstation UDP port 5555.</description>
+    </item>
+    
+  </channel>
+</rss>

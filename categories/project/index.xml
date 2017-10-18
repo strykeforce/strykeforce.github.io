@@ -22,6 +22,16 @@ Documentation Third Coast Javadocs.</description>
     </item>
     
     <item>
+      <title>Third Coast Pygrapher</title>
+      <link>https://strykeforce.github.io/posts/thirdcoast-pygrapher/</link>
+      <pubDate>Wed, 18 Oct 2017 10:04:47 -0400</pubDate>
+      
+      <guid>https://strykeforce.github.io/posts/thirdcoast-pygrapher/</guid>
+      <description>One of the benefits of using open data formats such as JSON and HTTP/REST is the ease with which we can develop client applications for Third Coast Telemetry. This is a simple demonstration client written in Python.
+#!/usr/bin/env python # usage: pygrapher &amp;lt;id&amp;gt; &amp;lt;measurement&amp;gt; # example: pygrapher 0 SETPOINT import sys import requests import socket import json import matplotlib.pyplot as plt id = int(sys.argv[1]) # CAN address measure_id = sys.argv[2] # measurement id from inventory # server endpoints SERVER = &amp;#39;http://localhost:5800&amp;#39; SUB_ENDPOINT = SERVER + &amp;#39;/v1/grapher/subscription&amp;#39; # send subscription to start UDP streaming, retrieve description from response payload = {&amp;#39;type&amp;#39;:&amp;#39;start&amp;#39;, &amp;#39;subscription&amp;#39;: [{&amp;#39;itemId&amp;#39;:id, &amp;#39;measurementId&amp;#39;:measure_id}]} r = requests.</description>
+    </item>
+    
+    <item>
       <title>Thirdcoast Telemetry</title>
       <link>https://strykeforce.github.io/posts/thirdcoast-telemetry/</link>
       <pubDate>Tue, 17 Oct 2017 13:53:02 -0400</pubDate>
