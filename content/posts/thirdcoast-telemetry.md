@@ -1,11 +1,13 @@
 ---
 title: "Thirdcoast Telemetry"
+description: "Third Coast Telemetry protocol between our grapher app written in LabView and our robot code written in Java."
 date: 2017-10-17T13:53:02-04:00
 categories:
   - "project"
 tags:
   - "java"
   - "thirdcoast"
+  - "frc"
 draft: false
 weight: 0
 ---

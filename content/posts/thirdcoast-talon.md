@@ -1,11 +1,14 @@
 ---
 title: "Thirdcoast Talon"
+description: "Library for storing any number of Talon configurations in a TOML file and applying them to Talons."
 date: 2017-10-17T13:52:57-04:00
 categories:
   - "project"
 tags:
   - "java"
   - "thirdcoast"
+  - "talon"
+  - "frc"
 draft: false
 weight: 0
 ---
