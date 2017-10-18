@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Python on Stryke Force DevBlog</title>
+    <title>Python on Stryke Force Engineering Blog</title>
     <link>https://strykeforce.github.io/tags/python/</link>
-    <description>Recent content in Python on Stryke Force DevBlog</description>
+    <description>Recent content in Python on Stryke Force Engineering Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 18 Oct 2017 10:04:47 -0400</lastBuildDate>
