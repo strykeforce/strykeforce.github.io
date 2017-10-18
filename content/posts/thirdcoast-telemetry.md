@@ -42,77 +42,105 @@ This message lists all items that can be graphed under the `items` key and measu
 
 ```json
 {
+  "type": "inventory",
   "items": [
     {
       "id": 0,
-      "type": "talon",
-      "description": "Azimuth 0 (0)"
+      "type": "TALON",
+      "description": "Talon 0"
     },
     {
-      "id": 10,
-      "type": "talon",
-      "description": "Drive 0 (10)"
+      "id": 1,
+      "type": "SERVO",
+      "description": "Servo 0"
+    },
+    {
+      "id": 2,
+      "type": "DIGITAL_INPUT",
+      "description": "Digital Input 0"
     }
   ],
-  "measures": {
-     "talon": [
-       {
-         "id": "SETPOINT",
-         "description": "Setpoint"
-       },
-       {
-         "id": "OUTPUT_CURRENT",
-         "description": "Output Current"
-       },
-       {
-         "id": "OUTPUT_VOLTAGE",
-         "description": "Output Voltage"
-       },
-       {
-         "id": "ENCODER_POSITION",
-         "description": "Encoder Position"
-       },
-       {
-         "id": "ENCODER_VELOCITY",
-         "description": "Encoder Velocity"
-       },
-       {
-         "id": "ABSOLUTE_ENCODER_POSITION",
-         "description": "Absolute Encoder Position"
-       },
-       {
-         "id": "CONTROL_LOOP_ERROR",
-         "description": "Control Loop Error"
-       },
-       {
-         "id": "INTEGRATOR_ACCUMULATOR",
-         "description": "Integrator Accumulator"
-       },
-       {
-         "id": "BUS_VOLTAGE",
-         "description": "Bus Voltage"
-       },
-       {
-         "id": "FORWARD_HARD_LIMIT_CLOSED",
-         "description": "Forward Hard Limit Closed"
-       },
-       {
-         "id": "REVERSE_HARD_LIMIT_CLOSED",
-         "description": "Reverse Hard Limit Closed"
-       },
-       {
-         "id": "FORWARD_SOFT_LIMIT_OK",
-         "description": "Forward Soft Limit OK"
-       },
-       {
-         "id": "REVERSE_SOFT_LIMIT_OK",
-         "description": "Reverse Soft Limit OK"
-       }
-     ]
-   },
-  "timestamp": 1506990773465,
-  "type": "inventory",
-  "version": 1
+  "measures": [
+    {
+      "deviceType": "DIGITAL_INPUT",
+      "deviceMeasures": [
+        {
+          "id": "VALUE",
+          "description": "Value"
+        }
+      ]
+    },
+    {
+      "deviceType": "SERVO",
+      "deviceMeasures": [
+        {
+          "id": "ANGLE",
+          "description": "Angle"
+        },
+        {
+          "id": "POSITION",
+          "description": "Position"
+        }
+      ]
+    },
+    {
+      "deviceType": "TALON",
+      "deviceMeasures": [
+        {
+          "id": "SETPOINT",
+          "description": "Setpoint"
+        },
+        {
+          "id": "OUTPUT_CURRENT",
+          "description": "Output Current"
+        },
+        {
+          "id": "OUTPUT_VOLTAGE",
+          "description": "Output Voltage"
+        },
+        {
+          "id": "ENCODER_POSITION",
+          "description": "Encoder Position"
+        },
+        {
+          "id": "ENCODER_VELOCITY",
+          "description": "Encoder Velocity"
+        },
+        {
+          "id": "ABSOLUTE_ENCODER_POSITION",
+          "description": "Absolute Encoder Position"
+        },
+        {
+          "id": "CONTROL_LOOP_ERROR",
+          "description": "Control Loop Error"
+        },
+        {
+          "id": "INTEGRATOR_ACCUMULATOR",
+          "description": "Integrator Accumulator"
+        },
+        {
+          "id": "BUS_VOLTAGE",
+          "description": "Bus Voltage"
+        },
+        {
+          "id": "FORWARD_HARD_LIMIT_CLOSED",
+          "description": "Forward Hard Limit Closed"
+        },
+        {
+          "id": "REVERSE_HARD_LIMIT_CLOSED",
+          "description": "Reverse Hard Limit Closed"
+        },
+        {
+          "id": "FORWARD_SOFT_LIMIT_OK",
+          "description": "Forward Soft Limit OK"
+        },
+        {
+          "id": "REVERSE_SOFT_LIMIT_OK",
+          "description": "Reverse Soft Limit OK"
+        }
+      ]
+    }
+  ]
 }
 ```
 
@@ -126,27 +154,23 @@ The `itemId` and `measurementId` keys correspond to `id` in the inventory messag
   "subscription": [
     {
       "itemId": 0,
-      "measurementId": 1
+      "measurementId": "SETPOINT"
     },
     {
-      "itemId": 10,
-      "measurementId": 2
+      "itemId": 0,
+      "measurementId": "OUTPUT_CURRENT"
     },
     {
       "itemId": 1,
-      "measurementId": 1
+      "measurementId": "ANGLE"
     },
     {
-      "itemId": 11,
-      "measurementId": 2
+      "itemId": 1,
+      "measurementId": "POSITION"
     },
     {
-      "itemId": 61,
-      "measurementId": 13
-    },
-    {
-      "itemId": 62,
-      "measurementId": 13
+      "itemId": 2,
+      "measurementId": "VALUE"
     }
   ]
 }
@@ -190,7 +214,6 @@ This message is encapsulated in a UDP datagram so we want to keep this as lightw
     9.999177,
     5.209498
   ],
-  "timestamp": 1507473896981,
-  "type": "talon"
+  "timestamp": 1507473896981
 }
 ```

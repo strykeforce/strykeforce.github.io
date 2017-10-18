@@ -2,6 +2,7 @@ baseURL = "https://strykeforce.github.io/"
 languageCode = "en-us"
 title = "Stryke Force DevBlog"
 theme = "nix"
+enableGitInfo = true
 
 pygmentsStyle = "manni"
 pygmentsCodefences = true
