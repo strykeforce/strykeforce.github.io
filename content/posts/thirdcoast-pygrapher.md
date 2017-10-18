@@ -14,6 +14,11 @@ weight: 0
 ---
 One of the benefits of using open data formats such as JSON and HTTP/REST is the ease with which we can develop client applications for Third Coast Telemetry. This is a simple demonstration client written in Python.
 
+This is a sample of output when run with `./pygrapher 1 SETPOINT`
+
+{{<figure src="/media/talon-1-setpoint.png" title="Pygrapher screen shot">}}
+
+## Source Code
 ```python
 #!/usr/bin/env python
 
