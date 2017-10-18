@@ -7,6 +7,7 @@ categories:
 tags:
   - "java"
   - "thirdcoast"
+  - "telemetry"
   - "frc"
 draft: false
 weight: 0
