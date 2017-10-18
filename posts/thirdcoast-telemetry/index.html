@@ -4,6 +4,41 @@
     <head>
         <title> Thirdcoast Telemetry &middot; Stryke Force DevBlog </title>
 
+        <script type="application/ld+json">
+        {
+          "@context": "http://schema.org",
+          "@type": "BlogPosting",
+          "headline": "Thirdcoast Telemetry",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://strykeforce.github.io/posts/thirdcoast-telemetry/"
+          },
+          "keywords": "java, thirdcoast",
+          "wordcount": 522,
+          "url": "https://strykeforce.github.io/posts/thirdcoast-telemetry/",
+          "datePublished": "2017-10-17T13:53:02-04:00",
+          "dateModified": "2017-10-17T23:37:42-04:00",
+          
+          "author": {
+            "@type": "Person",
+            "name": "Jeff Hutchison"
+          },
+          "description": "",
+          "image": "https://strykeforce.github.io/strykeforce.jpg",
+          "publisher": {
+    		    "@type": "Organization",
+    		    "name": "Stryke Force 2767",
+    				"logo": "https://strykeforce.github.io/strykeforce.jpg",
+    				"address": {
+    			    "@type": "PostalAddress",
+    			    "addressLocality": "Kalamazoo",
+    			    "addressRegion": "MI",
+    					"addressCountry": "USA"
+    			  }
+    		  }
+        }
+        </script>
+
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 <meta name="generator" content="Hugo 0.31-DEV" />
@@ -126,77 +161,105 @@ ga('create', 'UA-108186367-2', 'auto');
 
 <p>This message lists all items that can be graphed under the <code>items</code> key and measurements for different types of items under the <code>measures</code> key. This messages is versions to potentially invalidate grapher save files.</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;inventory&#34;</span>,
   <span style="color:#309;font-weight:bold">&#34;items&#34;</span>: [
     {
       <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#f60">0</span>,
-      <span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;talon&#34;</span>,
-      <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Azimuth 0 (0)&#34;</span>
+      <span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;TALON&#34;</span>,
+      <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Talon 0&#34;</span>
     },
     {
-      <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#f60">10</span>,
-      <span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;talon&#34;</span>,
-      <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Drive 0 (10)&#34;</span>
+      <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#f60">1</span>,
+      <span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;SERVO&#34;</span>,
+      <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Servo 0&#34;</span>
+    },
+    {
+      <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#f60">2</span>,
+      <span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;DIGITAL_INPUT&#34;</span>,
+      <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Digital Input 0&#34;</span>
     }
   ],
-  <span style="color:#309;font-weight:bold">&#34;measures&#34;</span>: {
-     <span style="color:#309;font-weight:bold">&#34;talon&#34;</span>: [
-       {
-         <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#c30">&#34;SETPOINT&#34;</span>,
-         <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Setpoint&#34;</span>
-       },
-       {
-         <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#c30">&#34;OUTPUT_CURRENT&#34;</span>,
-         <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Output Current&#34;</span>
-       },
-       {
-         <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#c30">&#34;OUTPUT_VOLTAGE&#34;</span>,
-         <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Output Voltage&#34;</span>
-       },
-       {
-         <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#c30">&#34;ENCODER_POSITION&#34;</span>,
-         <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Encoder Position&#34;</span>
-       },
-       {
-         <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#c30">&#34;ENCODER_VELOCITY&#34;</span>,
-         <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Encoder Velocity&#34;</span>
-       },
-       {
-         <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#c30">&#34;ABSOLUTE_ENCODER_POSITION&#34;</span>,
-         <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Absolute Encoder Position&#34;</span>
-       },
-       {
-         <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#c30">&#34;CONTROL_LOOP_ERROR&#34;</span>,
-         <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Control Loop Error&#34;</span>
-       },
-       {
-         <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#c30">&#34;INTEGRATOR_ACCUMULATOR&#34;</span>,
-         <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Integrator Accumulator&#34;</span>
-       },
-       {
-         <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#c30">&#34;BUS_VOLTAGE&#34;</span>,
-         <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Bus Voltage&#34;</span>
-       },
-       {
-         <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#c30">&#34;FORWARD_HARD_LIMIT_CLOSED&#34;</span>,
-         <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Forward Hard Limit Closed&#34;</span>
-       },
-       {
-         <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#c30">&#34;REVERSE_HARD_LIMIT_CLOSED&#34;</span>,
-         <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Reverse Hard Limit Closed&#34;</span>
-       },
-       {
-         <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#c30">&#34;FORWARD_SOFT_LIMIT_OK&#34;</span>,
-         <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Forward Soft Limit OK&#34;</span>
-       },
-       {
-         <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#c30">&#34;REVERSE_SOFT_LIMIT_OK&#34;</span>,
-         <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Reverse Soft Limit OK&#34;</span>
-       }
-     ]
-   },
-  <span style="color:#309;font-weight:bold">&#34;timestamp&#34;</span>: <span style="color:#f60">1506990773465</span>,
-  <span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;inventory&#34;</span>,
-  <span style="color:#309;font-weight:bold">&#34;version&#34;</span>: <span style="color:#f60">1</span>
+  <span style="color:#309;font-weight:bold">&#34;measures&#34;</span>: [
+    {
+      <span style="color:#309;font-weight:bold">&#34;deviceType&#34;</span>: <span style="color:#c30">&#34;DIGITAL_INPUT&#34;</span>,
+      <span style="color:#309;font-weight:bold">&#34;deviceMeasures&#34;</span>: [
+        {
+          <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#c30">&#34;VALUE&#34;</span>,
+          <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Value&#34;</span>
+        }
+      ]
+    },
+    {
+      <span style="color:#309;font-weight:bold">&#34;deviceType&#34;</span>: <span style="color:#c30">&#34;SERVO&#34;</span>,
+      <span style="color:#309;font-weight:bold">&#34;deviceMeasures&#34;</span>: [
+        {
+          <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#c30">&#34;ANGLE&#34;</span>,
+          <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Angle&#34;</span>
+        },
+        {
+          <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#c30">&#34;POSITION&#34;</span>,
+          <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Position&#34;</span>
+        }
+      ]
+    },
+    {
+      <span style="color:#309;font-weight:bold">&#34;deviceType&#34;</span>: <span style="color:#c30">&#34;TALON&#34;</span>,
+      <span style="color:#309;font-weight:bold">&#34;deviceMeasures&#34;</span>: [
+        {
+          <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#c30">&#34;SETPOINT&#34;</span>,
+          <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Setpoint&#34;</span>
+        },
+        {
+          <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#c30">&#34;OUTPUT_CURRENT&#34;</span>,
+          <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Output Current&#34;</span>
+        },
+        {
+          <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#c30">&#34;OUTPUT_VOLTAGE&#34;</span>,
+          <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Output Voltage&#34;</span>
+        },
+        {
+          <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#c30">&#34;ENCODER_POSITION&#34;</span>,
+          <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Encoder Position&#34;</span>
+        },
+        {
+          <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#c30">&#34;ENCODER_VELOCITY&#34;</span>,
+          <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Encoder Velocity&#34;</span>
+        },
+        {
+          <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#c30">&#34;ABSOLUTE_ENCODER_POSITION&#34;</span>,
+          <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Absolute Encoder Position&#34;</span>
+        },
+        {
+          <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#c30">&#34;CONTROL_LOOP_ERROR&#34;</span>,
+          <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Control Loop Error&#34;</span>
+        },
+        {
+          <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#c30">&#34;INTEGRATOR_ACCUMULATOR&#34;</span>,
+          <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Integrator Accumulator&#34;</span>
+        },
+        {
+          <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#c30">&#34;BUS_VOLTAGE&#34;</span>,
+          <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Bus Voltage&#34;</span>
+        },
+        {
+          <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#c30">&#34;FORWARD_HARD_LIMIT_CLOSED&#34;</span>,
+          <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Forward Hard Limit Closed&#34;</span>
+        },
+        {
+          <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#c30">&#34;REVERSE_HARD_LIMIT_CLOSED&#34;</span>,
+          <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Reverse Hard Limit Closed&#34;</span>
+        },
+        {
+          <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#c30">&#34;FORWARD_SOFT_LIMIT_OK&#34;</span>,
+          <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Forward Soft Limit OK&#34;</span>
+        },
+        {
+          <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#c30">&#34;REVERSE_SOFT_LIMIT_OK&#34;</span>,
+          <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Reverse Soft Limit OK&#34;</span>
+        }
+      ]
+    }
+  ]
 }</code></pre></div>
 <h4 id="subscribe-message">Subscribe Message</h4>
 
@@ -206,27 +269,23 @@ ga('create', 'UA-108186367-2', 'auto');
   <span style="color:#309;font-weight:bold">&#34;subscription&#34;</span>: [
     {
       <span style="color:#309;font-weight:bold">&#34;itemId&#34;</span>: <span style="color:#f60">0</span>,
-      <span style="color:#309;font-weight:bold">&#34;measurementId&#34;</span>: <span style="color:#f60">1</span>
+      <span style="color:#309;font-weight:bold">&#34;measurementId&#34;</span>: <span style="color:#c30">&#34;SETPOINT&#34;</span>
     },
     {
-      <span style="color:#309;font-weight:bold">&#34;itemId&#34;</span>: <span style="color:#f60">10</span>,
-      <span style="color:#309;font-weight:bold">&#34;measurementId&#34;</span>: <span style="color:#f60">2</span>
+      <span style="color:#309;font-weight:bold">&#34;itemId&#34;</span>: <span style="color:#f60">0</span>,
+      <span style="color:#309;font-weight:bold">&#34;measurementId&#34;</span>: <span style="color:#c30">&#34;OUTPUT_CURRENT&#34;</span>
     },
     {
       <span style="color:#309;font-weight:bold">&#34;itemId&#34;</span>: <span style="color:#f60">1</span>,
-      <span style="color:#309;font-weight:bold">&#34;measurementId&#34;</span>: <span style="color:#f60">1</span>
+      <span style="color:#309;font-weight:bold">&#34;measurementId&#34;</span>: <span style="color:#c30">&#34;ANGLE&#34;</span>
     },
     {
-      <span style="color:#309;font-weight:bold">&#34;itemId&#34;</span>: <span style="color:#f60">11</span>,
-      <span style="color:#309;font-weight:bold">&#34;measurementId&#34;</span>: <span style="color:#f60">2</span>
+      <span style="color:#309;font-weight:bold">&#34;itemId&#34;</span>: <span style="color:#f60">1</span>,
+      <span style="color:#309;font-weight:bold">&#34;measurementId&#34;</span>: <span style="color:#c30">&#34;POSITION&#34;</span>
     },
     {
-      <span style="color:#309;font-weight:bold">&#34;itemId&#34;</span>: <span style="color:#f60">61</span>,
-      <span style="color:#309;font-weight:bold">&#34;measurementId&#34;</span>: <span style="color:#f60">13</span>
-    },
-    {
-      <span style="color:#309;font-weight:bold">&#34;itemId&#34;</span>: <span style="color:#f60">62</span>,
-      <span style="color:#309;font-weight:bold">&#34;measurementId&#34;</span>: <span style="color:#f60">13</span>
+      <span style="color:#309;font-weight:bold">&#34;itemId&#34;</span>: <span style="color:#f60">2</span>,
+      <span style="color:#309;font-weight:bold">&#34;measurementId&#34;</span>: <span style="color:#c30">&#34;VALUE&#34;</span>
     }
   ]
 }</code></pre></div>
@@ -262,8 +321,7 @@ ga('create', 'UA-108186367-2', 'auto');
     <span style="color:#f60">9.999177</span>,
     <span style="color:#f60">5.209498</span>
   ],
-  <span style="color:#309;font-weight:bold">&#34;timestamp&#34;</span>: <span style="color:#f60">1507473896981</span>,
-  <span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;talon&#34;</span>
+  <span style="color:#309;font-weight:bold">&#34;timestamp&#34;</span>: <span style="color:#f60">1507473896981</span>
 }</code></pre></div>
                 
 
