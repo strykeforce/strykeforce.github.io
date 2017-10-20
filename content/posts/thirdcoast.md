@@ -9,6 +9,8 @@ tags:
   - "thirdcoast"
   - "frc"
   - "swerve"
+  - "telemetry"
+  - "talon"
 draft: false
 weight: 10
 ---
