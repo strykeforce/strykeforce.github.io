@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Stryke Force Engineering Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Oct 2017 09:01:49 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 20 Oct 2017 14:56:12 +0000</lastBuildDate>
     
 	<atom:link href="https://strykeforce.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Frc</title>
       <link>https://strykeforce.github.io/tags/frc/</link>
-      <pubDate>Fri, 20 Oct 2017 09:01:49 -0400</pubDate>
+      <pubDate>Fri, 20 Oct 2017 14:56:12 +0000</pubDate>
       
       <guid>https://strykeforce.github.io/tags/frc/</guid>
       <description></description>
@@ -26,6 +26,15 @@
       <pubDate>Fri, 20 Oct 2017 09:01:49 -0400</pubDate>
       
       <guid>https://strykeforce.github.io/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Network</title>
+      <link>https://strykeforce.github.io/tags/network/</link>
+      <pubDate>Fri, 20 Oct 2017 14:56:12 +0000</pubDate>
+      
+      <guid>https://strykeforce.github.io/tags/network/</guid>
       <description></description>
     </item>
     

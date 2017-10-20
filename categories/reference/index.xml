@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reference on Stryke Force Engineering Blog</title>
+    <link>https://strykeforce.github.io/categories/reference/</link>
+    <description>Recent content in Reference on Stryke Force Engineering Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 20 Oct 2017 14:56:12 +0000</lastBuildDate>
+    
+	<atom:link href="https://strykeforce.github.io/categories/reference/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Robot Network</title>
+      <link>https://strykeforce.github.io/posts/robot-network/</link>
+      <pubDate>Fri, 20 Oct 2017 14:56:12 +0000</pubDate>
+      
+      <guid>https://strykeforce.github.io/posts/robot-network/</guid>
+      <description>While using FRC radios in the default configuration is easy to set up, having to connect to an isolated robot access point is inconvienient during development when Internet access is required. We have installed OpenWRT on the Open Mesh OM5P-AC used on our robots.
+Diagram  Open Mesh OM5P-AC Radio The radio is configured using OpenWRT as a router with its WiFi interface connecting to our shop network with static IP address 192.</description>
+    </item>
+    
+  </channel>
+</rss>
