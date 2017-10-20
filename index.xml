@@ -6,10 +6,20 @@
     <description>Recent content on Stryke Force Engineering Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 Oct 2017 09:48:58 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 20 Oct 2017 09:01:49 -0400</lastBuildDate>
     
 	<atom:link href="https://strykeforce.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Third Coast Telemetry Swerve</title>
+      <link>https://strykeforce.github.io/posts/thirdcoast-telemetry-swerve/</link>
+      <pubDate>Fri, 20 Oct 2017 09:01:49 -0400</pubDate>
+      
+      <guid>https://strykeforce.github.io/posts/thirdcoast-telemetry-swerve/</guid>
+      <description>Using the Third Coast Telemetry Service and Swerve Drive together is simple. Put the following into robotInit() to configure the drive Talons for monitoring.
+private final TelemetryService telemetryService = new TelemetryService(); private final SwerveDrive swerve = SwerveDrive.getInstance(); @Override public void robotInit() { swerve.configure(telemetryService); telemetryService.start(); // ... } This will set the Talon status frame update rates on the CAN bus to default values as specified in the javadoc for TelemetryService.</description>
+    </item>
     
     <item>
       <title>Third Coast Java Library</title>
