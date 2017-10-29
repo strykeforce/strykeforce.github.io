@@ -2,7 +2,7 @@
 <html>
 
     <head>
-        <title> Third Coast Telemetry Swerve &middot; Stryke Force Engineering Blog </title>
+        <title> Using Third Coast Telemetry with Swerve Drive &middot; Stryke Force Engineering Blog </title>
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
@@ -44,16 +44,16 @@ ga('create', 'UA-108186367-2', 'auto');
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "headline": "Third Coast Telemetry Swerve",
+  "headline": "Using Third Coast Telemetry with Swerve Drive",
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://strykeforce.github.io/posts/thirdcoast-telemetry-swerve/"
   },
   "keywords": "java, thirdcoast, frc, swerve, telemetry",
-  "wordcount": 70,
+  "wordcount": 162,
   "url": "https://strykeforce.github.io/posts/thirdcoast-telemetry-swerve/",
-  "datePublished": "2017-10-20T09:01:49-04:00",
-  "dateModified": "2017-10-20T09:10:03-04:00",
+  "datePublished": "2017-10-20T13:01:49+00:00",
+  "dateModified": "2017-10-29T07:57:49-04:00",
   
   
   "author": {
@@ -111,21 +111,28 @@ ga('create', 'UA-108186367-2', 'auto');
 </header>
 
         <div class="container wrapper">
-            <h1><a href="https://strykeforce.github.io/posts/thirdcoast-telemetry-swerve/">Third Coast Telemetry Swerve</a></h1>
+            <h1><a href="https://strykeforce.github.io/posts/thirdcoast-telemetry-swerve/">Using Third Coast Telemetry with Swerve Drive</a></h1>
             <span class="post-date">Oct 20, 2017 </span>
             <div class="post-content">
-                <p>Using the Third Coast Telemetry Service and Swerve Drive together is simple. Put the following into <code>robotInit()</code> to configure the drive Talons for monitoring.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">private</span> <span style="color:#069;font-weight:bold">final</span> TelemetryService telemetryService <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> TelemetryService<span style="color:#555">();</span>
-<span style="color:#069;font-weight:bold">private</span> <span style="color:#069;font-weight:bold">final</span> SwerveDrive swerve <span style="color:#555">=</span> SwerveDrive<span style="color:#555">.</span><span style="color:#309">getInstance</span><span style="color:#555">();</span>
-
-<span style="color:#99f">@Override</span>
-<span style="color:#069;font-weight:bold">public</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">robotInit</span><span style="color:#555">()</span> <span style="color:#555">{</span>
-  swerve<span style="color:#555">.</span><span style="color:#309">configure</span><span style="color:#555">(</span>telemetryService<span style="color:#555">);</span>
-  telemetryService<span style="color:#555">.</span><span style="color:#309">start</span><span style="color:#555">();</span>
+                <p>Using the Third Coast Telemetry Service and Swerve Drive together relies on configuration using <a href="https://google.github.io/dagger/">Dagger</a> dependency injection. This allows for easy testing and reusable, interchangeable modules. The following code, taken from the example robot in this repository, configures the azimuth and drive Talons for monitoring.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">public</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">robotInit</span><span style="color:#555">()</span> <span style="color:#555">{</span>
+  <span style="color:#069;font-weight:bold">try</span> <span style="color:#555">{</span>
+    RobotComponent component<span style="color:#555">;</span>
+    <span style="color:#09f;font-style:italic">// load config file or create from default resource file in jar
+</span><span style="color:#09f;font-style:italic"></span>    <span style="color:#069;font-weight:bold">try</span> <span style="color:#555">(</span>FileConfig toml <span style="color:#555">=</span> FileConfig<span style="color:#555">.</span><span style="color:#309">builder</span><span style="color:#555">(</span>CONFIG<span style="color:#555">).</span><span style="color:#309">defaultResource</span><span style="color:#555">(</span>DEFAULT_CONFIG<span style="color:#555">).</span><span style="color:#309">build</span><span style="color:#555">())</span> <span style="color:#555">{</span>
+      toml<span style="color:#555">.</span><span style="color:#309">load</span><span style="color:#555">();</span>
+      <span style="color:#09f;font-style:italic">// DaggerRobotComponent is generated during build by Dagger
+</span><span style="color:#09f;font-style:italic"></span>      component <span style="color:#555">=</span> DaggerRobotComponent<span style="color:#555">.</span><span style="color:#309">builder</span><span style="color:#555">().</span><span style="color:#309">toml</span><span style="color:#555">(</span>toml<span style="color:#555">.</span><span style="color:#309">unmodifiable</span><span style="color:#555">()).</span><span style="color:#309">build</span><span style="color:#555">();</span>
+    <span style="color:#555">}</span>
+    swerve <span style="color:#555">=</span> component<span style="color:#555">.</span><span style="color:#309">swerveDrive</span><span style="color:#555">();</span>
+    telemetryService <span style="color:#555">=</span> component<span style="color:#555">.</span><span style="color:#309">telemetryService</span><span style="color:#555">();</span>
+    swerve<span style="color:#555">.</span><span style="color:#309">registerWith</span><span style="color:#555">(</span>telemetryService<span style="color:#555">);</span>
+    telemetryService<span style="color:#555">.</span><span style="color:#309">start</span><span style="color:#555">();</span>
   <span style="color:#09f;font-style:italic">// ...
 </span><span style="color:#09f;font-style:italic"></span><span style="color:#555">}</span></code></pre></div>
-<p>This will set the Talon status frame update rates on the CAN bus to default values as specified in the javadoc for <code>TelemetryService</code>.</p>
-
+<p>This will set the Talon status frame update rates on the CAN bus to default values as specified in the javadoc for <code>TelemetryService</code>. You can configure a higher status frame rate for one or more talons. For example to focus on the performance of talon 6 during tuning you increase the general and feedback update rates to 5 ms each with:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"> StatusFrameRate rates <span style="color:#555">=</span> StatusFrameRate<span style="color:#555">.</span><span style="color:#309">builder</span><span style="color:#555">().</span><span style="color:#309">general</span><span style="color:#555">(</span>5<span style="color:#555">).</span><span style="color:#309">feedback</span><span style="color:#555">(</span>5<span style="color:#555">).</span><span style="color:#309">build</span><span style="color:#555">();</span>
+ telemetryService<span style="color:#555">.</span><span style="color:#309">configureStatusFrameRates</span><span style="color:#555">(</span>6<span style="color:#555">,</span> rates<span style="color:#555">);</span></code></pre></div>
                 
 
 <h3>See Also</h3>
@@ -133,11 +140,11 @@ ga('create', 'UA-108186367-2', 'auto');
 	
 	<li><a href="/posts/thirdcoast/">Third Coast Java Library</a></li>
 	
-	<li><a href="/posts/thirdcoast-simulator/">Thirdcoast Simulator</a></li>
+	<li><a href="/posts/thirdcoast-simulator/">Third Coast Telemetry Simulator</a></li>
 	
-	<li><a href="/posts/thirdcoast-telemetry/">Thirdcoast Telemetry</a></li>
+	<li><a href="/posts/thirdcoast-telemetry/">Third Coast Telemetry</a></li>
 	
-	<li><a href="/posts/thirdcoast-swerve/">Thirdcoast Swerve</a></li>
+	<li><a href="/posts/thirdcoast-swerve/">Third Coast Swerve Drive</a></li>
 	
 	<li><a href="/posts/thirdcoast-pygrapher/">Third Coast Pygrapher</a></li>
 	

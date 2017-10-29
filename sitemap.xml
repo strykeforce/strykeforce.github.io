@@ -3,12 +3,17 @@
   
   <url>
     <loc>https://strykeforce.github.io/posts/robot-network/</loc>
-    <lastmod>2017-10-22T11:45:15-04:00</lastmod>
+    <lastmod>2017-10-29T07:57:49-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/posts/thirdcoast-telemetry-swerve/</loc>
-    <lastmod>2017-10-20T09:10:03-04:00</lastmod>
+    <lastmod>2017-10-29T07:57:49-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://strykeforce.github.io/posts/thirdcoast-swerve/</loc>
+    <lastmod>2017-10-29T07:57:49-04:00</lastmod>
   </url>
   
   <url>
@@ -18,7 +23,7 @@
   
   <url>
     <loc>https://strykeforce.github.io/posts/thirdcoast-simulator/</loc>
-    <lastmod>2017-10-18T17:38:53-04:00</lastmod>
+    <lastmod>2017-10-29T07:57:49-04:00</lastmod>
   </url>
   
   <url>
@@ -28,17 +33,12 @@
   
   <url>
     <loc>https://strykeforce.github.io/posts/thirdcoast-telemetry/</loc>
-    <lastmod>2017-10-18T10:18:43-04:00</lastmod>
+    <lastmod>2017-10-29T07:57:49-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/posts/thirdcoast-talon/</loc>
-    <lastmod>2017-10-18T00:00:58-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://strykeforce.github.io/posts/thirdcoast-swerve/</loc>
-    <lastmod>2017-10-18T00:00:58-04:00</lastmod>
+    <lastmod>2017-10-29T07:57:49-04:00</lastmod>
   </url>
   
   <url>
@@ -48,31 +48,31 @@
   
   <url>
     <loc>https://strykeforce.github.io/tags/frc/</loc>
-    <lastmod>2017-10-22T11:45:15-04:00</lastmod>
+    <lastmod>2017-10-29T07:57:49-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/tags/java/</loc>
-    <lastmod>2017-10-20T09:10:03-04:00</lastmod>
+    <lastmod>2017-10-29T07:57:49-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/tags/network/</loc>
-    <lastmod>2017-10-22T11:45:15-04:00</lastmod>
+    <lastmod>2017-10-29T07:57:49-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/posts/</loc>
-    <lastmod>2017-10-22T11:45:15-04:00</lastmod>
+    <lastmod>2017-10-29T07:57:49-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/categories/project/</loc>
-    <lastmod>2017-10-20T09:10:03-04:00</lastmod>
+    <lastmod>2017-10-29T07:57:49-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -84,25 +84,25 @@
   
   <url>
     <loc>https://strykeforce.github.io/categories/reference/</loc>
-    <lastmod>2017-10-22T11:45:15-04:00</lastmod>
+    <lastmod>2017-10-29T07:57:49-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/</loc>
-    <lastmod>2017-10-22T11:45:15-04:00</lastmod>
+    <lastmod>2017-10-29T07:57:49-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/tags/swerve/</loc>
-    <lastmod>2017-10-20T09:10:03-04:00</lastmod>
+    <lastmod>2017-10-29T07:57:49-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/tags/</loc>
-    <lastmod>2017-10-22T11:45:15-04:00</lastmod>
+    <lastmod>2017-10-29T07:57:49-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -114,13 +114,13 @@
   
   <url>
     <loc>https://strykeforce.github.io/tags/telemetry/</loc>
-    <lastmod>2017-10-20T09:10:03-04:00</lastmod>
+    <lastmod>2017-10-29T07:57:49-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/tags/thirdcoast/</loc>
-    <lastmod>2017-10-20T09:10:03-04:00</lastmod>
+    <lastmod>2017-10-29T07:57:49-04:00</lastmod>
     <priority>0</priority>
   </url>
   

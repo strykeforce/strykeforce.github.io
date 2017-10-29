@@ -87,11 +87,11 @@ ga('create', 'UA-108186367-2', 'auto');
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
-							<h4 class="post-link"><a href="https://strykeforce.github.io/posts/thirdcoast-telemetry-swerve/">Third Coast Telemetry Swerve</a></h4>
+							<h4 class="post-link"><a href="https://strykeforce.github.io/posts/thirdcoast-telemetry-swerve/">Using Third Coast Telemetry with Swerve Drive</a></h4>
 							<h4 class="post-date">Oct 20, 2017</h4>
 						</div>
-						<div class="post-summary"><p>Using the Third Coast Telemetry Service and Swerve Drive together is simple. Put the following into robotInit() to configure the drive Talons for monitoring.
-private final TelemetryService telemetryService = new TelemetryService(); private final SwerveDrive swerve = SwerveDrive.getInstance(); @Override public void robotInit() { swerve.configure(telemetryService); telemetryService.start(); // ... } This will set the Talon status frame update rates on the CAN bus to default values as specified in the javadoc for TelemetryService.</p></div>
+						<div class="post-summary"><p>Using the Third Coast Telemetry Service and Swerve Drive together relies on configuration using Dagger dependency injection. This allows for easy testing and reusable, interchangeable modules. The following code, taken from the example robot in this repository, configures the azimuth and drive Talons for monitoring.
+public void robotInit() { try { RobotComponent component; // load config file or create from default resource file in jar  try (FileConfig toml = FileConfig.</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://strykeforce.github.io/posts/thirdcoast-telemetry-swerve/">Read More</a>
 						</div>
@@ -115,7 +115,7 @@ Documentation Third Coast Javadocs.</p></div>
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
-							<h4 class="post-link"><a href="https://strykeforce.github.io/posts/thirdcoast-simulator/">Thirdcoast Simulator</a></h4>
+							<h4 class="post-link"><a href="https://strykeforce.github.io/posts/thirdcoast-simulator/">Third Coast Telemetry Simulator</a></h4>
 							<h4 class="post-date">Oct 18, 2017</h4>
 						</div>
 						<div class="post-summary"><p>We have a robot simulation here.</p></div>
@@ -143,7 +143,7 @@ This is a sample of output when run with ./pygrapher 1 SETPOINT
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
-							<h4 class="post-link"><a href="https://strykeforce.github.io/posts/thirdcoast-telemetry/">Thirdcoast Telemetry</a></h4>
+							<h4 class="post-link"><a href="https://strykeforce.github.io/posts/thirdcoast-telemetry/">Third Coast Telemetry</a></h4>
 							<h4 class="post-date">Oct 17, 2017</h4>
 						</div>
 						<div class="post-summary"><p>Status: DRAFT

@@ -87,13 +87,27 @@ ga('create', 'UA-108186367-2', 'auto');
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
-							<h4 class="post-link"><a href="https://strykeforce.github.io/posts/thirdcoast-telemetry-swerve/">Third Coast Telemetry Swerve</a></h4>
+							<h4 class="post-link"><a href="https://strykeforce.github.io/posts/thirdcoast-telemetry-swerve/">Using Third Coast Telemetry with Swerve Drive</a></h4>
 							<h4 class="post-date">Oct 20, 2017</h4>
 						</div>
-						<div class="post-summary"><p>Using the Third Coast Telemetry Service and Swerve Drive together is simple. Put the following into robotInit() to configure the drive Talons for monitoring.
-private final TelemetryService telemetryService = new TelemetryService(); private final SwerveDrive swerve = SwerveDrive.getInstance(); @Override public void robotInit() { swerve.configure(telemetryService); telemetryService.start(); // ... } This will set the Talon status frame update rates on the CAN bus to default values as specified in the javadoc for TelemetryService.</p></div>
+						<div class="post-summary"><p>Using the Third Coast Telemetry Service and Swerve Drive together relies on configuration using Dagger dependency injection. This allows for easy testing and reusable, interchangeable modules. The following code, taken from the example robot in this repository, configures the azimuth and drive Talons for monitoring.
+public void robotInit() { try { RobotComponent component; // load config file or create from default resource file in jar  try (FileConfig toml = FileConfig.</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://strykeforce.github.io/posts/thirdcoast-telemetry-swerve/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="https://strykeforce.github.io/posts/thirdcoast-swerve/">Third Coast Swerve Drive</a></h4>
+							<h4 class="post-date">Oct 17, 2017</h4>
+						</div>
+						<div class="post-summary"><p>This software is designed to run on swerve drive hardware described in this paper. The swerve drive is controlled using the SwerveDrive class. Derivation of inverse kinematic equations are from Ether&rsquo;s Swerve Kinematics and Programming.
+The swerve-drive inverse kinematics algorithm will always calculate individual wheel angles as -0.5 to 0.5 rotations, measured clockwise with zero being the straight-ahead position. Wheel speed is calculated as 0 to 1 in the direction of the wheel angle.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="https://strykeforce.github.io/posts/thirdcoast-swerve/">Read More</a>
 						</div>
 					</div>
 				</li>
@@ -115,7 +129,7 @@ Documentation Third Coast Javadocs.</p></div>
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
-							<h4 class="post-link"><a href="https://strykeforce.github.io/posts/thirdcoast-simulator/">Thirdcoast Simulator</a></h4>
+							<h4 class="post-link"><a href="https://strykeforce.github.io/posts/thirdcoast-simulator/">Third Coast Telemetry Simulator</a></h4>
 							<h4 class="post-date">Oct 18, 2017</h4>
 						</div>
 						<div class="post-summary"><p>We have a robot simulation here.</p></div>
@@ -128,7 +142,7 @@ Documentation Third Coast Javadocs.</p></div>
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
-							<h4 class="post-link"><a href="https://strykeforce.github.io/posts/thirdcoast-telemetry/">Thirdcoast Telemetry</a></h4>
+							<h4 class="post-link"><a href="https://strykeforce.github.io/posts/thirdcoast-telemetry/">Third Coast Telemetry</a></h4>
 							<h4 class="post-date">Oct 17, 2017</h4>
 						</div>
 						<div class="post-summary"><p>Status: DRAFT
@@ -145,28 +159,13 @@ The data channel is for one-way graph data streaming from robot to grapher and l
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
-							<h4 class="post-link"><a href="https://strykeforce.github.io/posts/thirdcoast-talon/">Thirdcoast Talon</a></h4>
+							<h4 class="post-link"><a href="https://strykeforce.github.io/posts/thirdcoast-talon/">Third Coast Talon Provisioner</a></h4>
 							<h4 class="post-date">Oct 17, 2017</h4>
 						</div>
-						<div class="post-summary"><p>Talon Configurations Third Coast provides a library for storing any number of Talon configurations in a TOML file and applying them to Talons. The configuration file is stored in the robot application JAR and loaded by the class loader.
-The structure of a Talon configuration file is:
-# first Talon configuration [[TALON]] name = &#34;drive&#34; mode = &#34;Voltage&#34; # etc... # second Talon configuration [[TALON]] name = &#34;azimuth&#34; mode = &#34;Position&#34; # etc.</p></div>
+						<div class="post-summary"><p>Talon Configurations Third Coast provides a library for storing any number of Talon configurations in a TOML file and applying them to Talons. If this configuration file is not present on the roboRIO in the location you specify, a default configuration file stored in the robot application JAR is copied there. See the demonstration robot for an example of specifying a config file to use.
+The structure of a Talon configuration file is:</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://strykeforce.github.io/posts/thirdcoast-talon/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://strykeforce.github.io/posts/thirdcoast-swerve/">Thirdcoast Swerve</a></h4>
-							<h4 class="post-date">Oct 17, 2017</h4>
-						</div>
-						<div class="post-summary"><p>This software is designed to run on swerve drive hardware described in this paper. The swerve drive is controlled using the SwerveDrive class. Derivation of inverse kinematic equations are from Ether&rsquo;s Swerve Kinematics and Programming.
-The swerve-drive inverse kinematics algorithm will always calculate individual wheel angles as -0.5 to 0.5 rotations, measured clockwise with zero being the straight-ahead position. Wheel speed is calculated as 0 to 1 in the direction of the wheel angle.</p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://strykeforce.github.io/posts/thirdcoast-swerve/">Read More</a>
 						</div>
 					</div>
 				</li>

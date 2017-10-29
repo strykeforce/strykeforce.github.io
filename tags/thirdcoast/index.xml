@@ -6,19 +6,29 @@
     <description>Recent content in Thirdcoast on Stryke Force Engineering Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Oct 2017 09:01:49 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 20 Oct 2017 13:01:49 +0000</lastBuildDate>
     
 	<atom:link href="https://strykeforce.github.io/tags/thirdcoast/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Third Coast Telemetry Swerve</title>
+      <title>Using Third Coast Telemetry with Swerve Drive</title>
       <link>https://strykeforce.github.io/posts/thirdcoast-telemetry-swerve/</link>
-      <pubDate>Fri, 20 Oct 2017 09:01:49 -0400</pubDate>
+      <pubDate>Fri, 20 Oct 2017 13:01:49 +0000</pubDate>
       
       <guid>https://strykeforce.github.io/posts/thirdcoast-telemetry-swerve/</guid>
-      <description>Using the Third Coast Telemetry Service and Swerve Drive together is simple. Put the following into robotInit() to configure the drive Talons for monitoring.
-private final TelemetryService telemetryService = new TelemetryService(); private final SwerveDrive swerve = SwerveDrive.getInstance(); @Override public void robotInit() { swerve.configure(telemetryService); telemetryService.start(); // ... } This will set the Talon status frame update rates on the CAN bus to default values as specified in the javadoc for TelemetryService.</description>
+      <description>Using the Third Coast Telemetry Service and Swerve Drive together relies on configuration using Dagger dependency injection. This allows for easy testing and reusable, interchangeable modules. The following code, taken from the example robot in this repository, configures the azimuth and drive Talons for monitoring.
+public void robotInit() { try { RobotComponent component; // load config file or create from default resource file in jar  try (FileConfig toml = FileConfig.</description>
+    </item>
+    
+    <item>
+      <title>Third Coast Swerve Drive</title>
+      <link>https://strykeforce.github.io/posts/thirdcoast-swerve/</link>
+      <pubDate>Tue, 17 Oct 2017 13:52:49 -0400</pubDate>
+      
+      <guid>https://strykeforce.github.io/posts/thirdcoast-swerve/</guid>
+      <description>This software is designed to run on swerve drive hardware described in this paper. The swerve drive is controlled using the SwerveDrive class. Derivation of inverse kinematic equations are from Ether&amp;rsquo;s Swerve Kinematics and Programming.
+The swerve-drive inverse kinematics algorithm will always calculate individual wheel angles as -0.5 to 0.5 rotations, measured clockwise with zero being the straight-ahead position. Wheel speed is calculated as 0 to 1 in the direction of the wheel angle.</description>
     </item>
     
     <item>
@@ -32,7 +42,7 @@ Documentation Third Coast Javadocs.</description>
     </item>
     
     <item>
-      <title>Thirdcoast Simulator</title>
+      <title>Third Coast Telemetry Simulator</title>
       <link>https://strykeforce.github.io/posts/thirdcoast-simulator/</link>
       <pubDate>Wed, 18 Oct 2017 17:36:17 -0400</pubDate>
       
@@ -52,7 +62,7 @@ This is a sample of output when run with ./pygrapher 1 SETPOINT
     </item>
     
     <item>
-      <title>Thirdcoast Telemetry</title>
+      <title>Third Coast Telemetry</title>
       <link>https://strykeforce.github.io/posts/thirdcoast-telemetry/</link>
       <pubDate>Tue, 17 Oct 2017 13:53:02 -0400</pubDate>
       
@@ -65,24 +75,13 @@ The data channel is for one-way graph data streaming from robot to grapher and l
     </item>
     
     <item>
-      <title>Thirdcoast Talon</title>
+      <title>Third Coast Talon Provisioner</title>
       <link>https://strykeforce.github.io/posts/thirdcoast-talon/</link>
       <pubDate>Tue, 17 Oct 2017 13:52:57 -0400</pubDate>
       
       <guid>https://strykeforce.github.io/posts/thirdcoast-talon/</guid>
-      <description>Talon Configurations Third Coast provides a library for storing any number of Talon configurations in a TOML file and applying them to Talons. The configuration file is stored in the robot application JAR and loaded by the class loader.
-The structure of a Talon configuration file is:
-# first Talon configuration [[TALON]] name = &amp;#34;drive&amp;#34; mode = &amp;#34;Voltage&amp;#34; # etc... # second Talon configuration [[TALON]] name = &amp;#34;azimuth&amp;#34; mode = &amp;#34;Position&amp;#34; # etc.</description>
-    </item>
-    
-    <item>
-      <title>Thirdcoast Swerve</title>
-      <link>https://strykeforce.github.io/posts/thirdcoast-swerve/</link>
-      <pubDate>Tue, 17 Oct 2017 13:52:49 -0400</pubDate>
-      
-      <guid>https://strykeforce.github.io/posts/thirdcoast-swerve/</guid>
-      <description>This software is designed to run on swerve drive hardware described in this paper. The swerve drive is controlled using the SwerveDrive class. Derivation of inverse kinematic equations are from Ether&amp;rsquo;s Swerve Kinematics and Programming.
-The swerve-drive inverse kinematics algorithm will always calculate individual wheel angles as -0.5 to 0.5 rotations, measured clockwise with zero being the straight-ahead position. Wheel speed is calculated as 0 to 1 in the direction of the wheel angle.</description>
+      <description>Talon Configurations Third Coast provides a library for storing any number of Talon configurations in a TOML file and applying them to Talons. If this configuration file is not present on the roboRIO in the location you specify, a default configuration file stored in the robot application JAR is copied there. See the demonstration robot for an example of specifying a config file to use.
+The structure of a Talon configuration file is:</description>
     </item>
     
   </channel>
