@@ -50,10 +50,10 @@ ga('create', 'UA-108186367-2', 'auto');
     "@id": "https://strykeforce.github.io/posts/robot-network/"
   },
   "keywords": "frc, network",
-  "wordcount": 111,
+  "wordcount": 280,
   "url": "https://strykeforce.github.io/posts/robot-network/",
   "datePublished": "2017-10-20T14:56:12+00:00",
-  "dateModified": "2017-10-29T07:57:49-04:00",
+  "dateModified": "2017-10-29T12:16:20-04:00",
   
   
   "author": {
@@ -118,7 +118,7 @@ ga('create', 'UA-108186367-2', 'auto');
 
 <p>While using FRC radios in the default configuration is easy to set up, having to connect to an isolated robot access point is inconvienient during development when Internet access is required. We have installed <a href="https://openwrt.org">OpenWRT</a> on the Open Mesh <a href="https://wiki.openwrt.org/toh/hwdata/open-mesh/open-mesh_om5p">OM5P-AN</a> used on our robots.</p>
 
-<h1 id="diagram">Diagram</h1>
+<h2 id="diagram">Diagram</h2>
 
 
 <figure >
@@ -129,9 +129,70 @@ ga('create', 'UA-108186367-2', 'auto');
 </figure>
 
 
-<h1 id="open-mesh-om5p-an-radio">Open Mesh OM5P-AN Radio</h1>
+<h2 id="open-mesh-om5p-an-radio">Open Mesh OM5P-AN Radio</h2>
 
-<p>The radio is configured using OpenWRT as a router with its WiFi interface connecting to our shop network with static IP address <code>192.168.3.251</code> and its ethernet ports on the <code>10.27.67.0/24</code> network.</p>
+<p>The radio is configured using OpenWRT as a router with its WiFi interface connecting to our shop network with static IP address <code>192.168.3.251</code> and its ethernet ports on the <code>10.27.67.0/24</code> network. The OpenWRT configuration backup is on the team&rsquo;s Google drive.</p>
+
+<p>The interfaces have the following configuration:</p>
+
+<pre><code>config interface 'lan'
+        option force_link '1'
+        option type 'bridge'
+        option proto 'static'
+        option netmask '255.255.255.0'
+        option ip6assign '60'
+        option _orig_ifname 'eth0 radio0.network1 radio1.network1'
+        option _orig_bridge 'true'
+        option ipaddr '10.27.67.1'
+        option gateway '192.168.3.1'
+        option broadcast '10.27.67.255'
+        option ifname 'eth0 eth1'
+
+config interface 'wwan'
+        option _orig_ifname 'wlan1'
+        option _orig_bridge 'false'
+        option proto 'static'
+        option ipaddr '192.168.3.251'
+        option netmask '255.255.255.0'
+        option gateway '192.168.3.1'
+        option broadcast '192.168.3.255'
+        option dns '192.168.3.1'
+</code></pre>
+
+<p>The WiFi connection to our shop&rsquo;s network has this configuration:</p>
+
+<pre><code>config wifi-iface
+	option ssid 'SYKFRC'
+	option encryption 'psk2'
+	option device 'radio1'
+	option mode 'sta'
+	option bssid '82:2A:A8:58:5F:6B'
+	option key '&lt;wifi password&gt;'
+	option network 'wwan'
+</code></pre>
+
+<p>The firewall has this configuration:</p>
+
+<pre><code>config zone
+	option name 'lan'
+	option input 'ACCEPT'
+	option output 'ACCEPT'
+	option forward 'ACCEPT'
+	option network 'lan'
+
+config zone
+	option input 'ACCEPT'
+	option forward 'ACCEPT'
+	option output 'ACCEPT'
+	option name 'sykfrc'
+	option network 'wwan'
+	option mtu_fix '1'
+	option masq '0'
+
+config forwarding
+	option dest 'lan'
+	option src 'sykfrc'
+</code></pre>
 
 <h2 id="router">Router</h2>
 
