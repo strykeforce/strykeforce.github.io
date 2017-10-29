@@ -71,6 +71,7 @@ This is a sample of output when run with ./pygrapher 1 SETPOINT
       <guid>https://strykeforce.github.io/posts/thirdcoast-telemetry/</guid>
       <description>Status: DRAFT
 This is the current state of the Third Coast Telemetry protocol between our grapher app written in LabView and our robot code written in Java.
+Javadocs are here.
 Network The grapher and robot communicate over two network channels, one for control and one for data.
 The control channel is a HTTP REST web service that listens on robot TCP port 5800.
 The data channel is for one-way graph data streaming from robot to grapher and listens on grapher workstation UDP port 5555.</description>
@@ -83,6 +84,7 @@ The data channel is for one-way graph data streaming from robot to grapher and l
       
       <guid>https://strykeforce.github.io/posts/thirdcoast-talon/</guid>
       <description>Talon Configurations Third Coast provides a library for storing any number of Talon configurations in a TOML file and applying them to Talons. If this configuration file is not present on the roboRIO in the location you specify, a default configuration file stored in the robot application JAR is copied there. See the demonstration robot for an example of specifying a config file to use.
+Javadocs are here.
 The structure of a Talon configuration file is:</description>
     </item>
     
