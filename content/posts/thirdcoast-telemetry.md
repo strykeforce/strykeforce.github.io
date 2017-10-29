@@ -1,5 +1,5 @@
 ---
-title: "Thirdcoast Telemetry"
+title: "Third Coast Telemetry"
 description: "Third Coast Telemetry protocol between our grapher app written in LabView and our robot code written in Java."
 date: 2017-10-17T13:53:02-04:00
 categories:

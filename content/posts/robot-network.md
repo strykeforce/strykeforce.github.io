@@ -1,5 +1,5 @@
 ---
-title: Robot Network
+title: Robot Practice Field Network
 description: A reference on setting up robot networking on our home practice field.
 date: 2017-10-20T14:56:12.000Z
 categories:

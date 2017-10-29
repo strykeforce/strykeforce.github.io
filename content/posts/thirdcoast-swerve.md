@@ -1,5 +1,5 @@
 ---
-title: "Thirdcoast Swerve"
+title: "Third Coast Swerve Drive"
 description: "A demonstration of Third Coast swerve drive API usage."
 date: 2017-10-17T13:52:49-04:00
 categories:
@@ -10,7 +10,7 @@ tags:
   - "swerve"
   - "frc"
 draft: false
-weight: 0
+weight: 4
 ---
 This software is designed to run on swerve drive hardware described in this [paper](https://www.chiefdelphi.com/media/papers/3375). The swerve drive is controlled using the [`SwerveDrive`][swerve] class. Derivation of inverse kinematic equations are from Ether's [Swerve Kinematics and Programming][ether].
 
@@ -22,7 +22,7 @@ Hardware assumed by the [`Wheel`][swerve] class includes a CTRE magnetic encoder
 
 A demonstration of Third Coast API usage is in [`org.strykeforce.thirdcoast.robot`][robot]. This uses [GradleRIO] to build.
 
-**Note:** you must edit the [`thirdcoast.toml`][toml] configuration file and provide Talon position-mode PID parameters for your hardware. This file will be copied from the deployed JAR file to `/home/lvuser/thirdcoast.toml` the first time you deploy and run the robot code. See the configuration file [documentation](talon) for more information.
+**Note:** you must edit the [`thirdcoast.toml`][toml] configuration file and provide Talon position-mode PID parameters for your hardware. This file will be copied from the deployed JAR file to `/home/lvuser/thirdcoast.toml` the first time you deploy and run the robot code. See the configuration file [documentation][talon] for more information.
 
 
 [ether]: https://www.chiefdelphi.com/media/papers/2426
@@ -30,3 +30,4 @@ A demonstration of Third Coast API usage is in [`org.strykeforce.thirdcoast.robo
 [robot]: https://github.com/strykeforce/thirdcoast/tree/master/robot
 [swerve]: https://strykeforce.github.io/thirdcoast/javadoc/org/strykeforce/thirdcoast/swerve/package-summary.html
 [toml]: https://github.com/strykeforce/thirdcoast/blob/master/core/src/main/resources/org/strykeforce/thirdcoast.toml
+[talon]: /posts/thirdcoast-talon/

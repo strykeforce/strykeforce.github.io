@@ -1,5 +1,5 @@
 ---
-title: "Thirdcoast Talon"
+title: "Third Coast Talon Provisioner"
 description: "Library for storing any number of Talon configurations in a TOML file and applying them to Talons."
 date: 2017-10-17T13:52:57-04:00
 categories:
@@ -14,7 +14,7 @@ weight: 0
 ---
 # Talon Configurations
 
-Third Coast provides a library for storing any number of Talon configurations in a [TOML](https://github.com/toml-lang/toml) file and applying them to Talons. The configuration file is stored in the robot application JAR and loaded by the class loader.
+Third Coast provides a library for storing any number of Talon configurations in a [TOML](https://github.com/toml-lang/toml) file and applying them to Talons. If this configuration file is not present on the roboRIO in the location you specify, a default configuration file stored in the robot application JAR is copied there. See the [demonstration robot][robot] for an example of specifying a config file to use.
 
 The structure of a Talon configuration file is:
 
@@ -220,3 +220,5 @@ Set the maximum voltage that the Talon will ever output. This can be used to lim
 ```toml
 output_voltage_max = 12.0
 ```
+
+[robot]: https://github.com/strykeforce/thirdcoast/tree/master/robot

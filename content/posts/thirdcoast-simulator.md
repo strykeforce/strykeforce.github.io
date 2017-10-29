@@ -1,5 +1,5 @@
 ---
-title: "Thirdcoast Simulator"
+title: "Third Coast Telemetry Simulator"
 description: "Simulate a robot for Third Coast Telemetry client development."
 date: 2017-10-18T17:36:17-04:00
 categories:
