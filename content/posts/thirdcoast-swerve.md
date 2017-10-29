@@ -1,6 +1,6 @@
 ---
 title: "Third Coast Swerve Drive"
-description: "A demonstration of Third Coast swerve drive API usage."
+description: "A demonstration of Stryke Force Third Coast swerve drive API usage."
 date: 2017-10-17T13:52:49-04:00
 categories:
   - "project"

@@ -1,6 +1,6 @@
 ---
 title: Using Third Coast Telemetry with Swerve Drive
-description: Example code for using Third Coast Telemetry with a Swerve drive
+description: Example code for using Stryke Force 2767 Third Coast Telemetry with a Swerve drive.
 date: 2017-10-20T13:01:49.000Z
 categories:
   - project

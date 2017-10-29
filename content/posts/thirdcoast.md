@@ -1,6 +1,6 @@
 ---
 title: "Third Coast Java Library"
-description: "Third Coast swerve drive, talon configuration and telemetry API for FRC robots."
+description: "Stryke Force 2767 Third Coast swerve drive, talon configuration and telemetry API for FRC robots."
 date: 2017-10-17T09:48:58-04:00
 categories:
   - "project"
