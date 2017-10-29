@@ -34,10 +34,12 @@ public void robotInit() {
 }
 ```
 
-This will set the Talon status frame update rates on the CAN bus to default values as specified in the javadoc for `TelemetryService`. You can configure a higher status frame rate for one or more talons. For example to focus on the performance of talon 6 during tuning you increase the general and feedback update rates to 5 ms each with:
+This will set the Talon status frame update rates on the CAN bus to default values as specified in the [javadoc][javadoc] for `TelemetryService`. You can configure a higher status frame rate for one or more talons. For example to focus on the performance of talon 6 during tuning you increase the general and feedback update rates to 5 ms each with:
 
 ```java
  StatusFrameRate rates = StatusFrameRate.builder().general(5).feedback(5).build();
  telemetryService.configureStatusFrameRates(6, rates);
 
 ```
+
+[javadoc]: https://strykeforce.github.io/thirdcoast/javadoc/
