@@ -53,7 +53,7 @@ ga('create', 'UA-108186367-2', 'auto');
   "wordcount": 162,
   "url": "https://strykeforce.github.io/posts/thirdcoast-telemetry-swerve/",
   "datePublished": "2017-10-20T13:01:49+00:00",
-  "dateModified": "2017-10-29T07:57:49-04:00",
+  "dateModified": "2017-10-29T08:03:27-04:00",
   
   
   "author": {
@@ -130,7 +130,7 @@ ga('create', 'UA-108186367-2', 'auto');
     telemetryService<span style="color:#555">.</span><span style="color:#309">start</span><span style="color:#555">();</span>
   <span style="color:#09f;font-style:italic">// ...
 </span><span style="color:#09f;font-style:italic"></span><span style="color:#555">}</span></code></pre></div>
-<p>This will set the Talon status frame update rates on the CAN bus to default values as specified in the javadoc for <code>TelemetryService</code>. You can configure a higher status frame rate for one or more talons. For example to focus on the performance of talon 6 during tuning you increase the general and feedback update rates to 5 ms each with:</p>
+<p>This will set the Talon status frame update rates on the CAN bus to default values as specified in the <a href="https://strykeforce.github.io/thirdcoast/javadoc/">javadoc</a> for <code>TelemetryService</code>. You can configure a higher status frame rate for one or more talons. For example to focus on the performance of talon 6 during tuning you increase the general and feedback update rates to 5 ms each with:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"> StatusFrameRate rates <span style="color:#555">=</span> StatusFrameRate<span style="color:#555">.</span><span style="color:#309">builder</span><span style="color:#555">().</span><span style="color:#309">general</span><span style="color:#555">(</span>5<span style="color:#555">).</span><span style="color:#309">feedback</span><span style="color:#555">(</span>5<span style="color:#555">).</span><span style="color:#309">build</span><span style="color:#555">();</span>
  telemetryService<span style="color:#555">.</span><span style="color:#309">configureStatusFrameRates</span><span style="color:#555">(</span>6<span style="color:#555">,</span> rates<span style="color:#555">);</span></code></pre></div>
                 
