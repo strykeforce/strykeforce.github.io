@@ -16,6 +16,8 @@ weight: 0
 
 Third Coast provides a library for storing any number of Talon configurations in a [TOML](https://github.com/toml-lang/toml) file and applying them to Talons. If this configuration file is not present on the roboRIO in the location you specify, a default configuration file stored in the robot application JAR is copied there. See the [demonstration robot][robot] for an example of specifying a config file to use.
 
+Javadocs are [here](https://strykeforce.github.io/thirdcoast/javadoc/).
+
 The structure of a Talon configuration file is:
 
 ```toml

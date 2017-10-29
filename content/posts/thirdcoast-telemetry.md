@@ -17,6 +17,8 @@ Status: **DRAFT**
 
 This is the current state of the Third Coast Telemetry protocol between our grapher app written in LabView and our robot code written in Java.
 
+Javadocs are [here](https://strykeforce.github.io/thirdcoast/javadoc/).
+
 ### Network
 
 The grapher and robot communicate over two network channels, one for control and one for data.

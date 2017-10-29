@@ -18,6 +18,8 @@ The swerve-drive inverse kinematics algorithm will always calculate individual w
 
 Hardware assumed by the [`Wheel`][swerve] class includes a CTRE magnetic encoder on the azimuth motor and no limits on wheel azimuth rotation. Azimuth Talons have an ID in the range 0-3 with corresponding drive Talon IDs in the range 10-13.
 
+Javadocs are [here](https://strykeforce.github.io/thirdcoast/javadoc/).
+
 # Demonstration Robot
 
 A demonstration of Third Coast API usage is in [`org.strykeforce.thirdcoast.robot`][robot]. This uses [GradleRIO] to build.

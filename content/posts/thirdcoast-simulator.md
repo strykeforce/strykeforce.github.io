@@ -54,3 +54,5 @@ Inventory at http://127.0.0.1:5800/v1/grapher/inventory
 
 Press enter to exit.
 ```
+
+Javadocs are [here](https://strykeforce.github.io/thirdcoast/javadoc/).
