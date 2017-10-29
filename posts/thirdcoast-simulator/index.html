@@ -50,10 +50,10 @@ ga('create', 'UA-108186367-2', 'auto');
     "@id": "https://strykeforce.github.io/posts/thirdcoast-simulator/"
   },
   "keywords": "java, thirdcoast, telemetry, frc",
-  "wordcount": 6,
+  "wordcount": 220,
   "url": "https://strykeforce.github.io/posts/thirdcoast-simulator/",
   "datePublished": "2017-10-18T17:36:17-04:00",
-  "dateModified": "2017-10-29T07:57:49-04:00",
+  "dateModified": "2017-10-29T10:09:56-04:00",
   
   
   "author": {
@@ -114,8 +114,45 @@ ga('create', 'UA-108186367-2', 'auto');
             <h1><a href="https://strykeforce.github.io/posts/thirdcoast-simulator/">Third Coast Telemetry Simulator</a></h1>
             <span class="post-date">Oct 18, 2017 </span>
             <div class="post-content">
-                <p>We have a robot simulation <a href="https://github.com/strykeforce/thirdcoast/releases">here</a>.</p>
+                <p>We use simulated telemetry data for client development, jar file available here <a href="https://github.com/strykeforce/thirdcoast/releases">here</a>.</p>
 
+<p>Example of use:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ java -jar sim-v17.0.14.jar
+
+Creating simulated inventory...
+ <span style="color:#f60">0</span>: Fake Talon <span style="color:#f60">54</span> at <span style="color:#f60">5</span> Hz
+ <span style="color:#f60">1</span>: Fake Talon <span style="color:#f60">57</span> at <span style="color:#f60">3</span> Hz
+ <span style="color:#f60">2</span>: Fake Talon <span style="color:#f60">39</span> at <span style="color:#f60">5</span> Hz
+ <span style="color:#f60">3</span>: Fake Talon <span style="color:#f60">45</span> at <span style="color:#f60">1</span> Hz
+ <span style="color:#f60">4</span>: Fake Talon <span style="color:#f60">13</span> at <span style="color:#f60">4</span> Hz
+ <span style="color:#f60">5</span>: Fake Talon <span style="color:#f60">52</span> at <span style="color:#f60">3</span> Hz
+ <span style="color:#f60">6</span>: Fake Talon <span style="color:#f60">16</span> at <span style="color:#f60">2</span> Hz
+ <span style="color:#f60">7</span>: Fake Talon <span style="color:#f60">46</span> at <span style="color:#f60">2</span> Hz
+ <span style="color:#f60">8</span>: Fake Servo <span style="color:#f60">0</span> at <span style="color:#f60">1</span> Hz
+ <span style="color:#f60">9</span>: Fake Digital Input <span style="color:#f60">0</span> at <span style="color:#f60">1</span> Hz
+
+Measure signals are...
+Setpoint                  : SINE inv even ids
+Output Current            : SINE, ampl <span style="color:#f60">1000</span>, ph <span style="color:#f60">0</span>.25
+Output Voltage            : SINE, ampl <span style="color:#f60">2</span>, ph -0.25, off <span style="color:#f60">2</span>/-2 even/odd id
+Encoder Position          : SAWTOOTH, inv odd ids
+Encoder Velocity          : SAWTOOTH, ampl <span style="color:#f60">0</span>.1
+Absolute Encoder Position : SAWTOOTH, off <span style="color:#f60">2</span>/-2 even/odd
+Control Loop Error        : TRIANGLE, inv even ids
+Integrator Accumulator    : TRIANGLE, ampl <span style="color:#f60">50</span> ph <span style="color:#f60">0</span>.25
+Bus Voltage               : TRIANGLE, ampl id ph <span style="color:#f60">0</span>.33 off id/-id even/odd
+Forward Hard Limit Closed : SQUARE
+Reverse Hard Limit Closed : SQUARE, inv
+Forward Soft Limit OK     : SQUARE, ph <span style="color:#f60">0</span>.33
+Reverse Soft Limit OK     : SQUARE, ph <span style="color:#f60">0</span>.33 inv
+Value                     : SINE
+Position                  : SAWTOOTH
+Angle                     : TRIANGLE
+
+Inventory at http://192.168.1.226:5800/v1/grapher/inventory
+Inventory at http://127.0.0.1:5800/v1/grapher/inventory
+
+Press enter to exit.</code></pre></div>
                 
 
 <h3>See Also</h3>
