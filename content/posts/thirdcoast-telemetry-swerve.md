@@ -23,7 +23,7 @@ public void robotInit() {
     // load config file or create from default resource file in jar
     try (FileConfig toml = FileConfig.builder(CONFIG).defaultResource(DEFAULT_CONFIG).build()) {
       toml.load();
-      // DaggerRobotComponent is generated during build by Dagger
+      // DaggerRobotComponent is generated from RobotComponent.java
       component = DaggerRobotComponent.builder().toml(toml.unmodifiable()).build();
     }
     swerve = component.swerveDrive();
