@@ -44,10 +44,10 @@ The swerve-drive inverse kinematics algorithm will always calculate individual w
     <item>
       <title>Third Coast Java Library</title>
       <link>https://strykeforce.github.io/posts/thirdcoast/</link>
-      <pubDate>Tue, 17 Oct 2017 09:48:58 -0400</pubDate>
+      <pubDate>Tue, 17 Oct 2017 13:48:58 +0000</pubDate>
       
       <guid>https://strykeforce.github.io/posts/thirdcoast/</guid>
-      <description>Our Third Coast swerve drive, talon configuration and telemetry API for FRC robots is available from its repository.
+      <description>The Stryke Force 2767 Third Coast swerve drive, talon configuration and telemetry API source code for FRC robots is available from its repository at https://github.com/strykeforce/thirdcoast.
 Documentation Third Coast Javadocs.</description>
     </item>
     
