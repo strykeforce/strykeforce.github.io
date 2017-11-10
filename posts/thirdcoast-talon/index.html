@@ -6,7 +6,7 @@
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.31-DEV" />
+<meta name="generator" content="Hugo 0.30.2" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -50,10 +50,10 @@ ga('create', 'UA-108186367-2', 'auto');
     "@id": "https://strykeforce.github.io/posts/thirdcoast-talon/"
   },
   "keywords": "java, thirdcoast, talon, frc",
-  "wordcount": 733,
+  "wordcount": 1000,
   "url": "https://strykeforce.github.io/posts/thirdcoast-talon/",
-  "datePublished": "2017-10-17T13:52:57-04:00",
-  "dateModified": "2017-10-29T12:40:45-04:00",
+  "datePublished": "2017-10-17T17:52:57+00:00",
+  "dateModified": "2017-11-10T07:48:43-05:00",
   
   
   "author": {
@@ -122,31 +122,51 @@ ga('create', 'UA-108186367-2', 'auto');
 
 <p>Javadocs are <a href="https://strykeforce.github.io/thirdcoast/javadoc/">here</a>.</p>
 
-<p>The structure of a Talon configuration file is:</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#09f;font-style:italic"># first Talon configuration</span>
+<p>Multiple Talon configurations can be stored in a TOML configuration file. Each configuration is an element TOML table array called <code>TALON</code> and is identified by the <code>name</code> key. An example of a Talon configuration file is:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#09f;font-style:italic"># Third Coast Swerve Drive Talon</span>
 [[TALON]]
-name = <span style="color:#c30">&#34;drive&#34;</span>
-mode = <span style="color:#c30">&#34;Voltage&#34;</span>
-<span style="color:#09f;font-style:italic"># etc...</span>
+  name = <span style="color:#c30">&#34;drive&#34;</span>
+  mode = <span style="color:#c30">&#34;Voltage&#34;</span>
+  setpointMax    = <span style="color:#f60">12.0</span>
+  currentLimit   = <span style="color:#f60">50</span>
+  <span style="color:#09f;font-style:italic"># remaining settings at default values</span>
 
-<span style="color:#09f;font-style:italic"># second Talon configuration</span>
+<span style="color:#09f;font-style:italic"># Third Coast Swerve Azimuth Talon</span>
 [[TALON]]
-name = <span style="color:#c30">&#34;azimuth&#34;</span>
-mode = <span style="color:#c30">&#34;Position&#34;</span>
-<span style="color:#09f;font-style:italic"># etc...</span></code></pre></div>
+  name = <span style="color:#c30">&#34;azimuth&#34;</span>
+  mode = <span style="color:#c30">&#34;Position&#34;</span>
+  setpointMax     = <span style="color:#f60">4095.0</span>
+  brakeInNeutral = <span style="color:#069;font-weight:bold">false</span>
+  forwardOutputVoltagePeak =  <span style="color:#f60">6.0</span>
+  reverseOutputVoltagePeak = <span style="color:#f60">-6.0</span>
+  <span style="color:#09f;font-style:italic"># NOTE: you must provide azimuth Talon closed-loop tuning parameters below</span>
+  pGain =   <span style="color:#f60">0.0</span>
+  iGain =   <span style="color:#f60">0.0</span>
+  dGain =   <span style="color:#f60">0.0</span>
+  fGain =   <span style="color:#f60">0.0</span>
+  iZone =   <span style="color:#f60">0</span>
+  [TALON.encoder]
+    device  = <span style="color:#c30">&#34;CtreMagEncoder_Relative&#34;</span>
+    reversed = <span style="color:#069;font-weight:bold">false</span></code></pre></div>
+<p>This Talon configuration file can then be used in the Third Coast Java library to provision Talons in the robot, for example:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">File file <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> File<span style="color:#555">(</span><span style="color:#c30">&#34;/path/to/config.toml&#34;</span><span style="color:#555">);</span>
+TalonProvisioner provisioner <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> TalonProvisioner<span style="color:#555">(</span>file<span style="color:#555">);</span>
+TalonConfiguration azimuthConfig <span style="color:#555">=</span> provisioner<span style="color:#555">.</span><span style="color:#309">configurationFor</span><span style="color:#555">(</span><span style="color:#c30">&#34;azimuth&#34;</span><span style="color:#555">);</span>
+CANTalon talon <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> CANTalon<span style="color:#555">(</span>1<span style="color:#555">);</span>
+azimuthConfig<span style="color:#555">.</span><span style="color:#309">configure</span><span style="color:#555">(</span>talon<span style="color:#555">);</span></code></pre></div>
 <h2 id="talon-configuration-parameter-reference">Talon Configuration Parameter Reference</h2>
 
-<p>Talon parameters may apply to all or specific modes as listed below.</p>
+<p>Talon parameters may apply to all or specific Talon operating modes as listed below. Unless otherwise specified, parameters are optional and have a default value show in the example for each.</p>
 
 <h3 id="talon-parameters-applicable-to-all-operating-modes">Talon Parameters Applicable to all Operating Modes</h3>
 
-<h4 id="name">name</h4>
+<h4 id="name"><code>name</code></h4>
 
-<p>Each talon configuration name needs to be globally unique.</p>
+<p>Each talon configuration name needs to be globally unique. This is a required parameter.</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">name = <span style="color:#c30">&#34;drive_teleop&#34;</span></code></pre></div>
-<h4 id="mode">mode</h4>
+<h4 id="mode"><code>mode</code></h4>
 
-<p>Select a control mode from the following list. Note this is case-sensitive. If not specified, defaults to Voltage.</p>
+<p>Select a control mode from the following list. Note this is case-sensitive. If not specified, defaults to <code>Voltage</code>.</p>
 
 <ul>
 <li>Current</li>
@@ -159,16 +179,55 @@ mode = <span style="color:#c30">&#34;Position&#34;</span>
 <li>Speed</li>
 <li>Voltage</li>
 </ul>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">mode = <span style="color:#c30">&#34;Voltage&#34;</span></code></pre></div>
-<h4 id="setpoint-max">setpoint_max</h4>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">mode = <span style="color:#c30">&#34;Voltage&#34;</span> <span style="color:#09f;font-style:italic"># default</span></code></pre></div>
+<h4 id="setpointmax"><code>setpointMax</code></h4>
 
-<p>Max input or throttle will scale to this absolute value. Units are the same at the setpoint, i.e. volts, ticks, etc&hellip; Applies to all modes.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">setpoint_max = <span style="color:#f60">12.0</span> <span style="color:#09f;font-style:italic"># max volts</span></code></pre></div>
-<h4 id="current-limit">current_limit</h4>
+<p>Max input or throttle will scale to this absolute value. Units are the same at the setpoint, i.e. volts, revolutions, encoder ticks, etc&hellip; Applies to all modes. This is a required parameter for Third Coast drive motors only.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">setpointMax = <span style="color:#f60">0.0</span> <span style="color:#09f;font-style:italic"># default</span></code></pre></div>
+<h4 id="currentlimit"><code>currentLimit</code></h4>
 
 <p>Limit current to specified maximum. A value of zero will disable current limit. Applies to all modes.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">current_limit = <span style="color:#f60">50</span></code></pre></div>
-<h4 id="feedback-device">feedback_device</h4>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">currentLimit = <span style="color:#f60">0</span> <span style="color:#09f;font-style:italic"># default</span></code></pre></div>
+<h4 id="brakeinneutral"><code>brakeInNeutral</code></h4>
+
+<p>Set to true to brake during neutral, false to coast during neutral. If not specified, defaults to true. Applies to all modes.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">brakeInNeutral = <span style="color:#069;font-weight:bold">true</span> <span style="color:#09f;font-style:italic"># default</span></code></pre></div>
+<h4 id="outputreversed"><code>outputReversed</code></h4>
+
+<p>Set to true to reverse motor output. If not specified, defaults to false. Applies to all modes.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">output_reversed = <span style="color:#069;font-weight:bold">false</span> <span style="color:#09f;font-style:italic"># default</span></code></pre></div>
+<h4 id="voltageramprate"><code>voltageRampRate</code></h4>
+
+<p>Set a maximum output voltage ramp rate, in volts/sec. A value at or near zero will disable ramping (see Talon software manual section 6.4). Applies to all modes.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">voltageRampRate = <span style="color:#f60">0.0</span> <span style="color:#09f;font-style:italic"># default</span></code></pre></div>
+<h4 id="velocitymeasurementperiod"><code>velocityMeasurementPeriod</code></h4>
+
+<p>The Velocity Measurement Sample Period is selected from the following list of pre-supported sampling periods specifed in the <code>CANTalon.VelocityMeasurementPeriod</code> enum (see Talon software manual section 7.8). If not specified, defaults to 100 ms.</p>
+
+<ul>
+<li>Period_1Ms</li>
+<li>Period_2Ms</li>
+<li>Period_5Ms</li>
+<li>Period_10Ms</li>
+<li>Period_20Ms</li>
+<li>Period_25Ms</li>
+<li>Period_50Ms</li>
+<li>Period_100Ms</li>
+</ul>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">velocity_measurement_period = <span style="color:#c30">&#34;Period_100Ms&#34;</span> <span style="color:#09f;font-style:italic"># default</span></code></pre></div>
+<h4 id="velocitymeasurementwindow"><code>velocityMeasurementWindow</code></h4>
+
+<p>The velocity measurement rolling average window is selected from a fixed list of pre-supported sample counts: [1, 2, 4, 8, 16, 32, 64]. If an alternative value is specified, it is rounded down by the CTRE API to the nearest supported value. If not specified, defaults to 64.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">velocityMeasurementWindow = <span style="color:#f60">64</span> <span style="color:#09f;font-style:italic"># default</span></code></pre></div>
+<h4 id="encoder"><code>encoder</code></h4>
+
+<p>Encoders are defined in a sub-table of the Talon configuration. For example,</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">[TALON.encoder]
+    device = <span style="color:#c30">&#34;QuadEncoder&#34;</span>
+    reversed = <span style="color:#069;font-weight:bold">false</span>
+    unitScalingEnabled = <span style="color:#069;font-weight:bold">true</span>
+    ticksPerRevolution = <span style="color:#f60">1024</span></code></pre></div>
+<h5 id="device"><code>device</code></h5>
 
 <p>Select feedback device from the following list. Note this is case-sensitive. If not specified, defaults to QuadEncoder. Applies to all modes.</p>
 
@@ -182,77 +241,56 @@ mode = <span style="color:#c30">&#34;Position&#34;</span>
 <li>PulseWidth</li>
 <li>QuadEncoder</li>
 </ul>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">feedback_device = <span style="color:#c30">&#34;QuadEncoder&#34;</span></code></pre></div>
-<h4 id="ticks-per-revolution">ticks_per_revolution</h4>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">device = <span style="color:#c30">&#34;QuadEncoder&#34;</span> <span style="color:#09f;font-style:italic"># default</span></code></pre></div>
+<h5 id="unitscalingenabled-and-ticksperrevolution"><code>unitScalingEnabled</code> and <code>ticksPerRevolution</code></h5>
 
-<p>Configure how many codes per revolution are generated by this encoder. See Talon software manual section 7.2. If not specified, Talon will use native units. Applies to all modes.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">ticks_per_revolution = <span style="color:#f60">4096</span></code></pre></div>
-<h4 id="brake-in-neutral">brake_in_neutral</h4>
+<p>Configure if unit scaling is enabled and if so, how many codes per revolution are generated by this encoder. See Talon software manual section 7.2. If not specified, Talon will use native units. Applies to all modes.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">unitScalingEnabled = <span style="color:#069;font-weight:bold">false</span> <span style="color:#09f;font-style:italic"># default</span>
+ticksPerRevolution = <span style="color:#f60">0</span> <span style="color:#09f;font-style:italic"># n/a if not enabled</span></code></pre></div>
+<h4 id="forwardlimitswitch-reverselimitswitch"><code>forwardLimitSwitch</code>, <code>reverseLimitSwitch</code></h4>
 
-<p>Set to true to brake during neutral, false to coast during neutral. If not specified, defaults to true. Applies to all modes.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">brake_in_neutral = <span style="color:#069;font-weight:bold">true</span></code></pre></div>
-<h4 id="forward-limit-switch-reverse-limit-switch">forward_limit_switch, reverse_limit_switch</h4>
+<p>Limit switches are normally-open, normally-closed, or disabled and are defined in a sub-table of the Talon configuration. If not specified, defaults to disabled. Applies to all modes. For example,</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">[TALON.forwardLimitSwitch]
+  enabled = <span style="color:#069;font-weight:bold">false</span> <span style="color:#09f;font-style:italic"># default</span>
+  normallyOpen = <span style="color:#069;font-weight:bold">true</span> <span style="color:#09f;font-style:italic"># default</span></code></pre></div>
+<h4 id="forwardsoftlimit-reversesoftlimit"><code>forwardSoftLimit</code>, <code>reverseSoftLimit</code></h4>
 
-<p>Limit switches are normally-open, normally-closed, or disabled. If not specified, defaults to disabled. Applies to all modes.</p>
-
-<ul>
-<li>NormallyOpen</li>
-<li>NormallyClosed</li>
-<li>Disabled</li>
-</ul>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">forward_limit_switch = <span style="color:#c30">&#34;NormallyOpen&#34;</span>
-reverse_limit_switch = <span style="color:#c30">&#34;Disabled&#34;</span></code></pre></div>
-<h4 id="forward-soft-limit-reverse-soft-limit">forward_soft_limit, reverse_soft_limit</h4>
-
-<p>Soft limits are set if the following options are present. Units are the same at the setpoint, i.e. volts, ticks. Applies to all modes.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">forward_soft_limit = <span style="color:#f60">10000.0</span>
-reverse_soft_limit = <span style="color:#f60">12000.0</span></code></pre></div>
-<h4 id="encoder-reversed">encoder_reversed</h4>
-
-<p>Set to true to reverse the encoder sensing direction to be in-phase with motor output. If not specified, defaults to false. Applies to all modes.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">encoder_reversed = <span style="color:#069;font-weight:bold">false</span></code></pre></div>
-<h4 id="output-reversed">output_reversed</h4>
-
-<p>Set to true to reverse motor output. If not specified, defaults to false. Applies to all modes.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">output_reversed = <span style="color:#069;font-weight:bold">false</span></code></pre></div>
-<h4 id="voltage-ramp-rate">voltage_ramp_rate</h4>
-
-<p>Set a maximum output voltage ramp rate, in volts/sec. A value at or near zero will disable ramping (see Talon software manual section 6.4). Applies to all modes.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">voltage_ramp_rate = <span style="color:#f60">0.0</span></code></pre></div>
-<h4 id="velocity-measurement-period">velocity_measurement_period</h4>
-
-<p>The Velocity Measurement Sample Period is selected from a fixed list of pre-supported sampling periods [1, 5, 10, 20, 25, 50, 100] milliseconds (see Talon software manual section 7.8). If not specified, defaults to 100 ms.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">velocity_measurement_period = <span style="color:#f60">100</span></code></pre></div>
-<h4 id="velocity-measurement-window">velocity_measurement_window</h4>
-
-<p>The Velocity Measurement Rolling Average Window is selected from a fixed list of pre-supported sample counts: [1, 2, 4, 8, 16, 32, 64]. If an alternative value is specified, it is rounded down to the nearest supported value. If not specified, defaults to 64.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">velocity_measurement_window = <span style="color:#f60">64</span></code></pre></div>
+<p>Soft limits are enabled and set in a sub-table of the Talon configuration. Units are the same at the setpoint, i.e. volts, ticks. Applies to all modes. For example,</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">[TALON.reverseSoftLimit]
+  enabled = <span style="color:#069;font-weight:bold">false</span> <span style="color:#09f;font-style:italic"># default</span>
+  position = <span style="color:#f60">0.0</span> <span style="color:#09f;font-style:italic"># n/A if not enabled</span></code></pre></div>
 <h3 id="talon-parameters-applicable-to-closed-loop-operating-modes">Talon Parameters Applicable to Closed-loop Operating Modes</h3>
 
 <h4 id="pidf-i-zone">PIDF, I-zone</h4>
 
-<h4 id="allowable-closed-loop-error">allowable_closed_loop_error</h4>
+<p>Closed-loop motor tuning parameters.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">pGain =   <span style="color:#f60">0.0</span> <span style="color:#09f;font-style:italic"># defaults</span>
+iGain =   <span style="color:#f60">0.0</span>
+dGain =   <span style="color:#f60">0.0</span>
+fGain =   <span style="color:#f60">0.0</span>
+iZone =   <span style="color:#f60">0</span></code></pre></div>
+<h4 id="allowableclosedlooperror"><code>allowableClosedLoopError</code></h4>
 
 <p>Within this error range, PID gains are zero, F still in effect. Units are mA for current, talon native units for position and velocity. If not specified, defaults to zero. Applies to closed-loop modes.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">allowable_closed_loop_error = <span style="color:#f60">0</span></code></pre></div>
-<h4 id="forward-output-voltage-nominal-reverse-output-voltage-nominal">forward_output_voltage_nominal, reverse_output_voltage_nominal</h4>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">allowableClosedLoopError = <span style="color:#f60">0</span> <span style="color:#09f;font-style:italic"># default</span></code></pre></div>
+<h4 id="forwardoutputvoltagenominal-reverseoutputvoltagenominal"><code>forwardOutputVoltageNominal</code>, <code>reverseOutputVoltageNominal</code></h4>
 
 <p>Output magnitude between zero and this value is set to this value. If not specified, defaults to zero. Applies to closed-loop modes.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">forward_output_voltage_nominal = <span style="color:#f60">0.0</span>
-reverse_output_voltage_nominal = <span style="color:#f60">0.0</span></code></pre></div>
-<h4 id="forward-output-voltage-peak-reverse-output-voltage-peak">forward_output_voltage_peak, reverse_output_voltage_peak</h4>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">forwardOutputVoltageNominal = <span style="color:#f60">0.0</span> <span style="color:#09f;font-style:italic"># defaults</span>
+reverseOutputVoltageNominal = <span style="color:#f60">0.0</span></code></pre></div>
+<h4 id="forwardoutputvoltagepeak-reverseoutputvoltagepeak"><code>forwardOutputVoltagePeak</code>, <code>reverseOutputVoltagePeak</code></h4>
 
-<p>Output voltage will be limited to this value. If not specified, defaults to no limit, Applies to closed-loop modes.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">forward_output_voltage_peak = <span style="color:#f60">5.0</span>
-reverse_output_voltage_peak = <span style="color:#f60">5.0</span></code></pre></div>
-<h4 id="nominal-closed-loop-voltage">nominal_closed_loop_voltage</h4>
+<p>Output voltage will be limited to this value. If not specified, defaults to no limit. Applies to closed-loop modes.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">forwardOutputVoltagePeak = <span style="color:#f60">12.0</span> <span style="color:#09f;font-style:italic"># defaults</span>
+reverseOutputVoltagePeak = <span style="color:#f60">-12.0</span></code></pre></div>
+<h4 id="nominalclosedloopvoltage"><code>nominalClosedLoopVoltage</code></h4>
 
 <p>When set, the output of the Closed Loop mode is compensated for the measured battery voltage. Set to zero to disable. If not specified, defaults to disabled. Applies to closed-loop modes.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">nominal_closed_loop_voltage = <span style="color:#f60">12.0</span></code></pre></div>
-<h4 id="output-voltage-max">output_voltage_max</h4>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">nominalClosedLoopVoltage = <span style="color:#f60">0.0</span> <span style="color:#09f;font-style:italic"># default</span></code></pre></div>
+<h4 id="outputvoltagemax"><code>outputVoltageMax</code></h4>
 
-<p>Set the maximum voltage that the Talon will ever output. This can be used to limit the maximum output voltage (positive or negative) in closed-loop modes so that motors which cannot withstand full bus voltage can be used safely. If not specified, defaults to no limit.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">output_voltage_max = <span style="color:#f60">12.0</span></code></pre></div>
+<p>Set the maximum voltage that the Talon will ever output. This can be used to limit the maximum output voltage (positive or negative) in closed-loop modes so that motors which cannot withstand full bus voltage can be used safely. If not specified, defaults to no limit.  Applies to closed-loop modes.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">outputVoltageMax = <span style="color:#f60">12.0</span> <span style="color:#09f;font-style:italic"># default</span></code></pre></div>
                 
 
 <h3>See Also</h3>
