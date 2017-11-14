@@ -52,6 +52,17 @@ Documentation Third Coast Javadocs.</description>
     </item>
     
     <item>
+      <title>Roborio Digital Output</title>
+      <link>https://strykeforce.github.io/posts/roborio-digital-output/</link>
+      <pubDate>Tue, 14 Nov 2017 13:32:11 -0500</pubDate>
+      
+      <guid>https://strykeforce.github.io/posts/roborio-digital-output/</guid>
+      <description>Results from testing the digital outputs on the roboRIO.
+Pulse Output The pulse length is set with a double and is passed to the FPGA where it is used to determine the pulse length. Calling DigitalOutput#pulse(double pulseLength) gives the following:
+ pulseLength = 0.25: pulse width = 144 µsec pulseLength = 0.50: pulse width = 32 µsec pulseLength = 1.00: pulse width = 64 µsec pulseLength = 2.00: pulse width = 128 µsec pulseLength = 4.</description>
+    </item>
+    
+    <item>
       <title>SSH Setup for 2767</title>
       <link>https://strykeforce.github.io/posts/robot-ssh/</link>
       <pubDate>Sun, 29 Oct 2017 11:18:47 -0400</pubDate>
