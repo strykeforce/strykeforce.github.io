@@ -6,20 +6,10 @@
     <description>Recent content in Java on Stryke Force Engineering Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Oct 2017 13:01:49 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Oct 2017 13:52:49 -0400</lastBuildDate>
     
 	<atom:link href="https://strykeforce.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Using Third Coast Telemetry with Swerve Drive</title>
-      <link>https://strykeforce.github.io/posts/thirdcoast-telemetry-swerve/</link>
-      <pubDate>Fri, 20 Oct 2017 13:01:49 +0000</pubDate>
-      
-      <guid>https://strykeforce.github.io/posts/thirdcoast-telemetry-swerve/</guid>
-      <description>Using the Third Coast Telemetry Service and Swerve Drive together relies on configuration using Dagger dependency injection. This allows for easy testing and reusable, interchangeable modules. The following code, taken from the example robot in this repository, configures the azimuth and drive Talons for monitoring.
-public void robotInit() { try { RobotComponent component; // load config file or create from default resource file in jar  try (FileConfig toml = FileConfig.</description>
-    </item>
     
     <item>
       <title>Third Coast Swerve Drive</title>
@@ -29,6 +19,20 @@ public void robotInit() { try { RobotComponent component; // load config file or
       <guid>https://strykeforce.github.io/posts/thirdcoast-swerve/</guid>
       <description>This software is designed to run on swerve drive hardware described in this paper. The swerve drive is controlled using the SwerveDrive class. Derivation of inverse kinematic equations are from Ether&amp;rsquo;s Swerve Kinematics and Programming.
 The swerve-drive inverse kinematics algorithm will always calculate individual wheel angles as -0.5 to 0.5 rotations, measured clockwise with zero being the straight-ahead position. Wheel speed is calculated as 0 to 1 in the direction of the wheel angle.</description>
+    </item>
+    
+    <item>
+      <title>Third Coast Telemetry</title>
+      <link>https://strykeforce.github.io/posts/thirdcoast-telemetry/</link>
+      <pubDate>Tue, 17 Oct 2017 13:53:02 -0400</pubDate>
+      
+      <guid>https://strykeforce.github.io/posts/thirdcoast-telemetry/</guid>
+      <description>This is the current state of the Third Coast Telemetry protocol between our grapher app written in LabView and our robot code written in Java.
+See the thirdcoast-users Google Group for support.
+Javadocs are here.
+Network The grapher and robot communicate over two network channels, one for control and one for data.
+The control channel is a HTTP REST web service that listens on robot TCP port 5800.
+The data channel is for one-way graph data streaming from robot to grapher and listens on grapher workstation UDP port 5555.</description>
     </item>
     
     <item>
@@ -42,6 +46,16 @@ Documentation Third Coast Javadocs.</description>
     </item>
     
     <item>
+      <title>Using Third Coast Telemetry with Swerve Drive</title>
+      <link>https://strykeforce.github.io/posts/thirdcoast-telemetry-swerve/</link>
+      <pubDate>Fri, 20 Oct 2017 13:01:49 +0000</pubDate>
+      
+      <guid>https://strykeforce.github.io/posts/thirdcoast-telemetry-swerve/</guid>
+      <description>Using the Third Coast Telemetry Service and Swerve Drive together relies on configuration using Dagger dependency injection. This allows for easy testing and reusable, interchangeable modules. The following code, taken from the example robot in this repository, configures the azimuth and drive Talons for monitoring.
+public void robotInit() { try { RobotComponent component; // load config file or create from default resource file in jar  try (FileConfig toml = FileConfig.</description>
+    </item>
+    
+    <item>
       <title>Third Coast Telemetry Simulator</title>
       <link>https://strykeforce.github.io/posts/thirdcoast-simulator/</link>
       <pubDate>Wed, 18 Oct 2017 17:36:17 -0400</pubDate>
@@ -50,20 +64,6 @@ Documentation Third Coast Javadocs.</description>
       <description>We use simulated telemetry data for client development, jar file available here here.
 Example of use:
 $ java -jar sim-v17.0.14.jar Creating simulated inventory... 0: Fake Talon 54 at 5 Hz 1: Fake Talon 57 at 3 Hz 2: Fake Talon 39 at 5 Hz 3: Fake Talon 45 at 1 Hz 4: Fake Talon 13 at 4 Hz 5: Fake Talon 52 at 3 Hz 6: Fake Talon 16 at 2 Hz 7: Fake Talon 46 at 2 Hz 8: Fake Servo 0 at 1 Hz 9: Fake Digital Input 0 at 1 Hz Measure signals are.</description>
-    </item>
-    
-    <item>
-      <title>Third Coast Telemetry</title>
-      <link>https://strykeforce.github.io/posts/thirdcoast-telemetry/</link>
-      <pubDate>Tue, 17 Oct 2017 13:53:02 -0400</pubDate>
-      
-      <guid>https://strykeforce.github.io/posts/thirdcoast-telemetry/</guid>
-      <description>Status: DRAFT
-This is the current state of the Third Coast Telemetry protocol between our grapher app written in LabView and our robot code written in Java.
-Javadocs are here.
-Network The grapher and robot communicate over two network channels, one for control and one for data.
-The control channel is a HTTP REST web service that listens on robot TCP port 5800.
-The data channel is for one-way graph data streaming from robot to grapher and listens on grapher workstation UDP port 5555.</description>
     </item>
     
     <item>

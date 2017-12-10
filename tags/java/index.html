@@ -6,7 +6,7 @@
 
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.30.2" />
+<meta name="generator" content="Hugo 0.31.1" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -87,20 +87,6 @@ ga('create', 'UA-108186367-2', 'auto');
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
-							<h4 class="post-link"><a href="https://strykeforce.github.io/posts/thirdcoast-telemetry-swerve/">Using Third Coast Telemetry with Swerve Drive</a></h4>
-							<h4 class="post-date">Oct 20, 2017</h4>
-						</div>
-						<div class="post-summary"><p>Using the Third Coast Telemetry Service and Swerve Drive together relies on configuration using Dagger dependency injection. This allows for easy testing and reusable, interchangeable modules. The following code, taken from the example robot in this repository, configures the azimuth and drive Talons for monitoring.
-public void robotInit() { try { RobotComponent component; // load config file or create from default resource file in jar  try (FileConfig toml = FileConfig.</p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://strykeforce.github.io/posts/thirdcoast-telemetry-swerve/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
 							<h4 class="post-link"><a href="https://strykeforce.github.io/posts/thirdcoast-swerve/">Third Coast Swerve Drive</a></h4>
 							<h4 class="post-date">Oct 17, 2017</h4>
 						</div>
@@ -108,6 +94,24 @@ public void robotInit() { try { RobotComponent component; // load config file or
 The swerve-drive inverse kinematics algorithm will always calculate individual wheel angles as -0.5 to 0.5 rotations, measured clockwise with zero being the straight-ahead position. Wheel speed is calculated as 0 to 1 in the direction of the wheel angle.</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://strykeforce.github.io/posts/thirdcoast-swerve/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="https://strykeforce.github.io/posts/thirdcoast-telemetry/">Third Coast Telemetry</a></h4>
+							<h4 class="post-date">Oct 17, 2017</h4>
+						</div>
+						<div class="post-summary"><p>This is the current state of the Third Coast Telemetry protocol between our grapher app written in LabView and our robot code written in Java.
+See the thirdcoast-users Google Group for support.
+Javadocs are here.
+Network The grapher and robot communicate over two network channels, one for control and one for data.
+The control channel is a HTTP REST web service that listens on robot TCP port 5800.
+The data channel is for one-way graph data streaming from robot to grapher and listens on grapher workstation UDP port 5555.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="https://strykeforce.github.io/posts/thirdcoast-telemetry/">Read More</a>
 						</div>
 					</div>
 				</li>
@@ -129,6 +133,20 @@ Documentation Third Coast Javadocs.</p></div>
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
+							<h4 class="post-link"><a href="https://strykeforce.github.io/posts/thirdcoast-telemetry-swerve/">Using Third Coast Telemetry with Swerve Drive</a></h4>
+							<h4 class="post-date">Oct 20, 2017</h4>
+						</div>
+						<div class="post-summary"><p>Using the Third Coast Telemetry Service and Swerve Drive together relies on configuration using Dagger dependency injection. This allows for easy testing and reusable, interchangeable modules. The following code, taken from the example robot in this repository, configures the azimuth and drive Talons for monitoring.
+public void robotInit() { try { RobotComponent component; // load config file or create from default resource file in jar  try (FileConfig toml = FileConfig.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="https://strykeforce.github.io/posts/thirdcoast-telemetry-swerve/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
 							<h4 class="post-link"><a href="https://strykeforce.github.io/posts/thirdcoast-simulator/">Third Coast Telemetry Simulator</a></h4>
 							<h4 class="post-date">Oct 18, 2017</h4>
 						</div>
@@ -137,24 +155,6 @@ Example of use:
 $ java -jar sim-v17.0.14.jar Creating simulated inventory... 0: Fake Talon 54 at 5 Hz 1: Fake Talon 57 at 3 Hz 2: Fake Talon 39 at 5 Hz 3: Fake Talon 45 at 1 Hz 4: Fake Talon 13 at 4 Hz 5: Fake Talon 52 at 3 Hz 6: Fake Talon 16 at 2 Hz 7: Fake Talon 46 at 2 Hz 8: Fake Servo 0 at 1 Hz 9: Fake Digital Input 0 at 1 Hz Measure signals are.</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://strykeforce.github.io/posts/thirdcoast-simulator/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://strykeforce.github.io/posts/thirdcoast-telemetry/">Third Coast Telemetry</a></h4>
-							<h4 class="post-date">Oct 17, 2017</h4>
-						</div>
-						<div class="post-summary"><p>Status: DRAFT
-This is the current state of the Third Coast Telemetry protocol between our grapher app written in LabView and our robot code written in Java.
-Javadocs are here.
-Network The grapher and robot communicate over two network channels, one for control and one for data.
-The control channel is a HTTP REST web service that listens on robot TCP port 5800.
-The data channel is for one-way graph data streaming from robot to grapher and listens on grapher workstation UDP port 5555.</p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://strykeforce.github.io/posts/thirdcoast-telemetry/">Read More</a>
 						</div>
 					</div>
 				</li>

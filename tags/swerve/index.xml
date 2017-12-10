@@ -6,20 +6,10 @@
     <description>Recent content in Swerve on Stryke Force Engineering Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Oct 2017 13:01:49 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Oct 2017 13:52:49 -0400</lastBuildDate>
     
 	<atom:link href="https://strykeforce.github.io/tags/swerve/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Using Third Coast Telemetry with Swerve Drive</title>
-      <link>https://strykeforce.github.io/posts/thirdcoast-telemetry-swerve/</link>
-      <pubDate>Fri, 20 Oct 2017 13:01:49 +0000</pubDate>
-      
-      <guid>https://strykeforce.github.io/posts/thirdcoast-telemetry-swerve/</guid>
-      <description>Using the Third Coast Telemetry Service and Swerve Drive together relies on configuration using Dagger dependency injection. This allows for easy testing and reusable, interchangeable modules. The following code, taken from the example robot in this repository, configures the azimuth and drive Talons for monitoring.
-public void robotInit() { try { RobotComponent component; // load config file or create from default resource file in jar  try (FileConfig toml = FileConfig.</description>
-    </item>
     
     <item>
       <title>Third Coast Swerve Drive</title>
@@ -39,6 +29,16 @@ The swerve-drive inverse kinematics algorithm will always calculate individual w
       <guid>https://strykeforce.github.io/posts/thirdcoast/</guid>
       <description>The Stryke Force 2767 Third Coast swerve drive, talon configuration and telemetry API source code for FRC robots is available from its repository at https://github.com/strykeforce/thirdcoast.
 Documentation Third Coast Javadocs.</description>
+    </item>
+    
+    <item>
+      <title>Using Third Coast Telemetry with Swerve Drive</title>
+      <link>https://strykeforce.github.io/posts/thirdcoast-telemetry-swerve/</link>
+      <pubDate>Fri, 20 Oct 2017 13:01:49 +0000</pubDate>
+      
+      <guid>https://strykeforce.github.io/posts/thirdcoast-telemetry-swerve/</guid>
+      <description>Using the Third Coast Telemetry Service and Swerve Drive together relies on configuration using Dagger dependency injection. This allows for easy testing and reusable, interchangeable modules. The following code, taken from the example robot in this repository, configures the azimuth and drive Talons for monitoring.
+public void robotInit() { try { RobotComponent component; // load config file or create from default resource file in jar  try (FileConfig toml = FileConfig.</description>
     </item>
     
   </channel>
