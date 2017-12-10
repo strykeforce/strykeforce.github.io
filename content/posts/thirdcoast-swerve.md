@@ -10,7 +10,7 @@ tags:
   - "swerve"
   - "frc"
 draft: false
-weight: 4
+weight: 2
 ---
 This software is designed to run on swerve drive hardware described in this [paper](https://www.chiefdelphi.com/media/papers/3375). The swerve drive is controlled using the [`SwerveDrive`][swerve] class. Derivation of inverse kinematic equations are from Ether's [Swerve Kinematics and Programming][ether].
 

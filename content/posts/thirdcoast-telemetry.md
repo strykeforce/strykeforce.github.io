@@ -10,12 +10,12 @@ tags:
   - "telemetry"
   - "frc"
 draft: false
-weight: 0
+weight: 6
 ---
 
-Status: **DRAFT**
-
 This is the current state of the Third Coast Telemetry protocol between our grapher app written in LabView and our robot code written in Java.
+
+See the [thirdcoast-users](https://groups.google.com/forum/#!forum/thirdcoast-users) Google Group for support.
 
 Javadocs are [here](https://strykeforce.github.io/thirdcoast/javadoc/).
 

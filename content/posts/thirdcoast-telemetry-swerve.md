@@ -11,7 +11,7 @@ tags:
   - swerve
   - telemetry
 draft: false
-weight: 2
+weight: 0
 ---
 
 Using the Third Coast Telemetry Service and Swerve Drive together relies on configuration using [Dagger](https://google.github.io/dagger/) dependency injection. This allows for easy testing and reusable, interchangeable modules. The following code, taken from the example robot in this repository, configures the azimuth and drive Talons for monitoring.
