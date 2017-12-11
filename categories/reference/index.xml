@@ -17,7 +17,7 @@
       <pubDate>Mon, 11 Dec 2017 10:40:48 -0500</pubDate>
       
       <guid>https://strykeforce.github.io/posts/talon-training/</guid>
-      <description>Stryke Force hosted West Michigan FRC teams for a Talon SRX motor training on December 9, 2017.
+      <description>Stryke Force hosted students and mentors from West Michigan FRC teams for a Talon SRX motor training on December 9, 2017.
 Course Material  Course Presentation with step-by-step closed-loop tuning guide (pdf, pptx) Course Video (coming soon)  Topics  How does a motor work? (turning current into rotary motion) Motor performance (speed/torque curves and what they mean) Talon SRX overview Talon SRX control modes Encoders Configuring an entire axis (Talon SRX + sensor + motor)  Open loop Closed loop -PID Tuning a Closed loop Velocity Position Motion Magic   Questions amd Feedback If you have any questions about this class please ask on Chief Delphi and one of us will be sure to respond.</description>
     </item>
     
