@@ -11,7 +11,7 @@ tags:
 draft: false
 weight: 1
 ---
-Stryke Force conducted Talon SRX motor training for West Michigan FRC team on December 9, 2017.
+Stryke Force hosted West Michigan FRC teams for a Talon SRX motor training on December 9, 2017.
 
 ## Course Material
 
