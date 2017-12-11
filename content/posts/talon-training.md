@@ -34,7 +34,7 @@ Stryke Force hosted students and mentors from West Michigan FRC teams for a Talo
     - Position
     - Motion Magic
 
-## Questions amd Feedback
+## Questions and Feedback
 
 If you have any questions about this class please ask on [Chief Delphi][cd] and one of us will be sure to respond.
 
