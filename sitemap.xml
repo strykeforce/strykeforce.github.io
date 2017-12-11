@@ -3,23 +3,23 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://strykeforce.github.io/posts/robot-network/</loc>
-    <lastmod>2017-10-29T12:16:20-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://strykeforce.github.io/posts/thirdcoast-swerve/</loc>
-    <lastmod>2017-12-10T14:05:13-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://strykeforce.github.io/posts/thirdcoast-telemetry/</loc>
-    <lastmod>2017-12-10T14:05:13-05:00</lastmod>
+    <loc>https://strykeforce.github.io/posts/talon-training/</loc>
+    <lastmod>2017-12-11T11:09:14-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/posts/thirdcoast/</loc>
-    <lastmod>2017-10-31T09:00:54-04:00</lastmod>
+    <lastmod>2017-12-11T11:09:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://strykeforce.github.io/posts/thirdcoast-telemetry/</loc>
+    <lastmod>2017-12-11T11:09:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://strykeforce.github.io/posts/thirdcoast-swerve/</loc>
+    <lastmod>2017-12-11T11:09:14-05:00</lastmod>
   </url>
   
   <url>
@@ -30,6 +30,11 @@
   <url>
     <loc>https://strykeforce.github.io/posts/robot-ssh/</loc>
     <lastmod>2017-10-29T11:58:34-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://strykeforce.github.io/posts/robot-network/</loc>
+    <lastmod>2017-12-11T11:09:14-05:00</lastmod>
   </url>
   
   <url>
@@ -59,31 +64,31 @@
   
   <url>
     <loc>https://strykeforce.github.io/tags/frc/</loc>
-    <lastmod>2017-10-29T12:16:20-04:00</lastmod>
+    <lastmod>2017-12-11T11:09:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/tags/java/</loc>
-    <lastmod>2017-12-10T14:05:13-05:00</lastmod>
+    <lastmod>2017-12-11T11:09:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/tags/network/</loc>
-    <lastmod>2017-10-29T12:16:20-04:00</lastmod>
+    <lastmod>2017-12-11T11:09:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/posts/</loc>
-    <lastmod>2017-10-29T12:16:20-04:00</lastmod>
+    <lastmod>2017-12-11T11:09:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/categories/project/</loc>
-    <lastmod>2017-12-10T14:05:13-05:00</lastmod>
+    <lastmod>2017-12-11T11:09:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -95,7 +100,7 @@
   
   <url>
     <loc>https://strykeforce.github.io/categories/reference/</loc>
-    <lastmod>2017-10-29T12:16:20-04:00</lastmod>
+    <lastmod>2017-12-11T11:09:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -107,43 +112,43 @@
   
   <url>
     <loc>https://strykeforce.github.io/</loc>
-    <lastmod>2017-10-29T12:16:20-04:00</lastmod>
+    <lastmod>2017-12-11T11:09:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/tags/swerve/</loc>
-    <lastmod>2017-12-10T14:05:13-05:00</lastmod>
+    <lastmod>2017-12-11T11:09:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/tags/</loc>
-    <lastmod>2017-10-29T12:16:20-04:00</lastmod>
+    <lastmod>2017-12-11T11:09:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/tags/talon/</loc>
-    <lastmod>2017-10-31T09:00:54-04:00</lastmod>
+    <lastmod>2017-12-11T11:09:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/tags/telemetry/</loc>
-    <lastmod>2017-12-10T14:05:13-05:00</lastmod>
+    <lastmod>2017-12-11T11:09:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/tags/thirdcoast/</loc>
-    <lastmod>2017-12-10T14:05:13-05:00</lastmod>
+    <lastmod>2017-12-11T11:09:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/categories/tutorial/</loc>
-    <lastmod>2017-10-29T11:58:34-04:00</lastmod>
+    <lastmod>2017-12-11T11:09:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   

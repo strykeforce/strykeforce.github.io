@@ -6,10 +6,20 @@
     <description>Recent content in Telemetry on Stryke Force Engineering Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 Oct 2017 13:53:02 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 17 Oct 2017 13:48:58 +0000</lastBuildDate>
     
 	<atom:link href="https://strykeforce.github.io/tags/telemetry/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Third Coast Java Library</title>
+      <link>https://strykeforce.github.io/posts/thirdcoast/</link>
+      <pubDate>Tue, 17 Oct 2017 13:48:58 +0000</pubDate>
+      
+      <guid>https://strykeforce.github.io/posts/thirdcoast/</guid>
+      <description>The Stryke Force 2767 Third Coast swerve drive, talon configuration and telemetry API source code for FRC robots is available from its repository at https://github.com/strykeforce/thirdcoast.
+Documentation Third Coast Javadocs.</description>
+    </item>
     
     <item>
       <title>Third Coast Telemetry</title>
@@ -23,16 +33,6 @@ Javadocs are here.
 Network The grapher and robot communicate over two network channels, one for control and one for data.
 The control channel is a HTTP REST web service that listens on robot TCP port 5800.
 The data channel is for one-way graph data streaming from robot to grapher and listens on grapher workstation UDP port 5555.</description>
-    </item>
-    
-    <item>
-      <title>Third Coast Java Library</title>
-      <link>https://strykeforce.github.io/posts/thirdcoast/</link>
-      <pubDate>Tue, 17 Oct 2017 13:48:58 +0000</pubDate>
-      
-      <guid>https://strykeforce.github.io/posts/thirdcoast/</guid>
-      <description>The Stryke Force 2767 Third Coast swerve drive, talon configuration and telemetry API source code for FRC robots is available from its repository at https://github.com/strykeforce/thirdcoast.
-Documentation Third Coast Javadocs.</description>
     </item>
     
     <item>

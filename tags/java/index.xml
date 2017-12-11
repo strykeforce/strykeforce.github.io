@@ -6,19 +6,19 @@
     <description>Recent content in Java on Stryke Force Engineering Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 Oct 2017 13:52:49 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 17 Oct 2017 13:48:58 +0000</lastBuildDate>
     
 	<atom:link href="https://strykeforce.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Third Coast Swerve Drive</title>
-      <link>https://strykeforce.github.io/posts/thirdcoast-swerve/</link>
-      <pubDate>Tue, 17 Oct 2017 13:52:49 -0400</pubDate>
+      <title>Third Coast Java Library</title>
+      <link>https://strykeforce.github.io/posts/thirdcoast/</link>
+      <pubDate>Tue, 17 Oct 2017 13:48:58 +0000</pubDate>
       
-      <guid>https://strykeforce.github.io/posts/thirdcoast-swerve/</guid>
-      <description>This software is designed to run on swerve drive hardware described in this paper. The swerve drive is controlled using the SwerveDrive class. Derivation of inverse kinematic equations are from Ether&amp;rsquo;s Swerve Kinematics and Programming.
-The swerve-drive inverse kinematics algorithm will always calculate individual wheel angles as -0.5 to 0.5 rotations, measured clockwise with zero being the straight-ahead position. Wheel speed is calculated as 0 to 1 in the direction of the wheel angle.</description>
+      <guid>https://strykeforce.github.io/posts/thirdcoast/</guid>
+      <description>The Stryke Force 2767 Third Coast swerve drive, talon configuration and telemetry API source code for FRC robots is available from its repository at https://github.com/strykeforce/thirdcoast.
+Documentation Third Coast Javadocs.</description>
     </item>
     
     <item>
@@ -36,13 +36,13 @@ The data channel is for one-way graph data streaming from robot to grapher and l
     </item>
     
     <item>
-      <title>Third Coast Java Library</title>
-      <link>https://strykeforce.github.io/posts/thirdcoast/</link>
-      <pubDate>Tue, 17 Oct 2017 13:48:58 +0000</pubDate>
+      <title>Third Coast Swerve Drive</title>
+      <link>https://strykeforce.github.io/posts/thirdcoast-swerve/</link>
+      <pubDate>Tue, 17 Oct 2017 13:52:49 -0400</pubDate>
       
-      <guid>https://strykeforce.github.io/posts/thirdcoast/</guid>
-      <description>The Stryke Force 2767 Third Coast swerve drive, talon configuration and telemetry API source code for FRC robots is available from its repository at https://github.com/strykeforce/thirdcoast.
-Documentation Third Coast Javadocs.</description>
+      <guid>https://strykeforce.github.io/posts/thirdcoast-swerve/</guid>
+      <description>This software is designed to run on swerve drive hardware described in this paper. The swerve drive is controlled using the SwerveDrive class. Derivation of inverse kinematic equations are from Ether&amp;rsquo;s Swerve Kinematics and Programming.
+The swerve-drive inverse kinematics algorithm will always calculate individual wheel angles as -0.5 to 0.5 rotations, measured clockwise with zero being the straight-ahead position. Wheel speed is calculated as 0 to 1 in the direction of the wheel angle.</description>
     </item>
     
     <item>
