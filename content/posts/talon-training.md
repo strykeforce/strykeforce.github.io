@@ -8,6 +8,7 @@ categories:
 tags:
   - "frc"
   - "talon"
+  - "telemetry"
 draft: false
 weight: 1
 ---
