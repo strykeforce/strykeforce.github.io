@@ -17,6 +17,7 @@ Stryke Force hosted students and mentors from West Michigan FRC teams for a Talo
 
 - Course Presentation with step-by-step closed-loop tuning guide ([pdf], [pptx])
 - Course Video (coming soon)
+- Grapher and `tct` utility used for the tuning demonstrations ([download information][thirdcoast-users])
 
 ## Topics
 
