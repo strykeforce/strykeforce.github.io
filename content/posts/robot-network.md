@@ -8,7 +8,7 @@ tags:
   - frc
   - network
 draft: false
-weight: 2
+weight: 0
 ---
 
 While using FRC radios in the default configuration is easy to set up, having to connect to an isolated robot access point is inconvienient during development when Internet access is required. We have installed [OpenWRT][openwrt] on the Open Mesh [OM5P-AN][om5p] used on our robots.

@@ -10,7 +10,7 @@ tags:
   - "telemetry"
   - "frc"
 draft: false
-weight: 6
+weight: 3
 ---
 
 This is the current state of the Third Coast Telemetry protocol between our grapher app written in LabView and our robot code written in Java.
