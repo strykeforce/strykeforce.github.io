@@ -28,11 +28,11 @@ Stryke Force hosted students and mentors from West Michigan FRC teams for a Talo
 - Encoders
 - Configuring an entire axis (Talon SRX + sensor + motor)
   - Open loop
-  - Closed loop -PID
+  - Closed loop - PID
   - Tuning a Closed loop
-    - Velocity
-    - Position
-    - Motion Magic
+      - Velocity
+      - Position
+      - Motion Magic
 
 ## Questions and Feedback
 
