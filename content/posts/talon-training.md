@@ -43,5 +43,5 @@ For questions about the tuning tools demonstrated in this course, visit the [thi
 
 [pdf]: /media/talon-training/Talon%20SRX%20Motor%20Training%20Course%202017.pdf
 [pptx]: /media/talon-training/Talon%20SRX%20Motor%20Training%20Course%202017.pptx
-[cd]: https://www.chiefdelphi.com/forums/portal.php
+[cd]: https://www.chiefdelphi.com/forums/member.php?u=104074
 [thirdcoast-users]: https://groups.google.com/forum/#!forum/thirdcoast-users
