@@ -1,17 +1,14 @@
----
-title: "Third Coast Pygrapher"
-description: "A simple Third Coast Telemetry client written in Python"
-date: 2017-10-18T10:04:47-04:00
-categories:
-  - "project"
-tags:
-  - "python"
-  - "thirdcoast"
-  - "telemetry"
-  - "frc"
-draft: false
-weight: 0
----
++++
+categories = ["project"]
+date = "2017-10-18T10:04:47-04:00"
+description = "A simple Third Coast Telemetry client written in Python"
+draft = false
+tags = ["python", "thirdcoast", "telemetry", "frc"]
+title = "Third Coast Pygrapher"
+weight = 0
+
++++
+
 One of the benefits of using open data formats such as JSON and HTTP/REST is the ease with which we can develop client applications for Third Coast Telemetry. This is a simple demonstration client written in Python.
 
 This is a sample of output when run with `./pygrapher 1 SETPOINT`

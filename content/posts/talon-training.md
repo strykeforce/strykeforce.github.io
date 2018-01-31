@@ -1,17 +1,13 @@
----
-title: "Talon SRX Motor Training Course 2017"
-description: "Presentation and video from the Stryke Force FRC 2767 Talon SRX Motor Training Course on December 9, 2017"
-date: 2017-12-11T10:40:48-05:00
-categories:
-  - "reference"
-  - "tutorial"
-tags:
-  - "frc"
-  - "talon"
-  - "telemetry"
-draft: false
-weight: 1
----
++++
+categories = ["reference", "tutorial"]
+date = "2017-12-11T10:40:48-05:00"
+description = "Presentation and video from the Stryke Force FRC 2767 Talon SRX Motor Training Course on December 9, 2017"
+draft = false
+tags = ["frc", "talon", "telemetry"]
+title = "Talon SRX Motor Training Course 2017"
+weight = 1
++++
+
 Stryke Force hosted students and mentors from West Michigan FRC teams for a Talon SRX motor training on December 9, 2017.
 
 ## Course Material

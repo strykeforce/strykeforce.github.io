@@ -1,17 +1,14 @@
----
-title: "Third Coast Swerve Drive"
-description: "A demonstration of Stryke Force Third Coast swerve drive API usage."
-date: 2017-10-17T13:52:49-04:00
-categories:
-  - "project"
-tags:
-  - "java"
-  - "thirdcoast"
-  - "swerve"
-  - "frc"
-draft: false
-weight: 3
----
++++
+categories = ["project"]
+date = "2017-10-17T13:52:49-04:00"
+description = "A demonstration of Stryke Force Third Coast swerve drive API usage."
+draft = false
+tags = ["java", "thirdcoast", "swerve", "frc"]
+title = "Third Coast Swerve Drive"
+weight = 3
+
++++
+
 This software is designed to run on swerve drive hardware described in this [paper](https://www.chiefdelphi.com/media/papers/3375). The swerve drive is controlled using the [`SwerveDrive`][swerve] class. Derivation of inverse kinematic equations are from Ether's [Swerve Kinematics and Programming][ether].
 
 The swerve-drive inverse kinematics algorithm will always calculate individual wheel angles as -0.5 to 0.5 rotations, measured clockwise with zero being the straight-ahead position. Wheel speed is calculated as 0 to 1 in the direction of the wheel angle. The [`Wheel`][swerve] class will calculate how to implement this angle and drive direction optimally for the azimuth and drive motors. In some cases it makes sense to reverse wheel direction to avoid rotating the wheel azimuth 180 degrees.

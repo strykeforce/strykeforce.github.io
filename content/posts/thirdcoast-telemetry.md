@@ -1,17 +1,13 @@
----
-title: "Third Coast Telemetry"
-description: "Third Coast Telemetry protocol between our grapher app written in LabView and our robot code written in Java."
-date: 2017-10-17T13:53:02-04:00
-categories:
-  - "project"
-tags:
-  - "java"
-  - "thirdcoast"
-  - "telemetry"
-  - "frc"
-draft: false
-weight: 3
----
++++
+categories = ["project"]
+date = "2017-10-17T13:53:02-04:00"
+description = "Third Coast Telemetry protocol between our grapher app written in LabView and our robot code written in Java."
+draft = false
+tags = ["java", "thirdcoast", "telemetry", "frc"]
+title = "Third Coast Telemetry"
+weight = 3
+
++++
 
 This is the current state of the Third Coast Telemetry protocol between our grapher app written in LabView and our robot code written in Java.
 

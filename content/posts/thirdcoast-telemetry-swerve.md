@@ -1,18 +1,13 @@
----
-title: Using Third Coast Telemetry with Swerve Drive
-description: Example code for using Stryke Force 2767 Third Coast Telemetry with a Swerve drive.
-date: 2017-10-20T13:01:49.000Z
-categories:
-  - project
-tags:
-  - java
-  - thirdcoast
-  - frc
-  - swerve
-  - telemetry
-draft: false
-weight: 0
----
++++
+categories = ["project"]
+date = "2017-10-20T13:01:49.000Z"
+description = "Example code for using Stryke Force 2767 Third Coast Telemetry with a Swerve drive."
+draft = false
+tags = ["java", "thirdcoast", "frc", "swerve", "telemetry"]
+title = "Using Third Coast Telemetry with Swerve Drive"
+weight = 0
+
++++
 
 Using the Third Coast Telemetry Service and Swerve Drive together relies on configuration using [Dagger](https://google.github.io/dagger/) dependency injection. This allows for easy testing and reusable, interchangeable modules. The following code, taken from the example robot in this repository, configures the azimuth and drive Talons for monitoring.
 

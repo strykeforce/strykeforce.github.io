@@ -1,16 +1,13 @@
----
-title: "Roborio Digital Output"
-description: "Results from testing the digital outputs on the roboRIO."
-date: 2017-11-14T13:32:11-05:00
-categories:
-  - "project"
-  - "reference"
-tags:
-  - "frc"
-  - "roborio"
-draft: false
-weight: 0
----
++++
+categories = ["project", "reference"]
+date = "2017-11-14T13:32:11-05:00"
+description = "Results from testing the digital outputs on the roboRIO."
+draft = false
+tags = ["frc", "roborio"]
+title = "Roborio Digital Output"
+weight = 0
++++
+
 Results from testing the digital outputs on the roboRIO.
 
 ## Pulse Output

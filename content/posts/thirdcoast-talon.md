@@ -1,19 +1,13 @@
----
-title: Third Coast Talon Provisioner
-description: >-
-  Library for storing any number of Talon configurations in a TOML file and
-  applying them to Talons.
-date: 2017-10-17T17:52:57.000Z
-categories:
-  - project
-tags:
-  - java
-  - thirdcoast
-  - talon
-  - frc
-draft: false
-weight: 0
----
++++
+categories = ["project"]
+date = "2017-10-17T17:52:57.000Z"
+description = "Library for storing any number of Talon configurations in a TOML file and applying them to Talons."
+draft = false
+tags = ["java", "thirdcoast", "talon", "frc"]
+title = "Third Coast Talon Provisioner"
+weight = 0
+
++++
 
 # Talon Configurations
 

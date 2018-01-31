@@ -1,15 +1,13 @@
----
-title: "SSH Setup for 2767"
-description: "Stryke Force 2767 instructions for ssh access to roboRIO"
-date: 2017-10-29T11:18:47-04:00
-categories:
-  - "reference"
-  - "tutorial"
-tags:
-  - "frc"
-draft: false
-weight: 0
----
++++
+categories = ["reference", "tutorial"]
+date = "2017-10-29T11:18:47-04:00"
+description = "Stryke Force 2767 instructions for ssh access to roboRIO"
+draft = false
+tags = ["frc"]
+title = "SSH Setup for 2767"
+weight = 0
++++
+
 These are instructions for the 2767 team on how to configure easy SSH access to the roboRIO from macOS or Linux. (PuTTY instructions coming...)
 
 ## Linux and macOS

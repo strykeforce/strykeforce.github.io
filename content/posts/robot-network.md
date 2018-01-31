@@ -1,15 +1,12 @@
----
-title: Robot Practice Field Network
-description: A reference on setting up robot networking on our home practice field.
-date: 2017-10-20T14:56:12.000Z
-categories:
-  - reference
-tags:
-  - frc
-  - network
-draft: false
-weight: 0
----
++++
+categories = ["reference"]
+date = "2017-10-20T14:56:12.000Z"
+description = "A reference on setting up practice field driver station to robot networking on our home practice field."
+draft = false
+tags = ["frc", "network"]
+title = "Robot Practice Field Network"
+weight = 0
++++
 
 While using FRC radios in the default configuration is easy to set up, having to connect to an isolated robot access point is inconvienient during development when Internet access is required. We have installed [OpenWRT][openwrt] on the Open Mesh [OM5P-AN][om5p] used on our robots.
 

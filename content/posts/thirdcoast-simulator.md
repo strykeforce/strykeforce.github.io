@@ -1,17 +1,14 @@
----
-title: "Third Coast Telemetry Simulator"
-description: "Simulate a robot for Third Coast Telemetry client development."
-date: 2017-10-18T17:36:17-04:00
-categories:
-  - "project"
-tags:
-  - "java"
-  - "thirdcoast"
-  - "telemetry"
-  - "frc"
-draft: false
-weight: 0
----
++++
+categories = ["project"]
+date = "2017-10-18T17:36:17-04:00"
+description = "Simulate a robot for Third Coast Telemetry client development."
+draft = false
+tags = ["java", "thirdcoast", "telemetry", "frc"]
+title = "Third Coast Telemetry Simulator"
+weight = 0
+
++++
+
 We use simulated telemetry data for client development, jar file available here [here](https://github.com/strykeforce/thirdcoast/releases).
 
 Example of use:
