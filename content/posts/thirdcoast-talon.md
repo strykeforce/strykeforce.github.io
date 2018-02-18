@@ -14,7 +14,7 @@ weight = 0
 
 Third Coast provides a library for storing any number of TalonSRX configurations in a [TOML](https://github.com/toml-lang/toml) file and applying them to Talons. If this configuration file is not present on the roboRIO in the location you specify, a default configuration file stored in the robot application JAR is used. See the [demonstration robot][robot] for an example of specifying a config file to use.
 
-Javadocs are [here](https://strykeforce.github.io/thirdcoast/javadoc/).
+Javadocs are [here](https://strykeforce.github.io/thirdcoast/javadoc/) and source code is in [GitHub](https://github.com/strykeforce/thirdcoast).
 
 Multiple TalonSRX configurations, each with up to four closed-loop parameter slots, can be stored in a TOML configuration file. Each configuration is an element of the `TALON` table array. An actual example of our swerve TalonSRX configurations is:
 
