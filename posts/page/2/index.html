@@ -6,7 +6,7 @@
 
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.31.1" />
+<meta name="generator" content="Hugo 0.36.1" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -87,14 +87,29 @@ ga('create', 'UA-108186367-2', 'auto');
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
-							<h4 class="post-link"><a href="https://strykeforce.github.io/posts/thirdcoast-talon/">Third Coast Talon Provisioner</a></h4>
-							<h4 class="post-date">Oct 17, 2017</h4>
+							<h4 class="post-link"><a href="https://strykeforce.github.io/posts/thirdcoast-simulator/">Third Coast Telemetry Simulator</a></h4>
+							<h4 class="post-date">Oct 18, 2017</h4>
 						</div>
-						<div class="post-summary"><p>Talon Configurations Third Coast provides a library for storing any number of Talon configurations in a TOML file and applying them to Talons. If this configuration file is not present on the roboRIO in the location you specify, a default configuration file stored in the robot application JAR is copied there. See the demonstration robot for an example of specifying a config file to use.
-Javadocs are here.
-Multiple Talon configurations can be stored in a TOML configuration file.</p></div>
+						<div class="post-summary"><p>We use simulated telemetry data for client development, jar file available here here.
+Example of use:
+$ java -jar sim-v17.0.14.jar Creating simulated inventory... 0: Fake Talon 54 at 5 Hz 1: Fake Talon 57 at 3 Hz 2: Fake Talon 39 at 5 Hz 3: Fake Talon 45 at 1 Hz 4: Fake Talon 13 at 4 Hz 5: Fake Talon 52 at 3 Hz 6: Fake Talon 16 at 2 Hz 7: Fake Talon 46 at 2 Hz 8: Fake Servo 0 at 1 Hz 9: Fake Digital Input 0 at 1 Hz Measure signals are.</p></div>
 						<div class="post-list-footer text-center">
-							<a href="https://strykeforce.github.io/posts/thirdcoast-talon/">Read More</a>
+							<a href="https://strykeforce.github.io/posts/thirdcoast-simulator/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="https://strykeforce.github.io/posts/thirdcoast-pygrapher/">Third Coast Pygrapher</a></h4>
+							<h4 class="post-date">Oct 18, 2017</h4>
+						</div>
+						<div class="post-summary"><p>One of the benefits of using open data formats such as JSON and HTTP/REST is the ease with which we can develop client applications for Third Coast Telemetry. This is a simple demonstration client written in Python.
+This is a sample of output when run with ./pygrapher 1 SETPOINT
+ Pygrapher screen shot   Source Code #!/usr/bin/env python # usage: pygrapher &lt;id&gt; &lt;measurement&gt; # example: pygrapher 0 SETPOINT import sys import requests import socket import json import matplotlib.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="https://strykeforce.github.io/posts/thirdcoast-pygrapher/">Read More</a>
 						</div>
 					</div>
 				</li>
@@ -137,7 +152,7 @@ Multiple Talon configurations can be stored in a TOML configuration file.</p></d
 			<div class="push"></div>
 		</div>
 		<footer class="footer text-center">
-<p>Copyright &copy; 2017 Stryke Force 2767 -
+<p>Copyright &copy; 2018 Stryke Force 2767 -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

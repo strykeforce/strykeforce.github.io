@@ -6,10 +6,19 @@
     <description>Recent content in Tags on Stryke Force Engineering Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Dec 2017 10:40:48 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 28 Dec 2017 09:48:25 -0600</lastBuildDate>
     
 	<atom:link href="https://strykeforce.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Android</title>
+      <link>https://strykeforce.github.io/tags/android/</link>
+      <pubDate>Thu, 28 Dec 2017 09:48:25 -0600</pubDate>
+      
+      <guid>https://strykeforce.github.io/tags/android/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Frc</title>
@@ -32,7 +41,7 @@
     <item>
       <title>Network</title>
       <link>https://strykeforce.github.io/tags/network/</link>
-      <pubDate>Fri, 20 Oct 2017 14:56:12 +0000</pubDate>
+      <pubDate>Thu, 28 Dec 2017 09:48:25 -0600</pubDate>
       
       <guid>https://strykeforce.github.io/tags/network/</guid>
       <description></description>
@@ -50,7 +59,7 @@
     <item>
       <title>Roborio</title>
       <link>https://strykeforce.github.io/tags/roborio/</link>
-      <pubDate>Tue, 14 Nov 2017 13:32:11 -0500</pubDate>
+      <pubDate>Thu, 28 Dec 2017 09:48:25 -0600</pubDate>
       
       <guid>https://strykeforce.github.io/tags/roborio/</guid>
       <description></description>

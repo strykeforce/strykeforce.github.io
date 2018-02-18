@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Android on Stryke Force Engineering Blog</title>
+    <link>https://strykeforce.github.io/tags/android/</link>
+    <description>Recent content in Android on Stryke Force Engineering Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 28 Dec 2017 09:48:25 -0600</lastBuildDate>
+    
+	<atom:link href="https://strykeforce.github.io/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Android to roboRIO Networking</title>
+      <link>https://strykeforce.github.io/posts/android-robot-network/</link>
+      <pubDate>Thu, 28 Dec 2017 09:48:25 -0600</pubDate>
+      
+      <guid>https://strykeforce.github.io/posts/android-robot-network/</guid>
+      <description>We&amp;rsquo;ve looked at a couple of methods for establishing a network connection over USB between an Android vision processor and our roboRIO. Two methods are using ADB for port-mapping and using Android USB tethering. This post describes our investigation of USB tethering.
+Addresses The Android end of the tethered connection is hard-coded for 192.168.42.129 (see source code).</description>
+    </item>
+    
+  </channel>
+</rss>

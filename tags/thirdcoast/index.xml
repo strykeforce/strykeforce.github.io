@@ -46,6 +46,16 @@ The swerve-drive inverse kinematics algorithm will always calculate individual w
     </item>
     
     <item>
+      <title>Third Coast Talon Provisioner</title>
+      <link>https://strykeforce.github.io/posts/thirdcoast-talon/</link>
+      <pubDate>Sun, 18 Feb 2018 06:52:57 +0000</pubDate>
+      
+      <guid>https://strykeforce.github.io/posts/thirdcoast-talon/</guid>
+      <description>Talon Configurations Note: This library has seen some major changes as a result of the upgrade to CTRE Phoenix Toolkit in 2018.
+Third Coast provides a library for storing any number of TalonSRX configurations in a TOML file and applying them to Talons. If this configuration file is not present on the roboRIO in the location you specify, a default configuration file stored in the robot application JAR is used.</description>
+    </item>
+    
+    <item>
       <title>Using Third Coast Telemetry with Swerve Drive</title>
       <link>https://strykeforce.github.io/posts/thirdcoast-telemetry-swerve/</link>
       <pubDate>Fri, 20 Oct 2017 13:01:49 +0000</pubDate>
@@ -75,17 +85,6 @@ $ java -jar sim-v17.0.14.jar Creating simulated inventory... 0: Fake Talon 54 at
       <description>One of the benefits of using open data formats such as JSON and HTTP/REST is the ease with which we can develop client applications for Third Coast Telemetry. This is a simple demonstration client written in Python.
 This is a sample of output when run with ./pygrapher 1 SETPOINT
  Pygrapher screen shot   Source Code #!/usr/bin/env python # usage: pygrapher &amp;lt;id&amp;gt; &amp;lt;measurement&amp;gt; # example: pygrapher 0 SETPOINT import sys import requests import socket import json import matplotlib.</description>
-    </item>
-    
-    <item>
-      <title>Third Coast Talon Provisioner</title>
-      <link>https://strykeforce.github.io/posts/thirdcoast-talon/</link>
-      <pubDate>Tue, 17 Oct 2017 17:52:57 +0000</pubDate>
-      
-      <guid>https://strykeforce.github.io/posts/thirdcoast-talon/</guid>
-      <description>Talon Configurations Third Coast provides a library for storing any number of Talon configurations in a TOML file and applying them to Talons. If this configuration file is not present on the roboRIO in the location you specify, a default configuration file stored in the robot application JAR is copied there. See the demonstration robot for an example of specifying a config file to use.
-Javadocs are here.
-Multiple Talon configurations can be stored in a TOML configuration file.</description>
     </item>
     
   </channel>

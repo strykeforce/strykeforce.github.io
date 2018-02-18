@@ -6,7 +6,7 @@
 
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.31.1" />
+<meta name="generator" content="Hugo 0.36.1" />
 
 
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -147,6 +147,34 @@ The swerve-drive inverse kinematics algorithm will always calculate individual w
 				<li>
 					<div class="post-list-item">
 						<div class="post-header">
+							<h4 class="post-link"><a href="https://strykeforce.github.io/posts/thirdcoast-talon/">Third Coast Talon Provisioner</a></h4>
+							<h4 class="post-date">Feb 18, 2018</h4>
+						</div>
+						<div class="post-summary"><p>Talon Configurations Note: This library has seen some major changes as a result of the upgrade to CTRE Phoenix Toolkit in 2018.
+Third Coast provides a library for storing any number of TalonSRX configurations in a TOML file and applying them to Talons. If this configuration file is not present on the roboRIO in the location you specify, a default configuration file stored in the robot application JAR is used.</p></div>
+						<div class="post-list-footer text-center">
+							<a href="https://strykeforce.github.io/posts/thirdcoast-talon/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
+							<h4 class="post-link"><a href="https://strykeforce.github.io/posts/android-robot-network/">Android to roboRIO Networking</a></h4>
+							<h4 class="post-date">Dec 28, 2017</h4>
+						</div>
+						<div class="post-summary"><p>We&rsquo;ve looked at a couple of methods for establishing a network connection over USB between an Android vision processor and our roboRIO. Two methods are using ADB for port-mapping and using Android USB tethering. This post describes our investigation of USB tethering.
+Addresses The Android end of the tethered connection is hard-coded for 192.168.42.129 (see source code).</p></div>
+						<div class="post-list-footer text-center">
+							<a href="https://strykeforce.github.io/posts/android-robot-network/">Read More</a>
+						</div>
+					</div>
+				</li>
+			
+				<li>
+					<div class="post-list-item">
+						<div class="post-header">
 							<h4 class="post-link"><a href="https://strykeforce.github.io/posts/roborio-digital-output/">Roborio Digital Output</a></h4>
 							<h4 class="post-date">Nov 14, 2017</h4>
 						</div>
@@ -202,36 +230,6 @@ public void robotInit() { try { RobotComponent component; // load config file or
 					</div>
 				</li>
 			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://strykeforce.github.io/posts/thirdcoast-simulator/">Third Coast Telemetry Simulator</a></h4>
-							<h4 class="post-date">Oct 18, 2017</h4>
-						</div>
-						<div class="post-summary"><p>We use simulated telemetry data for client development, jar file available here here.
-Example of use:
-$ java -jar sim-v17.0.14.jar Creating simulated inventory... 0: Fake Talon 54 at 5 Hz 1: Fake Talon 57 at 3 Hz 2: Fake Talon 39 at 5 Hz 3: Fake Talon 45 at 1 Hz 4: Fake Talon 13 at 4 Hz 5: Fake Talon 52 at 3 Hz 6: Fake Talon 16 at 2 Hz 7: Fake Talon 46 at 2 Hz 8: Fake Servo 0 at 1 Hz 9: Fake Digital Input 0 at 1 Hz Measure signals are.</p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://strykeforce.github.io/posts/thirdcoast-simulator/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
-				<li>
-					<div class="post-list-item">
-						<div class="post-header">
-							<h4 class="post-link"><a href="https://strykeforce.github.io/posts/thirdcoast-pygrapher/">Third Coast Pygrapher</a></h4>
-							<h4 class="post-date">Oct 18, 2017</h4>
-						</div>
-						<div class="post-summary"><p>One of the benefits of using open data formats such as JSON and HTTP/REST is the ease with which we can develop client applications for Third Coast Telemetry. This is a simple demonstration client written in Python.
-This is a sample of output when run with ./pygrapher 1 SETPOINT
- Pygrapher screen shot   Source Code #!/usr/bin/env python # usage: pygrapher &lt;id&gt; &lt;measurement&gt; # example: pygrapher 0 SETPOINT import sys import requests import socket import json import matplotlib.</p></div>
-						<div class="post-list-footer text-center">
-							<a href="https://strykeforce.github.io/posts/thirdcoast-pygrapher/">Read More</a>
-						</div>
-					</div>
-				</li>
-			
 			</ul>
             
 
@@ -270,7 +268,7 @@ This is a sample of output when run with ./pygrapher 1 SETPOINT
 			<div class="push"></div>
 		</div>
 		<footer class="footer text-center">
-<p>Copyright &copy; 2017 Stryke Force 2767 -
+<p>Copyright &copy; 2018 Stryke Force 2767 -
 <span class="credit">
 	Powered by
 	<a target="_blank" href="https://gohugo.io">Hugo</a>

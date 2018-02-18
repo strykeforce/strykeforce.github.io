@@ -4,57 +4,68 @@
   
   <url>
     <loc>https://strykeforce.github.io/posts/talon-training/</loc>
-    <lastmod>2017-12-11T16:58:34-05:00</lastmod>
+    <lastmod>2018-01-31T05:06:44-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/posts/thirdcoast/</loc>
-    <lastmod>2017-12-11T11:09:14-05:00</lastmod>
+    <lastmod>2018-01-31T05:06:44-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/posts/thirdcoast-telemetry/</loc>
-    <lastmod>2017-12-11T11:09:14-05:00</lastmod>
+    <lastmod>2018-01-31T05:06:44-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/posts/thirdcoast-swerve/</loc>
-    <lastmod>2017-12-11T11:09:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://strykeforce.github.io/posts/roborio-digital-output/</loc>
-    <lastmod>2017-11-14T13:53:16-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://strykeforce.github.io/posts/robot-ssh/</loc>
-    <lastmod>2017-10-29T11:58:34-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://strykeforce.github.io/posts/robot-network/</loc>
-    <lastmod>2017-12-11T11:09:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://strykeforce.github.io/posts/thirdcoast-telemetry-swerve/</loc>
-    <lastmod>2017-12-10T14:05:13-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://strykeforce.github.io/posts/thirdcoast-simulator/</loc>
-    <lastmod>2017-10-29T12:40:45-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://strykeforce.github.io/posts/thirdcoast-pygrapher/</loc>
-    <lastmod>2017-10-18T10:30:56-04:00</lastmod>
+    <lastmod>2018-01-31T05:06:44-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/posts/thirdcoast-talon/</loc>
-    <lastmod>2017-11-10T07:48:43-05:00</lastmod>
+    <lastmod>2018-02-18T06:20:40-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://strykeforce.github.io/posts/android-robot-network/</loc>
+    <lastmod>2018-01-31T05:06:44-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://strykeforce.github.io/posts/roborio-digital-output/</loc>
+    <lastmod>2018-01-31T05:06:44-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://strykeforce.github.io/posts/robot-ssh/</loc>
+    <lastmod>2018-01-31T05:06:44-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://strykeforce.github.io/posts/robot-network/</loc>
+    <lastmod>2018-01-31T05:06:44-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://strykeforce.github.io/posts/thirdcoast-telemetry-swerve/</loc>
+    <lastmod>2018-01-31T05:06:44-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://strykeforce.github.io/posts/thirdcoast-simulator/</loc>
+    <lastmod>2018-01-31T05:06:44-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://strykeforce.github.io/posts/thirdcoast-pygrapher/</loc>
+    <lastmod>2018-01-31T05:06:44-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://strykeforce.github.io/tags/android/</loc>
+    <lastmod>2018-01-31T05:06:44-05:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -64,91 +75,91 @@
   
   <url>
     <loc>https://strykeforce.github.io/tags/frc/</loc>
-    <lastmod>2017-12-11T16:58:34-05:00</lastmod>
+    <lastmod>2018-01-31T05:06:44-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/tags/java/</loc>
-    <lastmod>2017-12-11T11:09:14-05:00</lastmod>
+    <lastmod>2018-01-31T05:06:44-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/tags/network/</loc>
-    <lastmod>2017-12-11T11:09:14-05:00</lastmod>
+    <lastmod>2018-01-31T05:06:44-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/posts/</loc>
-    <lastmod>2017-12-11T16:58:34-05:00</lastmod>
+    <lastmod>2018-01-31T05:06:44-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/categories/project/</loc>
-    <lastmod>2017-12-11T11:09:14-05:00</lastmod>
+    <lastmod>2018-01-31T05:06:44-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/tags/python/</loc>
-    <lastmod>2017-10-18T10:30:56-04:00</lastmod>
+    <lastmod>2018-01-31T05:06:44-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/categories/reference/</loc>
-    <lastmod>2017-12-11T16:58:34-05:00</lastmod>
+    <lastmod>2018-01-31T05:06:44-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/tags/roborio/</loc>
-    <lastmod>2017-11-14T13:53:16-05:00</lastmod>
+    <lastmod>2018-01-31T05:06:44-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/</loc>
-    <lastmod>2017-12-11T16:58:34-05:00</lastmod>
+    <lastmod>2018-01-31T05:06:44-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/tags/swerve/</loc>
-    <lastmod>2017-12-11T11:09:14-05:00</lastmod>
+    <lastmod>2018-01-31T05:06:44-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/tags/</loc>
-    <lastmod>2017-12-11T16:58:34-05:00</lastmod>
+    <lastmod>2018-01-31T05:06:44-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/tags/talon/</loc>
-    <lastmod>2017-12-11T16:58:34-05:00</lastmod>
+    <lastmod>2018-01-31T05:06:44-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/tags/telemetry/</loc>
-    <lastmod>2017-12-11T16:58:34-05:00</lastmod>
+    <lastmod>2018-01-31T05:06:44-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/tags/thirdcoast/</loc>
-    <lastmod>2017-12-11T11:09:14-05:00</lastmod>
+    <lastmod>2018-01-31T05:06:44-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://strykeforce.github.io/categories/tutorial/</loc>
-    <lastmod>2017-12-11T16:58:34-05:00</lastmod>
+    <lastmod>2018-01-31T05:06:44-05:00</lastmod>
     <priority>0</priority>
   </url>
   
