@@ -50,10 +50,10 @@ ga('create', 'UA-108186367-2', 'auto');
     "@id": "https://strykeforce.github.io/posts/android-robot-network/"
   },
   "keywords": "frc, roborio, android, network",
-  "wordcount": 57,
+  "wordcount": 103,
   "url": "https://strykeforce.github.io/posts/android-robot-network/",
   "datePublished": "2017-12-28T09:48:25-06:00",
-  "dateModified": "2018-01-31T05:06:44-05:00",
+  "dateModified": "2018-02-18T08:09:01-05:00",
   
   
   "author": {
@@ -118,9 +118,22 @@ ga('create', 'UA-108186367-2', 'auto');
 
 <p>We&rsquo;ve looked at a couple of methods for establishing a network connection over USB between an Android vision processor and our roboRIO. Two methods are using ADB for port-mapping and using Android USB tethering. This post describes our investigation of USB tethering.</p>
 
+<p>Android tethering over USB looks to be the best solution for us as we can set it up using the native RNDIS network driver on the roboRIO. No installation of <code>adb</code> required.</p>
+
 <h3 id="addresses">Addresses</h3>
 
 <p>The Android end of the tethered connection is hard-coded for <code>192.168.42.129</code> (see <a href="https://github.com/aosp-mirror/platform_frameworks_base/blob/marshmallow-release/services/core/java/com/android/server/connectivity/Tethering.java#L110">source code</a>).</p>
+
+<h3 id="resources">Resources</h3>
+
+<ul>
+<li><a href="http://ktnr74.blogspot.com/2014/09/calling-android-services-from-adb-shell.html">Calling Android services from ADB shell</a></li>
+<li><a href="http://joshuawise.com/horndis">HorNDIS</a></li>
+<li><a href="https://github.com/ligerbots/Steamworks2017Vision">LigerBots example</a></li>
+<li><a href="https://elementalx.org">ElementalX Kernel</a></li>
+<li><a href="http://www.supersu.com">SuperSU</a></li>
+<li><a href="https://twrp.me">TWRP</a></li>
+</ul>
 
                 
 

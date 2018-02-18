@@ -28,7 +28,7 @@ Course Material  Course Presentation with step-by-step closed-loop tuning guide 
       
       <guid>https://strykeforce.github.io/posts/android-robot-network/</guid>
       <description>We&amp;rsquo;ve looked at a couple of methods for establishing a network connection over USB between an Android vision processor and our roboRIO. Two methods are using ADB for port-mapping and using Android USB tethering. This post describes our investigation of USB tethering.
-Addresses The Android end of the tethered connection is hard-coded for 192.168.42.129 (see source code).</description>
+Android tethering over USB looks to be the best solution for us as we can set it up using the native RNDIS network driver on the roboRIO. No installation of adb required.</description>
     </item>
     
     <item>
