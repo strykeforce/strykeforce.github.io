@@ -94,8 +94,8 @@ Some material referenced when setting this up.
 
 - [OpenWRT][openwrt]
 - Andymark OMP5-AN [setup guide][andymark]
-- Open Mesh OM5P-AN [product page][om5p]
+- Open Mesh [Tech Data and Device Pages][open-mesh]
 
 [andymark]: http://files.andymark.com/OM5P-AN_QuickAP_Setup.pdf
-[om5p]: https://wiki.openwrt.org/toh/hwdata/open-mesh/open-mesh_om5p
+[open-mesh]: https://openwrt.org/toh/hwdata/open-mesh/start?s[]=open-mesh
 [openwrt]: https://openwrt.org

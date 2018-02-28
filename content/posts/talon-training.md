@@ -5,7 +5,7 @@ description = "Presentation and video from the Stryke Force FRC 2767 Talon SRX M
 draft = false
 tags = ["frc", "talon", "telemetry"]
 title = "Talon SRX Motor Training Course 2017"
-weight = 1
+weight = 0
 +++
 
 Stryke Force hosted students and mentors from West Michigan FRC teams for a Talon SRX motor training on December 9, 2017.
