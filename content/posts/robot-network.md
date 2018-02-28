@@ -8,7 +8,7 @@ title = "Robot Practice Field Network"
 weight = 0
 +++
 
-While using FRC radios in the default configuration is easy to set up, having to connect to an isolated robot access point is inconvienient during development when Internet access is required. We have installed [OpenWRT][openwrt] on the Open Mesh [OM5P-AN][om5p] used on our robots.
+While using FRC radios in the default configuration is easy to set up, having to connect to an isolated robot access point is inconvienient during development when Internet access is useful. We have installed [OpenWRT][openwrt] on the Open Mesh OM5P-AN used on our robots to allow us to connect to our robot via shop WiFi. This also helps with WiFi packet loss we experienced with our Driver Station laptops since we can now connect them to our shop network via Ethernet.
 
 ## Diagram
 
@@ -93,9 +93,11 @@ Our router is configured with a static route to the robot radio.
 Some material referenced when setting this up.
 
 - [OpenWRT][openwrt]
-- Andymark OMP5-AN [setup guide][andymark]
-- Open Mesh [Tech Data and Device Pages][open-mesh]
+- [Andymark OMP5-AN setup guide][andymark]
+- [Open Mesh Tech Data and Device Pages][open-mesh]
+- [Lock down of Open Mesh devices][lockdown]
 
 [andymark]: http://files.andymark.com/OM5P-AN_QuickAP_Setup.pdf
 [open-mesh]: https://openwrt.org/toh/hwdata/open-mesh/start?s[]=open-mesh
 [openwrt]: https://openwrt.org
+[lockdown]: https://github.com/true-systems/om5p-ac-v2-unlocker/wiki/Lock-down-of-Open-Mesh-devices
