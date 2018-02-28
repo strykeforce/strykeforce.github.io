@@ -50,10 +50,10 @@ ga('create', 'UA-108186367-2', 'auto');
     "@id": "https://strykeforce.github.io/posts/robot-network/"
   },
   "keywords": "frc, network",
-  "wordcount": 282,
+  "wordcount": 325,
   "url": "https://strykeforce.github.io/posts/robot-network/",
   "datePublished": "2017-10-20T14:56:12+00:00",
-  "dateModified": "2018-02-28T09:38:20-05:00",
+  "dateModified": "2018-02-28T11:29:10-05:00",
   
   
   "author": {
@@ -116,7 +116,7 @@ ga('create', 'UA-108186367-2', 'auto');
             <div class="post-content">
                 
 
-<p>While using FRC radios in the default configuration is easy to set up, having to connect to an isolated robot access point is inconvienient during development when Internet access is required. We have installed <a href="https://openwrt.org">OpenWRT</a> on the Open Mesh [OM5P-AN][om5p] used on our robots.</p>
+<p>While using FRC radios in the default configuration is easy to set up, having to connect to an isolated robot access point is inconvienient during development when Internet access is useful. We have installed <a href="https://openwrt.org">OpenWRT</a> on the Open Mesh OM5P-AN used on our robots to allow us to connect to our robot via shop WiFi. This also helps with WiFi packet loss we experienced with our Driver Station laptops since we can now connect them to our shop network via Ethernet.</p>
 
 <h2 id="diagram">Diagram</h2>
 
@@ -213,8 +213,9 @@ config forwarding
 
 <ul>
 <li><a href="https://openwrt.org">OpenWRT</a></li>
-<li>Andymark OMP5-AN <a href="http://files.andymark.com/OM5P-AN_QuickAP_Setup.pdf">setup guide</a></li>
-<li>Open Mesh <a href="https://openwrt.org/toh/hwdata/open-mesh/start?s[]=open-mesh">Tech Data and Device Pages</a></li>
+<li><a href="http://files.andymark.com/OM5P-AN_QuickAP_Setup.pdf">Andymark OMP5-AN setup guide</a></li>
+<li><a href="https://openwrt.org/toh/hwdata/open-mesh/start?s[]=open-mesh">Open Mesh Tech Data and Device Pages</a></li>
+<li><a href="https://github.com/true-systems/om5p-ac-v2-unlocker/wiki/Lock-down-of-Open-Mesh-devices">Lock down of Open Mesh devices</a></li>
 </ul>
 
                 

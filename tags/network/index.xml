@@ -27,8 +27,7 @@ Android tethering over USB looks to be the best solution for us as we can set it
       <pubDate>Fri, 20 Oct 2017 14:56:12 +0000</pubDate>
       
       <guid>https://strykeforce.github.io/posts/robot-network/</guid>
-      <description>While using FRC radios in the default configuration is easy to set up, having to connect to an isolated robot access point is inconvienient during development when Internet access is required. We have installed OpenWRT on the Open Mesh [OM5P-AN][om5p] used on our robots.
-Diagram   Open Mesh OM5P-AN Radio The radio is configured using OpenWRT as a router with its WiFi interface connecting to our shop network with static IP address 192.</description>
+      <description>While using FRC radios in the default configuration is easy to set up, having to connect to an isolated robot access point is inconvienient during development when Internet access is useful. We have installed OpenWRT on the Open Mesh OM5P-AN used on our robots to allow us to connect to our robot via shop WiFi. This also helps with WiFi packet loss we experienced with our Driver Station laptops since we can now connect them to our shop network via Ethernet.</description>
     </item>
     
   </channel>
