@@ -6,20 +6,10 @@
     <description>Recent content in Tutorial on Stryke Force Engineering Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Dec 2017 10:40:48 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 28 Dec 2017 09:48:25 -0600</lastBuildDate>
     
 	<atom:link href="https://strykeforce.github.io/categories/tutorial/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Talon SRX Motor Training Course 2017</title>
-      <link>https://strykeforce.github.io/posts/talon-training/</link>
-      <pubDate>Mon, 11 Dec 2017 10:40:48 -0500</pubDate>
-      
-      <guid>https://strykeforce.github.io/posts/talon-training/</guid>
-      <description>Stryke Force hosted students and mentors from West Michigan FRC teams for a Talon SRX motor training on December 9, 2017.
-Course Material  Course Presentation with step-by-step closed-loop tuning guide (pdf, pptx) Course Video (coming soon) Grapher and tct utility used for the tuning demonstrations (download information)  Topics  How does a motor work? (turning current into rotary motion) Motor performance (speed/torque curves and what they mean) Talon SRX overview Talon SRX control modes Encoders Configuring an entire axis (Talon SRX + sensor + motor)  Open loop Closed loop - PID Tuning a Closed loop  Velocity Position Motion Magic    Questions and Feedback If you have any questions about this class please ask on Chief Delphi and one of us will be sure to respond.</description>
-    </item>
     
     <item>
       <title>Android to roboRIO Networking</title>
@@ -29,6 +19,16 @@ Course Material  Course Presentation with step-by-step closed-loop tuning guide 
       <guid>https://strykeforce.github.io/posts/android-robot-network/</guid>
       <description>We&amp;rsquo;ve looked at a couple of methods for establishing a network connection over USB between an Android vision processor and our roboRIO. Two methods are using ADB for port-mapping and using Android USB tethering. This post describes our investigation of USB tethering.
 Android tethering over USB looks to be the best solution for us as we can set it up using the native RNDIS network driver on the roboRIO. No installation of adb required.</description>
+    </item>
+    
+    <item>
+      <title>Talon SRX Motor Training Course 2017</title>
+      <link>https://strykeforce.github.io/posts/talon-training/</link>
+      <pubDate>Mon, 11 Dec 2017 10:40:48 -0500</pubDate>
+      
+      <guid>https://strykeforce.github.io/posts/talon-training/</guid>
+      <description>Stryke Force hosted students and mentors from West Michigan FRC teams for a Talon SRX motor training on December 9, 2017.
+Course Material  Course Presentation with step-by-step closed-loop tuning guide (pdf, pptx) Course Video (coming soon) Grapher and tct utility used for the tuning demonstrations (download information)  Topics  How does a motor work? (turning current into rotary motion) Motor performance (speed/torque curves and what they mean) Talon SRX overview Talon SRX control modes Encoders Configuring an entire axis (Talon SRX + sensor + motor)  Open loop Closed loop - PID Tuning a Closed loop  Velocity Position Motion Magic    Questions and Feedback If you have any questions about this class please ask on Chief Delphi and one of us will be sure to respond.</description>
     </item>
     
     <item>

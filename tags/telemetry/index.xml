@@ -6,20 +6,10 @@
     <description>Recent content in Telemetry on Stryke Force Engineering Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Dec 2017 10:40:48 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 17 Oct 2017 13:48:58 +0000</lastBuildDate>
     
 	<atom:link href="https://strykeforce.github.io/tags/telemetry/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Talon SRX Motor Training Course 2017</title>
-      <link>https://strykeforce.github.io/posts/talon-training/</link>
-      <pubDate>Mon, 11 Dec 2017 10:40:48 -0500</pubDate>
-      
-      <guid>https://strykeforce.github.io/posts/talon-training/</guid>
-      <description>Stryke Force hosted students and mentors from West Michigan FRC teams for a Talon SRX motor training on December 9, 2017.
-Course Material  Course Presentation with step-by-step closed-loop tuning guide (pdf, pptx) Course Video (coming soon) Grapher and tct utility used for the tuning demonstrations (download information)  Topics  How does a motor work? (turning current into rotary motion) Motor performance (speed/torque curves and what they mean) Talon SRX overview Talon SRX control modes Encoders Configuring an entire axis (Talon SRX + sensor + motor)  Open loop Closed loop - PID Tuning a Closed loop  Velocity Position Motion Magic    Questions and Feedback If you have any questions about this class please ask on Chief Delphi and one of us will be sure to respond.</description>
-    </item>
     
     <item>
       <title>Third Coast Java Library</title>
@@ -43,6 +33,16 @@ Javadocs are here.
 Network The grapher and robot communicate over two network channels, one for control and one for data.
 The control channel is a HTTP REST web service that listens on robot TCP port 5800.
 The data channel is for one-way graph data streaming from robot to grapher and listens on grapher workstation UDP port 5555.</description>
+    </item>
+    
+    <item>
+      <title>Talon SRX Motor Training Course 2017</title>
+      <link>https://strykeforce.github.io/posts/talon-training/</link>
+      <pubDate>Mon, 11 Dec 2017 10:40:48 -0500</pubDate>
+      
+      <guid>https://strykeforce.github.io/posts/talon-training/</guid>
+      <description>Stryke Force hosted students and mentors from West Michigan FRC teams for a Talon SRX motor training on December 9, 2017.
+Course Material  Course Presentation with step-by-step closed-loop tuning guide (pdf, pptx) Course Video (coming soon) Grapher and tct utility used for the tuning demonstrations (download information)  Topics  How does a motor work? (turning current into rotary motion) Motor performance (speed/torque curves and what they mean) Talon SRX overview Talon SRX control modes Encoders Configuring an entire axis (Talon SRX + sensor + motor)  Open loop Closed loop - PID Tuning a Closed loop  Velocity Position Motion Magic    Questions and Feedback If you have any questions about this class please ask on Chief Delphi and one of us will be sure to respond.</description>
     </item>
     
     <item>
@@ -74,7 +74,7 @@ $ java -jar sim-v17.0.14.jar Creating simulated inventory... 0: Fake Talon 54 at
       <guid>https://strykeforce.github.io/posts/thirdcoast-pygrapher/</guid>
       <description>One of the benefits of using open data formats such as JSON and HTTP/REST is the ease with which we can develop client applications for Third Coast Telemetry. This is a simple demonstration client written in Python.
 This is a sample of output when run with ./pygrapher 1 SETPOINT
- Pygrapher screen shot   Source Code #!/usr/bin/env python # usage: pygrapher &amp;lt;id&amp;gt; &amp;lt;measurement&amp;gt; # example: pygrapher 0 SETPOINT import sys import requests import socket import json import matplotlib.</description>
+  Pygrapher screen shot   Source Code #!/usr/bin/env python # usage: pygrapher &amp;lt;id&amp;gt; &amp;lt;measurement&amp;gt; # example: pygrapher 0 SETPOINT import sys import requests import socket import json import matplotlib.</description>
     </item>
     
   </channel>

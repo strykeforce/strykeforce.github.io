@@ -84,7 +84,7 @@ $ java -jar sim-v17.0.14.jar Creating simulated inventory... 0: Fake Talon 54 at
       <guid>https://strykeforce.github.io/posts/thirdcoast-pygrapher/</guid>
       <description>One of the benefits of using open data formats such as JSON and HTTP/REST is the ease with which we can develop client applications for Third Coast Telemetry. This is a simple demonstration client written in Python.
 This is a sample of output when run with ./pygrapher 1 SETPOINT
- Pygrapher screen shot   Source Code #!/usr/bin/env python # usage: pygrapher &amp;lt;id&amp;gt; &amp;lt;measurement&amp;gt; # example: pygrapher 0 SETPOINT import sys import requests import socket import json import matplotlib.</description>
+  Pygrapher screen shot   Source Code #!/usr/bin/env python # usage: pygrapher &amp;lt;id&amp;gt; &amp;lt;measurement&amp;gt; # example: pygrapher 0 SETPOINT import sys import requests import socket import json import matplotlib.</description>
     </item>
     
   </channel>
