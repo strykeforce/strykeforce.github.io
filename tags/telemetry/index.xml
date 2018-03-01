@@ -52,18 +52,7 @@ Course Material  Course Presentation with step-by-step closed-loop tuning guide 
       
       <guid>https://strykeforce.github.io/posts/thirdcoast-telemetry-swerve/</guid>
       <description>Using the Third Coast Telemetry Service and Swerve Drive together relies on configuration using Dagger dependency injection. This allows for easy testing and reusable, interchangeable modules. The following code, taken from the example robot in this repository, configures the azimuth and drive Talons for monitoring.
-public void robotInit() { try { RobotComponent component; // load config file or create from default resource file in jar  try (FileConfig toml = FileConfig.</description>
-    </item>
-    
-    <item>
-      <title>Third Coast Telemetry Simulator</title>
-      <link>https://strykeforce.github.io/posts/thirdcoast-simulator/</link>
-      <pubDate>Wed, 18 Oct 2017 17:36:17 -0400</pubDate>
-      
-      <guid>https://strykeforce.github.io/posts/thirdcoast-simulator/</guid>
-      <description>We use simulated telemetry data for client development, jar file available here here.
-Example of use:
-$ java -jar sim-v17.0.14.jar Creating simulated inventory... 0: Fake Talon 54 at 5 Hz 1: Fake Talon 57 at 3 Hz 2: Fake Talon 39 at 5 Hz 3: Fake Talon 45 at 1 Hz 4: Fake Talon 13 at 4 Hz 5: Fake Talon 52 at 3 Hz 6: Fake Talon 16 at 2 Hz 7: Fake Talon 46 at 2 Hz 8: Fake Servo 0 at 1 Hz 9: Fake Digital Input 0 at 1 Hz Measure signals are.</description>
+public void robotInit() { URL thirdCoastConfig = Robot.class.getResource(&amp;#34;/META-INF/thirdcoast.toml&amp;#34;); // where you put it  SingletonComponent component = DaggerSingletonComponent.builder().thirdCoastConfig(thirdCoastConfig).build(); swerve = component.swerveDrive(); telemetryService = component.telemetryService(); swerve.registerWith(telemetryService); telemetryService.</description>
     </item>
     
     <item>

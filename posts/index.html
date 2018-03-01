@@ -222,7 +222,7 @@ Linux and macOS In the steps below, $ is the command-line prompt and should not 
 							<h4 class="post-date">Oct 20, 2017</h4>
 						</div>
 						<div class="post-summary"><p>Using the Third Coast Telemetry Service and Swerve Drive together relies on configuration using Dagger dependency injection. This allows for easy testing and reusable, interchangeable modules. The following code, taken from the example robot in this repository, configures the azimuth and drive Talons for monitoring.
-public void robotInit() { try { RobotComponent component; // load config file or create from default resource file in jar  try (FileConfig toml = FileConfig.</p></div>
+public void robotInit() { URL thirdCoastConfig = Robot.class.getResource(&#34;/META-INF/thirdcoast.toml&#34;); // where you put it  SingletonComponent component = DaggerSingletonComponent.builder().thirdCoastConfig(thirdCoastConfig).build(); swerve = component.swerveDrive(); telemetryService = component.telemetryService(); swerve.registerWith(telemetryService); telemetryService.</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://strykeforce.github.io/posts/thirdcoast-telemetry-swerve/">Read More</a>
 						</div>

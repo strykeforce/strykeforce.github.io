@@ -50,10 +50,10 @@ ga('create', 'UA-108186367-2', 'auto');
     "@id": "https://strykeforce.github.io/posts/thirdcoast-telemetry-swerve/"
   },
   "keywords": "java, thirdcoast, frc, swerve, telemetry",
-  "wordcount": 160,
+  "wordcount": 140,
   "url": "https://strykeforce.github.io/posts/thirdcoast-telemetry-swerve/",
   "datePublished": "2017-10-20T13:01:49+00:00",
-  "dateModified": "2018-01-31T05:06:44-05:00",
+  "dateModified": "2018-03-01T09:49:36-05:00",
   
   
   "author": {
@@ -116,18 +116,12 @@ ga('create', 'UA-108186367-2', 'auto');
             <div class="post-content">
                 <p>Using the Third Coast Telemetry Service and Swerve Drive together relies on configuration using <a href="https://google.github.io/dagger/">Dagger</a> dependency injection. This allows for easy testing and reusable, interchangeable modules. The following code, taken from the example robot in this repository, configures the azimuth and drive Talons for monitoring.</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">public</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">robotInit</span><span style="color:#555">()</span> <span style="color:#555">{</span>
-  <span style="color:#069;font-weight:bold">try</span> <span style="color:#555">{</span>
-    RobotComponent component<span style="color:#555">;</span>
-    <span style="color:#09f;font-style:italic">// load config file or create from default resource file in jar
-</span><span style="color:#09f;font-style:italic"></span>    <span style="color:#069;font-weight:bold">try</span> <span style="color:#555">(</span>FileConfig toml <span style="color:#555">=</span> FileConfig<span style="color:#555">.</span><span style="color:#309">builder</span><span style="color:#555">(</span>CONFIG<span style="color:#555">).</span><span style="color:#309">defaultResource</span><span style="color:#555">(</span>DEFAULT_CONFIG<span style="color:#555">).</span><span style="color:#309">build</span><span style="color:#555">())</span> <span style="color:#555">{</span>
-      toml<span style="color:#555">.</span><span style="color:#309">load</span><span style="color:#555">();</span>
-      <span style="color:#09f;font-style:italic">// DaggerRobotComponent is generated from RobotComponent.java
-</span><span style="color:#09f;font-style:italic"></span>      component <span style="color:#555">=</span> DaggerRobotComponent<span style="color:#555">.</span><span style="color:#309">builder</span><span style="color:#555">().</span><span style="color:#309">toml</span><span style="color:#555">(</span>toml<span style="color:#555">.</span><span style="color:#309">unmodifiable</span><span style="color:#555">()).</span><span style="color:#309">build</span><span style="color:#555">();</span>
-    <span style="color:#555">}</span>
-    swerve <span style="color:#555">=</span> component<span style="color:#555">.</span><span style="color:#309">swerveDrive</span><span style="color:#555">();</span>
-    telemetryService <span style="color:#555">=</span> component<span style="color:#555">.</span><span style="color:#309">telemetryService</span><span style="color:#555">();</span>
-    swerve<span style="color:#555">.</span><span style="color:#309">registerWith</span><span style="color:#555">(</span>telemetryService<span style="color:#555">);</span>
-    telemetryService<span style="color:#555">.</span><span style="color:#309">start</span><span style="color:#555">();</span>
+  URL thirdCoastConfig <span style="color:#555">=</span> Robot<span style="color:#555">.</span><span style="color:#309">class</span><span style="color:#555">.</span><span style="color:#309">getResource</span><span style="color:#555">(</span><span style="color:#c30">&#34;/META-INF/thirdcoast.toml&#34;</span><span style="color:#555">);</span> <span style="color:#09f;font-style:italic">// where you put it
+</span><span style="color:#09f;font-style:italic"></span>  SingletonComponent component <span style="color:#555">=</span> DaggerSingletonComponent<span style="color:#555">.</span><span style="color:#309">builder</span><span style="color:#555">().</span><span style="color:#309">thirdCoastConfig</span><span style="color:#555">(</span>thirdCoastConfig<span style="color:#555">).</span><span style="color:#309">build</span><span style="color:#555">();</span>
+  swerve <span style="color:#555">=</span> component<span style="color:#555">.</span><span style="color:#309">swerveDrive</span><span style="color:#555">();</span>
+  telemetryService <span style="color:#555">=</span> component<span style="color:#555">.</span><span style="color:#309">telemetryService</span><span style="color:#555">();</span>
+  swerve<span style="color:#555">.</span><span style="color:#309">registerWith</span><span style="color:#555">(</span>telemetryService<span style="color:#555">);</span>
+  telemetryService<span style="color:#555">.</span><span style="color:#309">start</span><span style="color:#555">();</span>
   <span style="color:#09f;font-style:italic">// ...
 </span><span style="color:#09f;font-style:italic"></span><span style="color:#555">}</span></code></pre></div>
 <p>This will set the Talon status frame update rates on the CAN bus to default values as specified in the <a href="https://strykeforce.github.io/thirdcoast/javadoc/">javadoc</a> for <code>TelemetryService</code>. You can configure a higher status frame rate for one or more talons. For example to focus on the performance of talon 6 during tuning you increase the general and feedback update rates to 5 ms each with:</p>
@@ -140,13 +134,13 @@ ga('create', 'UA-108186367-2', 'auto');
 	
 	<li><a href="/posts/thirdcoast/">Third Coast Java Library</a></li>
 	
-	<li><a href="/posts/thirdcoast-simulator/">Third Coast Telemetry Simulator</a></li>
-	
 	<li><a href="/posts/thirdcoast-telemetry/">Third Coast Telemetry</a></li>
 	
 	<li><a href="/posts/thirdcoast-swerve/">Third Coast Swerve Drive</a></li>
 	
 	<li><a href="/posts/thirdcoast-talon/">Third Coast Talon Provisioner</a></li>
+	
+	<li><a href="/posts/thirdcoast-pygrapher/">Third Coast Pygrapher</a></li>
 	
 </ul>
 
