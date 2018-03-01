@@ -12,19 +12,14 @@ weight = 0
 Using the Third Coast Telemetry Service and Swerve Drive together relies on configuration using [Dagger](https://google.github.io/dagger/) dependency injection. This allows for easy testing and reusable, interchangeable modules. The following code, taken from the example robot in this repository, configures the azimuth and drive Talons for monitoring.
 
 ```java
+
 public void robotInit() {
-  try {
-    RobotComponent component;
-    // load config file or create from default resource file in jar
-    try (FileConfig toml = FileConfig.builder(CONFIG).defaultResource(DEFAULT_CONFIG).build()) {
-      toml.load();
-      // DaggerRobotComponent is generated from RobotComponent.java
-      component = DaggerRobotComponent.builder().toml(toml.unmodifiable()).build();
-    }
-    swerve = component.swerveDrive();
-    telemetryService = component.telemetryService();
-    swerve.registerWith(telemetryService);
-    telemetryService.start();
+  URL thirdCoastConfig = Robot.class.getResource("/META-INF/thirdcoast.toml"); // where you put it
+  SingletonComponent component = DaggerSingletonComponent.builder().thirdCoastConfig(thirdCoastConfig).build();
+  swerve = component.swerveDrive();
+  telemetryService = component.telemetryService();
+  swerve.registerWith(telemetryService);
+  telemetryService.start();
   // ...
 }
 ```
